@@ -27,7 +27,7 @@ if(mysqli_num_rows($result) > 0) {
 }
 $stmt->close();
 
-//Add to database
+//Add to users table
 $salt_ok = false;
 $password_salt = openssl_random_pseudo_bytes(64, $salt_ok);
 if(!$salt_ok) {
@@ -37,7 +37,7 @@ if(!$salt_ok) {
 }
 $password_hash = hash("sha256", $password_salt . $user_data["password1"], false);
 $stmt = mysqli_stmt_init($conn);
-$stmt->prepare("INSERT INTO users (username, password, password_salt, firstname, lastname, email) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->prepare("INSERT INTO users (username, password, password_salt, firstname, lastname, email, prefs) VALUES (?, ?, ?, ?, ?, ?, '{}')");
 $stmt->bind_param('ssssss', $user_data["username"], $password_hash, $password_salt, $user_data["firstname"], $user_data["lastname"], $user_data["email"]);
 $stmt->execute();
 $result = mysqli_stmt_get_result($stmt);
@@ -49,5 +49,6 @@ if(!$result) {
   echo "Error: " . mysqli_error($conn) . "\n";
 }
 $stmt->close();
+
 close_sql_connection($conn);
 ?>

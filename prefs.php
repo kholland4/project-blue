@@ -1,18 +1,20 @@
 <?php
-$PREF_LEVEL_MIN = 0;
-$PREF_LEVEL_MAX = 10;
-$PREF_LEVEL_DEFAULT = 0;
+$prefDataRaw = json_decode(file_get_contents("prefdata.json"), true);
+$PREF_LEVEL_MIN = $prefDataRaw["meta"]["PREF_LEVEL_MIN"];
+$PREF_LEVEL_MAX = $prefDataRaw["meta"]["PREF_LEVEL_MAX"];
+$PREF_LEVEL_DEFAULT = $prefDataRaw["meta"]["PREF_LEVEL_DEFAULT"];
+$prefData = $prefDataRaw["data"];
 
 function prefs_get($conn, $userid) {
   $stmt=mysqli_stmt_init($conn);
-  $stmt->prepare("SELECT * FROM userprefs WHERE id=? LIMIT 1");
+  $stmt->prepare("SELECT * FROM users WHERE id=? LIMIT 1");
   $stmt->bind_param('i', $userid);
   $stmt->execute();
   $result = mysqli_stmt_get_result($stmt);
   if(mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
     $stmt->close();
-    return $row["data"];
+    return $row["prefs"];
   } else {
     $stmt->close();
     return null;
@@ -22,7 +24,7 @@ function prefs_get($conn, $userid) {
 
 function prefs_set($conn, $userid, $data) {
   $stmt = mysqli_stmt_init($conn);
-  $stmt->prepare("UPDATE userprefs SET data=? WHERE userid=?");
+  $stmt->prepare("UPDATE users SET prefs=? WHERE id=?");
   $stmt->bind_param('si', $data, $userid);
   $stmt->execute();
   $result = mysqli_stmt_get_result($stmt);
