@@ -1,12 +1,9 @@
 <?php
-$PREF_LEVEL_MIN = 0;
-$PREF_LEVEL_MAX = 10;
-$PREF_LEVEL_DEFAULT = 0;
-
-$prefData = array(
-  array("name" => "test"),
-  array("name" => "test #2")
-);
+$prefDataRaw = json_decode(file_get_contents("prefdata.json"), true);
+$PREF_LEVEL_MIN = $prefDataRaw["meta"]["PREF_LEVEL_MIN"];
+$PREF_LEVEL_MAX = $prefDataRaw["meta"]["PREF_LEVEL_MAX"];
+$PREF_LEVEL_DEFAULT = $prefDataRaw["meta"]["PREF_LEVEL_DEFAULT"];
+$prefData = $prefDataRaw["data"];
 
 function prefs_get($conn, $userid) {
   $stmt=mysqli_stmt_init($conn);
