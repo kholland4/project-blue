@@ -5,19 +5,15 @@ require "util.php";
 <html>
 <head>
 <title>Log in</title>
-<style>
-#header {
-  font-weight: bold;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="loginStyle.css">
 </head>
 <body>
 <div id="container">
-<div id="header">Log In</div>
-<form action="login.php" method="POST">
+<form id="f1" action="login.php" method="POST">
+<img src="huugsClear.png">
 <input type="text" name="username" minlength="4" maxlength="100" placeholder="Username" required autofocus><br>
 <input type="password" name="password" minlength="8" maxlength="64" placeholder="Password" required><br>
-<button>Log in</button>
+<button>Sign In</button>
 </form>
 <?php
 if(isset($_POST["username"])) {
