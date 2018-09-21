@@ -17,6 +17,22 @@ td.prefs {
   padding-bottom: 5px;
 }
 
+.delPref {
+  margin: 0px;
+  border: 0px;
+  padding: 3px;
+  color: black;
+  background-color: white;
+  outline: none;
+}
+.delPref::after {
+  /* TODO: use image instead */
+  content: "x";
+}
+.delPref:hover {
+  border: 1px solid #999999;
+}
+
 .prefIconOuter {
   width: 64px;
 }
