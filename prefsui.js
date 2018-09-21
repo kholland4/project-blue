@@ -40,13 +40,26 @@ function addPref() {
   if(prefID != -1 && document.getElementById("prefRow" + prefID) == undefined) {
     var tr = document.createElement("tr");
     tr.id = "prefRow" + prefID;
+    tr.className = "prefs";
     
-    //name
+    //name and icon
     var tdName = document.createElement("td");
-    tdName.innerText = prefData[prefID].name;
+    tdName.className = "prefs";
+    var iconOuter = document.createElement("div");
+    iconOuter.className = "prefIconOuter";
+    var icon = document.createElement("img");
+    icon.className = "prefIcon";
+    icon.src = prefData[prefID].image;
+    var caption = document.createElement("span");
+    caption.className = "prefIconCaption";
+    caption.innerText = prefData[prefID].name;
+    iconOuter.appendChild(icon);
+    iconOuter.appendChild(caption);
+    tdName.appendChild(iconOuter);
     
     //slider
     var tdSlider = document.createElement("td");
+    tdSlider.className = "prefs";
     var slider = document.createElement("input");
     slider.type = "range";
     slider.name = prefID;
@@ -57,6 +70,7 @@ function addPref() {
     
     //delete button
     var tdDel = document.createElement("td");
+    tdDel.className = "prefs";
     var buttonDel = document.createElement("button");
     buttonDel.className = "delPref";
     buttonDel.type = "button";

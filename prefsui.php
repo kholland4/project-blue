@@ -8,26 +8,7 @@ $userid = authenticate($conn);
 <html>
 <head>
 <script src="prefsui.js" type="text/javascript"></script>
-<style>
-#header {
-  font-weight: bold;
-}
-table {
-  margin:0px;
-  border:0px;
-  padding:0px;
-  border-collapse:collapse;
-}
-tr {
-  margin:0px;
-  border:0px;
-  padding:0px;
-}
-td {
-  margin:0px;
-  border:0px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="prefsui.css">
 </head>
 <body>
   <?php
@@ -42,14 +23,14 @@ td {
   }
   ?>
   <form action="prefsui.php" method="POST" id="prefListForm">
-    <table id="prefList">
+    <table id="prefList" class="prefs">
       <?php
       $prefs = prefs_get_arr($conn, $userid);
       foreach($prefs as $prefID => $level) {
-        echo "<tr id=\"prefRow" . $prefID . "\">\n";
-        echo "<td>" . htmlspecialchars($prefData[$prefID]["name"]) . "</td>";
-        echo "<td><input type=\"range\" name=\"" . $prefID . "\" min=\"" . $PREF_LEVEL_MIN . "\" max=\"" . $PREF_LEVEL_MAX . "\" value=\"" . $level . "\"></td>\n";
-        echo "<td><button class=\"delPref\" onclick=\"delPref(" . $prefID . ");\" type=\"button\"></button></td>";
+        echo "<tr id=\"prefRow" . $prefID . "\" class=\"prefs\">\n";
+        echo "<td class=\"prefs\"><div class=\"prefIconOuter\"><img class=\"prefIcon\" src=\"" . $prefData[$prefID]["image"] . "\"><span class=\"prefIconCaption\">" . htmlspecialchars($prefData[$prefID]["name"]) . "</span></td>";
+        echo "<td class=\"prefs\"><input type=\"range\" name=\"" . $prefID . "\" min=\"" . $PREF_LEVEL_MIN . "\" max=\"" . $PREF_LEVEL_MAX . "\" value=\"" . $level . "\"></td>\n";
+        echo "<td class=\"prefs\"><button class=\"delPref\" onclick=\"delPref(" . $prefID . ");\" type=\"button\"></button></td>";
         echo "</tr>\n";
       }
       ?>

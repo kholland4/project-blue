@@ -1,0 +1,30 @@
+table.prefs {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  border-collapse: collapse;
+}
+tr.prefs {
+  margin: 0px;
+  border: 0px;
+  border-bottom: 1px solid #777777;
+  padding: 0px;
+}
+td.prefs {
+  margin: 0px;
+  border: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.prefIconOuter {
+  width: 64px;
+}
+.prefIcon {
+  width: 64px;
+  height: 64px;
+  border: 1px solid black;
+}
+.prefIconCaption {
+  
+}
