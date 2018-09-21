@@ -33,8 +33,8 @@ td {
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   //TODO: validation
   $prefs = array();
-  foreach($_POST as $pref => $level) {
-    $prefs[$pref] = intval($level);
+  foreach($_POST as $prefID => $level) {
+    $prefs[intval($prefID)] = intval($level);
   }
   $res = prefs_set_arr($conn, $userid, $prefs);
   if($res == true) { echo "Updated."; } else { echo "Error"; }
@@ -44,13 +44,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <table>
 <?php
 $prefs = prefs_get_arr($conn, $userid);
-if(!isset($prefs["test"])) { $prefs["test"] = 0; }
-foreach($prefs as $pref => $level) {
-  echo "<tr><td>" . htmlspecialchars($pref) . "</td><td>";
-  for($i = $PREF_LEVEL_MIN; $i <= $PREF_LEVEL_MAX; $i++) {
-    $sel = ""; if($i == $level) { $sel = " checked"; }
-    echo "<input type=\"radio\" name=\"" . addslashes($pref) . "\" value=\"" . $i . "\"" . $sel . ">" . $i;
-  }
+//$prefs = array(0 => 5);
+foreach($prefs as $prefID => $level) {
+  echo "<tr><td>" . htmlspecialchars($prefData[$prefID]["name"]) . "</td><td>";
+  echo "<input type=\"range\" name=\"" . $prefID . "\" min=\"" . $PREF_LEVEL_MIN . "\" max=\"" . $PREF_LEVEL_MAX . "\" value=\"" . $level . "\"><span id=\"" . $prefID . "\">";
   echo "</tr>\n";
 }
 ?>
