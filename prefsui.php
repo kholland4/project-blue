@@ -3,6 +3,21 @@ require "util.php";
 require "prefs.php";
 $conn = create_sql_connection();
 $userid = authenticate($conn);
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  //TODO: validation!!!
+  $prefs = array();
+  foreach($_POST as $prefID => $level) {
+    $prefs[intval($prefID)] = intval($level);
+  }
+  $res = prefs_set_arr($conn, $userid, $prefs);
+  if($res == true) {
+    header("Location: " . $BASE_URL);
+    echo "Updated.";
+  } else {
+    echo "Error saving.";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,18 +27,6 @@ $userid = authenticate($conn);
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 </head>
 <body>
-  <a href="<?php echo $BASE_URL; ?>">Home</a><br>
-  <?php
-  if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TODO: validation!!!
-    $prefs = array();
-    foreach($_POST as $prefID => $level) {
-      $prefs[intval($prefID)] = intval($level);
-    }
-    $res = prefs_set_arr($conn, $userid, $prefs);
-    if($res == true) { echo "Updated."; } else { echo "Error"; }
-  }
-  ?>
   <form action="prefsui.php" method="POST" id="prefListForm">
     <table id="prefList" class="prefs">
       <?php
@@ -45,5 +48,6 @@ $userid = authenticate($conn);
     <button onclick="addPref();">Add</button>-->
   </div>
   <button onclick="document.getElementById('prefListForm').submit();">Update</button>
+  <a href="<?php echo $BASE_URL; ?>">Cancel</a>
   </body>
 </html>
