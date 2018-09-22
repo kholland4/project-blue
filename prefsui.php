@@ -37,10 +37,10 @@ $userid = authenticate($conn);
     </table>
   </form>
   <div id="addMenu">
-    <select id="addMenuSelect">
+    <!--<select id="addMenuSelect">
       <option value="-1" selected>Choose</option>
     </select>
-    <button onclick="addPref();">Add</button>
+    <button onclick="addPref();">Add</button>-->
   </div>
   <button onclick="document.getElementById('prefListForm').submit();">Update</button>
   </body>

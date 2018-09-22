@@ -44,3 +44,22 @@ td.prefs {
 .prefIconCaption {
   
 }
+
+#addMenu {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid blue;
+  padding: 10px;
+}
+.prefAddOuter {
+  width: 64px;
+  display: inline-block;
+  margin: 3px;
+}
+.prefAddIcon {
+  width: 64px;
+  height: 64px;
+}
+.prefAddCaption {
+
+}
