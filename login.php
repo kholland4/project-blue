@@ -4,7 +4,7 @@ require "util.php";
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Log in</title>
+<title>Sign In - <?php echo $DISPLAY_NAME; ?></title>
 <link rel="stylesheet" type="text/css" href="loginStyle.css">
 </head>
 <body>

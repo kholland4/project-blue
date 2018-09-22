@@ -7,6 +7,7 @@ $userid = authenticate($conn);
 <!DOCTYPE html>
 <html>
 <head>
+<title>Your Interests - <?php echo $DISPLAY_NAME; ?></title>
 <script src="prefsui.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 </head>
