@@ -11,6 +11,7 @@ $userid = authenticate($conn);
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 </head>
 <body>
+  <a href="<?php echo $BASE_URL; ?>">Home</a><br>
   <?php
   if($_SERVER["REQUEST_METHOD"] == "POST") {
     //TODO: validation!!!
