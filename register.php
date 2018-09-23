@@ -33,28 +33,28 @@ td {
 <!--If you're wondering, all of this validation is done on the server side as well.-->
 <table>
 <tr>
-  <td>Username:</td>
-  <td><input type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required></td>
+  [<!-- <td>Username:</td> -->]
+  <td><input placeholder="Username" type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required></td>
 </tr>
 <tr>
-  <td>Password:</td>
-  <td><input type="password" name="password1" minlength="8" maxlength="64" required></td>
+  <!-- <td>Password:</td> -->
+  <td><input placeholder="Password" type="password" name="password1" minlength="8" maxlength="64" required></td>
 </tr>
 <tr>
-  <td>Confirm password:</td>
-  <td><input type="password" name="password2" minlength="8" maxlength="64" required></td>
+  <!-- <td>Confirm password:</td> -->
+  <td><input placeholder="Confirm password" type="password" name="password2" minlength="8" maxlength="64" required></td>
 </tr>
 <tr>
-  <td>First name:</td>
-  <td><input type="text" name="firstname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only."></td>
+  <!-- <td>First name:</td> -->
+  <td><input placeholder="First name" type="text" name="firstname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only."></td>
 </tr>
 <tr>
-  <td>Last name:</td>
-  <td><input type="text" name="lastname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only."></td>
+  <!-- <td>Last name:</td> -->
+  <td><input placeholder="Last name" type="text" name="lastname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only."></td>
 </tr>
 <tr>
-  <td>Email address:</td>
-  <td><input type="email" name="email" minlength="6" maxlength="100" pattern="^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-]+\.[a-z\.]+$" title="Letters, numbers, underscores, hyphens, and periods."></td>
+  <!-- <td>Email address:</td> -->
+  <td><input placeholder="Email address" type="email" name="email" minlength="6" maxlength="100" pattern="^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-]+\.[a-z\.]+$" title="Letters, numbers, underscores, hyphens, and periods."></td>
 </tr>
 </table>
 <button>Register</button>
