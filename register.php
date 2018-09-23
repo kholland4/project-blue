@@ -33,7 +33,7 @@ td {
 <!--If you're wondering, all of this validation is done on the server side as well.-->
 <table>
 <tr>
-  [<!-- <td>Username:</td> -->]
+  <!-- <td>Username:</td> -->
   <td><input placeholder="Username" type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required></td>
 </tr>
 <tr>

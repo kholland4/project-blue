@@ -1,5 +1,4 @@
 {
-  "meta": {"PREF_LEVEL_MIN": 0, "PREF_LEVEL_MAX": 10, "PREF_LEVEL_DEFAULT": 5},
   "meta": {
     "PREF_LEVEL_MIN": 0,
     "PREF_LEVEL_MAX": 10,
@@ -12,11 +11,6 @@
     }
   },
   "data": [
-    {"name": "test #1", "image": "img/test.png"},
-    {"name": "test #2", "image": "img/test.png"},
-    {"name": "dogs", "image": "img/dog.png"},
-    {"name": "cats", "image": "img/cat.png"},
-    {"name": "fish", "image": "img/fish.png"}
     {"category": "test", "name": "test #1", "image": "img/test.png"},
     {"category": "test", "name": "test #2", "image": "img/test.png"},
     

@@ -42,10 +42,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </table>
   </form>
   <div id="addMenu">
- <!--    <select id="addMenuSelect">
+    <!--<select id="addMenuSelect">
       <option value="-1" selected>Choose</option>
     </select>
-    <button onclick="addPref();">Add</button> -->
+    <button onclick="addPref();">Add</button>-->
   </div>
   <button onclick="document.getElementById('prefListForm').submit();">Update</button>
   <a href="<?php echo $BASE_URL; ?>">Cancel</a>
