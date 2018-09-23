@@ -7,7 +7,8 @@ require "util.php";
 <title><?php echo $DISPLAY_NAME; ?></title>
 </head>
 <body>
-<span style="font-weight: bold;"><?php echo $DISPLAY_NAME; ?></span><br>
+<!--Joke logo, 'cause why not? Please remove when you style the homepage.-->
+<img src="project-blue.png" style="width: 100%; max-width: 300px;" alt="<?php echo $DISPLAY_NAME; ?>"><br>
 <?php
 $conn = create_sql_connection();
 //TODO: just use global $conn
