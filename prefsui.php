@@ -3,25 +3,30 @@ require "util.php";
 require "prefs.php";
 $conn = create_sql_connection();
 $userid = authenticate($conn);
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  //TODO: validation!!!
+  $prefs = array();
+  foreach($_POST as $prefID => $level) {
+    $prefs[intval($prefID)] = intval($level);
+  }
+  $res = prefs_set_arr($conn, $userid, $prefs);
+  if($res == true) {
+    header("Location: " . $BASE_URL);
+    echo "Updated.";
+  } else {
+    echo "Error saving.";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<title>Your Interests - <?php echo $DISPLAY_NAME; ?></title>
 <script src="prefsui.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 </head>
 <body>
-  <?php
-  if($_SERVER["REQUEST_METHOD"] == "POST") {
-    //TODO: validation!!!
-    $prefs = array();
-    foreach($_POST as $prefID => $level) {
-      $prefs[intval($prefID)] = intval($level);
-    }
-    $res = prefs_set_arr($conn, $userid, $prefs);
-    if($res == true) { echo "Updated."; } else { echo "Error"; }
-  }
-  ?>
   <form action="prefsui.php" method="POST" id="prefListForm">
     <table id="prefList" class="prefs">
       <?php
@@ -37,11 +42,12 @@ $userid = authenticate($conn);
     </table>
   </form>
   <div id="addMenu">
-    <!--<select id="addMenuSelect">
+ <!--    <select id="addMenuSelect">
       <option value="-1" selected>Choose</option>
     </select>
-    <button onclick="addPref();">Add</button>-->
+    <button onclick="addPref();">Add</button> -->
   </div>
   <button onclick="document.getElementById('prefListForm').submit();">Update</button>
+  <a href="<?php echo $BASE_URL; ?>">Cancel</a>
   </body>
 </html>

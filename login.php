@@ -4,8 +4,9 @@ require "util.php";
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Log in</title>
+<title>Sign In - <?php echo $DISPLAY_NAME; ?></title>
 <link rel="stylesheet" type="text/css" href="loginStyle.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="container">

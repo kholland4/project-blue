@@ -34,32 +34,40 @@ td.prefs {
 }
 
 .prefIconOuter {
-  width: 64px;
+  width: 80px;
 }
 .prefIcon {
-  width: 64px;
-  height: 64px;
-  border: 1px solid black;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
 }
 .prefIconCaption {
-  
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
 }
 
 #addMenu {
-  width: 100%;
-  max-width: 500px;
+  /* TODO: CSS flexbox */
+  width: calc(100% - 24px);
+  max-width: 516px;
   border: 2px solid blue;
   padding: 10px;
 }
 .prefAddOuter {
-  width: 64px;
+  width: 80px;
   display: inline-block;
   margin: 3px;
 }
 .prefAddIcon {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
 }
 .prefAddCaption {
-
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
 }

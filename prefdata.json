@@ -1,10 +1,44 @@
 {
-  "meta": {"PREF_LEVEL_MIN": 0, "PREF_LEVEL_MAX": 10, "PREF_LEVEL_DEFAULT": 5},
+  "meta": {
+    "PREF_LEVEL_MIN": 0,
+    "PREF_LEVEL_MAX": 10,
+    "PREF_LEVEL_DEFAULT": 5,
+    "categories": {
+      "test": "Test",
+      "animals": "Pets",
+      "sports": "Sports",
+      "fun": "Recreation"
+    }
+  },
   "data": [
+<<<<<<< HEAD
     {"name": "test #1", "image": "img/test.png"},
     {"name": "test #2", "image": "img/test.png"},
-    {"name": "dogs", "image": "img/dog.png"},
-    {"name": "cats", "image": "img/cat.png"},
-    {"name": "fish", "image": "img/fish.png"}
+    {"name": "dogs", "image": "img/dog.jpg"},
+    {"name": "cats", "image": "img/cats.jpg"},
+    {"name": "fish", "image": "img/fishFood.jpg"}
+=======
+    {"category": "test", "name": "test #1", "image": "img/test.png"},
+    {"category": "test", "name": "test #2", "image": "img/test.png"},
+    
+    {"category": "animals", "name": "Dogs", "image": "img/dog.png"},
+    {"category": "animals", "name": "Cats", "image": "img/cat.png"},
+    
+    {"category": "sports", "name": "Archery", "image": ""},
+    {"category": "sports", "name": "Badminton", "image": ""},
+    {"category": "sports", "name": "Baseball", "image": ""},
+    {"category": "sports", "name": "Basketball", "image": ""},
+    {"category": "sports", "name": "Climbing", "image": ""},
+    {"category": "sports", "name": "Football", "image": ""},
+    {"category": "sports", "name": "Golf", "image": ""},
+    {"category": "sports", "name": "Skiing", "image": ""},
+    {"category": "sports", "name": "Snowboarding", "image": ""},
+    {"category": "sports", "name": "Soccer", "image": ""},
+    {"category": "sports", "name": "Swimming", "image": ""},
+    
+    {"category": "fun", "name": "Beaches", "image": ""},
+    {"category": "fun", "name": "Boating", "image": ""},
+    {"category": "fun", "name": "Surfing", "image": ""}
+>>>>>>> cae48467db60a367542f275e8a74eafda534e424
   ]
 }
