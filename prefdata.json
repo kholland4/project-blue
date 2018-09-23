@@ -1,4 +1,5 @@
 {
+  "meta": {"PREF_LEVEL_MIN": 0, "PREF_LEVEL_MAX": 10, "PREF_LEVEL_DEFAULT": 5},
   "meta": {
     "PREF_LEVEL_MIN": 0,
     "PREF_LEVEL_MAX": 10,
@@ -11,13 +12,11 @@
     }
   },
   "data": [
-<<<<<<< HEAD
     {"name": "test #1", "image": "img/test.png"},
     {"name": "test #2", "image": "img/test.png"},
-    {"name": "dogs", "image": "img/dog.jpg"},
-    {"name": "cats", "image": "img/cats.jpg"},
-    {"name": "fish", "image": "img/fishFood.jpg"}
-=======
+    {"name": "dogs", "image": "img/dog.png"},
+    {"name": "cats", "image": "img/cat.png"},
+    {"name": "fish", "image": "img/fish.png"}
     {"category": "test", "name": "test #1", "image": "img/test.png"},
     {"category": "test", "name": "test #2", "image": "img/test.png"},
     
@@ -39,6 +38,5 @@
     {"category": "fun", "name": "Beaches", "image": ""},
     {"category": "fun", "name": "Boating", "image": ""},
     {"category": "fun", "name": "Surfing", "image": ""}
->>>>>>> cae48467db60a367542f275e8a74eafda534e424
   ]
 }
