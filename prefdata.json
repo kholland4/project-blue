@@ -12,12 +12,15 @@
   },
   "data": [
 <<<<<<< HEAD
+<<<<<<< HEAD
     {"name": "test #1", "image": "img/test.png"},
     {"name": "test #2", "image": "img/test.png"},
     {"name": "dogs", "image": "img/dog.jpg"},
     {"name": "cats", "image": "img/cats.jpg"},
     {"name": "fish", "image": "img/fishFood.jpg"}
 =======
+=======
+>>>>>>> cae48467db60a367542f275e8a74eafda534e424
     {"category": "test", "name": "test #1", "image": "img/test.png"},
     {"category": "test", "name": "test #2", "image": "img/test.png"},
     
@@ -39,6 +42,9 @@
     {"category": "fun", "name": "Beaches", "image": ""},
     {"category": "fun", "name": "Boating", "image": ""},
     {"category": "fun", "name": "Surfing", "image": ""}
+<<<<<<< HEAD
+>>>>>>> cae48467db60a367542f275e8a74eafda534e424
+=======
 >>>>>>> cae48467db60a367542f275e8a74eafda534e424
   ]
 }
