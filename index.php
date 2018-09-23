@@ -20,7 +20,7 @@ if($userid !== null) {
   echo "<a href='" . $BASE_URL . "logout.php'>Log out</a>";
 } else {
   echo "<a href='" . $BASE_URL . "login.php'>Log in</a><br>\n";
-  echo "<a href='" . $BASE_URL . "register.html'>Register</a>";
+  echo "<a href='" . $BASE_URL . "register.php'>Register</a>";
 }
 close_sql_connection($conn);
 ?>
