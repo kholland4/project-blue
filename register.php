@@ -5,12 +5,30 @@ require "util.php";
 <html>
 <head>
 <title>Register - <?php echo $DISPLAY_NAME; ?></title>
-<link rel="stylesheet" type="text/css" href="registerStyle.css">
+<style>
+#header {
+  font-weight: bold;
+}
+table {
+  margin:0px;
+  border:0px;
+  padding:0px;
+  border-collapse:collapse;
+}
+tr {
+  margin:0px;
+  border:0px;
+  padding:0px;
+}
+td {
+  margin:0px;
+  border:0px;
+}
+</style>
 </head>
 <body>
 <div id="container">
 <div id="header">Register</div>
-<img id="profilePic" src="img/test.png">
 <form action="register.php" method="POST">
 <!--If you're wondering, all of this validation is done on the server side as well.-->
 <table>
@@ -39,7 +57,7 @@ require "util.php";
   <td><input type="email" name="email" minlength="6" maxlength="100" pattern="^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-]+\.[a-z\.]+$" title="Letters, numbers, underscores, hyphens, and periods."></td>
 </tr>
 </table>
-<button id="rButton">Register</button>
+<button>Register</button>
 </form>
 <?php
 if(isset($_POST["username"])) {
