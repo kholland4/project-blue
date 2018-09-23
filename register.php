@@ -5,26 +5,8 @@ require "util.php";
 <html>
 <head>
 <title>Register - <?php echo $DISPLAY_NAME; ?></title>
-<style>
-#header {
-  font-weight: bold;
-}
-table {
-  margin:0px;
-  border:0px;
-  padding:0px;
-  border-collapse:collapse;
-}
-tr {
-  margin:0px;
-  border:0px;
-  padding:0px;
-}
-td {
-  margin:0px;
-  border:0px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="registerStyle.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div id="container">
