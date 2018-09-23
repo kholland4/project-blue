@@ -11,6 +11,7 @@ require "util.php";
 <body>
   <div id="container">
     <div id="header">Register</div>
+    <img id="profilePic" src="img/test.png">
     <form action="register.php" method="POST" id="f1">
       <input placeholder="Username" type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required>
       <input placeholder="Password" type="password" name="password1" minlength="8" maxlength="64" required>
