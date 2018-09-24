@@ -5,7 +5,9 @@ require "util.php";
 <html>
 <head>
 <title>Sign In - <?php echo $DISPLAY_NAME; ?></title>
-<link rel="stylesheet" type="text/css" href="loginStyle.css">
+<!-- button and input stylesheet -->
+<link rel="stylesheet" type="text/css" href="login_style.css">
+<!-- General stylesheet -->
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -16,6 +18,7 @@ require "util.php";
 <input type="text" name="username" minlength="4" maxlength="100" placeholder="Username" required autofocus><br>
 <input type="password" name="password" minlength="8" maxlength="64" placeholder="Password" required><br>
 <button>Sign In</button>
+<p>Don't have an account?</p><a href="register.php">Register</a>
 </form>
 <?php
 if(isset($_POST["username"])) {
