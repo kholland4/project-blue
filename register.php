@@ -6,13 +6,15 @@ require "util.php";
 <head>
   <title>Register - <?php echo $DISPLAY_NAME; ?></title>
   <link rel="stylesheet" type="text/css" href="registerStyle.css">
+  <link rel="stylesheet" type="text/css" href="inButtStyle.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div id="container">
     <div id="header">Register</div>
-    <img id="profilePic" src="img/test.png">
-    <form action="register.php" method="POST" id="f1">
+    <input type='file' />
+    <br><img id="profilePic" src="img/test.png" alt="your image" height=200 width=100>
+    <form id="f1" action="register.php" method="POST" id="f1">
       <input placeholder="Username" type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required><br>
       <input placeholder="Password" type="password" name="password1" minlength="8" maxlength="64" required><br>
       <input placeholder="Confirm password" type="password" name="password2" minlength="8" maxlength="64" required><br>
@@ -74,5 +76,16 @@ require "util.php";
     }
     ?>
   </div>
+  <!-- script to select image -->
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.querySelector('img');  // $('img')[0]
+          img.src = URL.createObjectURL(this.files[0]); // set src to file url
+      }
+  });
+});
+  </script>
 </body>
 </html>
