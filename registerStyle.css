@@ -19,20 +19,9 @@
   margin: .5em;
   max-width: 100%;
   height: auto;
-}
-#rButton {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #07254f;
-  width: 100%;
-  margin: 1em;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
   cursor: pointer;
-  border-radius: 10px;
-  width: 50%;
-  font-weight: bold;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  color: gray;
 }

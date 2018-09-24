@@ -5,15 +5,15 @@ require "util.php";
 <html>
 <head>
   <title>Register - <?php echo $DISPLAY_NAME; ?></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="registerStyle.css">
   <link rel="stylesheet" type="text/css" href="inButtStyle.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div id="container">
     <div id="header">Register</div>
-    <input type='file' />
-    <br><img id="profilePic" src="img/test.png" alt="your image" height=200 width=100>
+    <br><img style="cursor: pointer;" id="profilePic" src="img/test.png" alt="your image" height=200 width=100>
+    <input style="margin-bottom: 1em; display: none;" type='file' />
     <form id="f1" action="register.php" method="POST" id="f1">
       <input placeholder="Username" type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required><br>
       <input placeholder="Password" type="password" name="password1" minlength="8" maxlength="64" required><br>
@@ -22,6 +22,7 @@ require "util.php";
       <input placeholder="Last name" type="text" name="lastname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only."><br>
       <input placeholder="Email address" type="email" name="email" minlength="6" maxlength="100" pattern="^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-]+\.[a-z\.]+$" title="Letters, numbers, underscores, hyphens, and periods."><br>
       <button id="rButton">Register</button>
+      <p>Already a user?</p><a href="login.php">Sign In</a>
     </form>
     <?php
     if(isset($_POST["username"])) {
@@ -78,14 +79,18 @@ require "util.php";
   </div>
   <!-- script to select image -->
   <script type="text/javascript">
-    window.addEventListener('load', function() {
-  document.querySelector('input[type="file"]').addEventListener('change', function() {
+  window.addEventListener('load', function() {
+  document.querySelector("img").addEventListener("click", function() {
+    document.querySelector("input").click();
+     document.querySelector('input[type="file"]').addEventListener('change', function() {
       if (this.files && this.files[0]) {
           var img = document.querySelector('img');  // $('img')[0]
           img.src = URL.createObjectURL(this.files[0]); // set src to file url
       }
   });
 });
+});
+
   </script>
 </body>
 </html>
