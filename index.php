@@ -17,6 +17,7 @@ if($userid !== null) {
   $name = get_user_name($conn, $userid);
   echo "<span>Hello, $name!</span><br>\n";
   echo "<a href='" . $BASE_URL . "prefsui.php'>Your interests</a><br>\n";
+  echo "<a href='" . $BASE_URL . "matchui.php'>People like you</a><br>\n";
   echo "<a href='" . $BASE_URL . "logout.php'>Log out</a>";
 } else {
   echo "<a href='" . $BASE_URL . "login.php'>Log in</a><br>\n";
