@@ -3,24 +3,42 @@ var PREF_LEVEL_MAX;
 var PREF_LEVEL_DEFAULT;
 var prefData;
 
-function init() {
+var prefsStage1;
+
+function loadf(url, callback) {
   var xhttp = new XMLHttpRequest();
+  xhttp._callback = callback;
   xhttp.onreadystatechange = function() {
     if(this.readyState == 4) {
-      if(this.status == 200) {
-        var prefDataRaw = JSON.parse(this.responseText);
-        prefData = prefDataRaw.data;
-        PREF_LEVEL_MIN = prefDataRaw.meta.PREF_LEVEL_MIN;
-        PREF_LEVEL_MAX = prefDataRaw.meta.PREF_LEVEL_MAX;
-        PREF_LEVEL_DEFAULT = prefDataRaw.meta.PREF_LEVEL_DEFAULT;
-        initPrefs();
-      } else {
-        //TODO
-      }
+      this._callback();
     }
   };
-  xhttp.open("GET", "prefdata.json");
+  xhttp.open("GET", url);
   xhttp.send();
+}
+
+function init() {
+  loadf("prefdata.json", function() {
+    if(this.status == 200) {
+      var prefDataRaw = JSON.parse(this.responseText);
+      prefData = prefDataRaw.data;
+      PREF_LEVEL_MIN = prefDataRaw.meta.PREF_LEVEL_MIN;
+      PREF_LEVEL_MAX = prefDataRaw.meta.PREF_LEVEL_MAX;
+      PREF_LEVEL_DEFAULT = prefDataRaw.meta.PREF_LEVEL_DEFAULT;
+      initPrefs();
+      
+      loadf("getprefs.php?r=" + Math.random(), function() {
+        if(this.status == 200) {
+          prefsStage1 = JSON.parse(this.responseText);
+          initStage1();
+        } else {
+          //TODO
+        }
+      });
+    } else {
+      //TODO
+    }
+  });
 }
 
 function initPrefs() {
@@ -35,7 +53,7 @@ function initPrefs() {
       var opt = document.createElement("div");
       opt.className = "prefAddOuter";
       opt.dataset.id = i;
-      opt.onclick = addPref;
+      opt.onclick = function() { addPref(this.dataset.id); this.parentElement.removeChild(this); };
       var icon = document.createElement("img");
       icon.className = "prefAddIcon";
       icon.src = prefData[i].image;
@@ -49,11 +67,7 @@ function initPrefs() {
   }
 }
 
-function addPref() {
-  //var prefID = parseInt(document.getElementById("addMenuSelect").value);
-  //document.getElementById("addMenuSelect").value = "-1";
-  var prefID = this.dataset.id;
-  
+function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
   if(prefID != -1 && document.getElementById("prefRow" + prefID) == undefined) {
     var tr = document.createElement("tr");
     tr.id = "prefRow" + prefID;
@@ -82,7 +96,7 @@ function addPref() {
     slider.name = prefID;
     slider.min = PREF_LEVEL_MIN;
     slider.max = PREF_LEVEL_MAX;
-    slider.value = PREF_LEVEL_DEFAULT;
+    slider.value = level;
     tdSlider.appendChild(slider);
     
     //delete button
@@ -101,7 +115,7 @@ function addPref() {
     tr.appendChild(tdDel);
     document.getElementById("prefList").appendChild(tr);
   }
-  this.parentElement.removeChild(this);
+  //this.parentElement.removeChild(this);
 }
 
 function delPref(prefID) {
@@ -109,6 +123,16 @@ function delPref(prefID) {
   if(tr != undefined) {
     tr.parentElement.removeChild(tr);
     initPrefs();
+  }
+}
+
+function initStage1() {
+  initStage2();
+}
+
+function initStage2() {
+  for(var i = 0; i < prefsStage1.length; i++) {
+    addPref(prefsStage1[i].id, prefsStage1[i].level);
   }
 }
 
