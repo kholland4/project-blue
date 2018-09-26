@@ -27,15 +27,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 </head>
 <body>
-  <div id="stage1"></div>
+  <div id="stage1">
+    <div id="stage1List" class="stage1"></div>
+    <button onclick="initStage2();">Next</button>
+  </div>
   <div id="stage2">
-    <form action="prefsui.php" method="POST" id="prefListForm">
-      <table id="prefList" class="prefs"></table>
+    <form action="prefsui.php" method="POST" id="prefListForm" class="stage2">
+      <table id="prefList" class="stage2 prefs"></table>
     </form>
-    <div id="addMenuControl" onclick="toggleAddMenu();">More &#x25BE;</div>
-    <div id="addMenu"></div>
-    <button onclick="document.getElementById('prefListForm').submit();">Update</button>
-    <a href="<?php echo $BASE_URL; ?>">Cancel</a>
+    <div id="addMenuControl" class="stage2" onclick="toggleAddMenu();">More &#x25BE;</div>
+    <div id="addMenu" class="stage2"></div>
+    <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button>
+    <a href="<?php echo $BASE_URL; ?>" class="stage2">Cancel</a>
   </div>
 </body>
 </html>

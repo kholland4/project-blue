@@ -2,26 +2,26 @@
   display: none;
 }
 
-table.prefs {
+table.stage2.prefs {
   margin: 0px;
   border: 0px;
   padding: 0px;
   border-collapse: collapse;
 }
-tr.prefs {
+tr.stage2.prefs {
   margin: 0px;
   border: 0px;
   border-bottom: 1px solid #777777;
   padding: 0px;
 }
-td.prefs {
+td.stage2.prefs {
   margin: 0px;
   border: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-.delPref {
+.stage2.delPref {
   margin: 0px;
   border: 0px;
   padding: 3px;
@@ -29,30 +29,30 @@ td.prefs {
   background-color: white;
   outline: none;
 }
-.delPref::after {
+.stage2.delPref::after {
   /* TODO: use image instead */
   content: "x";
 }
-.delPref:hover {
+.stage2.delPref:hover {
   border: 1px solid #999999;
 }
 
-.prefIconOuter {
+.stage2.prefIconOuter {
   width: 80px;
 }
-.prefIcon {
+.stage2.prefIcon {
   width: 80px;
   height: 80px;
   border-radius: 100%;
 }
-.prefIconCaption {
+.stage2.prefIconCaption {
   display: inline-block;
   width: 100%;
   text-align: center;
   font-size: 12px;
 }
 
-#addMenu {
+.stage2#addMenu {
   display: none; /* JS used to reveal this */
   /* TODO: CSS flexbox */
   width: calc(100% - 24px);
@@ -60,17 +60,46 @@ td.prefs {
   border: 2px solid blue;
   padding: 10px;
 }
-.prefAddOuter {
+.stage2.prefAddOuter {
   width: 80px;
   display: inline-block;
   margin: 3px;
 }
-.prefAddIcon {
+.stage2.prefAddIcon {
   width: 80px;
   height: 80px;
   border-radius: 100%;
 }
-.prefAddCaption {
+.stage2.prefAddCaption {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+
+.stage1.prefIconOuter {
+  display: inline-block;
+  position: relative;
+  width: 128px;
+  margin: 10px;
+}
+.stage1.prefIcon {
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+}
+.stage1.prefIconOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+  opacity: 0.3;
+}
+.stage1.prefIconCaption {
   display: inline-block;
   width: 100%;
   text-align: center;

@@ -25,7 +25,6 @@ function init() {
       PREF_LEVEL_MIN = prefDataRaw.meta.PREF_LEVEL_MIN;
       PREF_LEVEL_MAX = prefDataRaw.meta.PREF_LEVEL_MAX;
       PREF_LEVEL_DEFAULT = prefDataRaw.meta.PREF_LEVEL_DEFAULT;
-      initPrefs();
       
       loadf("getprefs.php?r=" + Math.random(), function() {
         if(this.status == 200) {
@@ -51,14 +50,14 @@ function initPrefs() {
     //container.appendChild(opt);
     if(document.getElementById("prefRow" + i) == undefined) {
       var opt = document.createElement("div");
-      opt.className = "prefAddOuter";
+      opt.className = "stage2 prefAddOuter";
       opt.dataset.id = i;
       opt.onclick = function() { addPref(this.dataset.id); this.parentElement.removeChild(this); };
       var icon = document.createElement("img");
-      icon.className = "prefAddIcon";
+      icon.className = "stage2 prefAddIcon";
       icon.src = prefData[i].image;
       var caption = document.createElement("span");
-      caption.className = "prefAddCaption";
+      caption.className = "stage2 prefAddCaption";
       caption.innerText = prefData[i].name;
       opt.appendChild(icon);
       opt.appendChild(caption);
@@ -81,18 +80,18 @@ function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
   if(prefID != -1 && document.getElementById("prefRow" + prefID) == undefined) {
     var tr = document.createElement("tr");
     tr.id = "prefRow" + prefID;
-    tr.className = "prefs";
+    tr.className = "stage2 prefs";
     
     //name and icon
     var tdName = document.createElement("td");
-    tdName.className = "prefs";
+    tdName.className = "stage2 prefs";
     var iconOuter = document.createElement("div");
-    iconOuter.className = "prefIconOuter";
+    iconOuter.className = "stage2 prefIconOuter";
     var icon = document.createElement("img");
-    icon.className = "prefIcon";
+    icon.className = "stage2 prefIcon";
     icon.src = prefData[prefID].image;
     var caption = document.createElement("span");
-    caption.className = "prefIconCaption";
+    caption.className = "stage2 prefIconCaption";
     caption.innerText = prefData[prefID].name;
     iconOuter.appendChild(icon);
     iconOuter.appendChild(caption);
@@ -100,7 +99,7 @@ function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
     
     //slider
     var tdSlider = document.createElement("td");
-    tdSlider.className = "prefs";
+    tdSlider.className = "stage2 prefs";
     var slider = document.createElement("input");
     slider.type = "range";
     slider.name = prefID;
@@ -111,9 +110,9 @@ function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
     
     //delete button
     var tdDel = document.createElement("td");
-    tdDel.className = "prefs";
+    tdDel.className = "stage2 prefs";
     var buttonDel = document.createElement("button");
-    buttonDel.className = "delPref";
+    buttonDel.className = "stage2 delPref";
     buttonDel.type = "button";
     buttonDel.dataset.id = prefID;
     buttonDel.onclick = function() { delPref(this.dataset.id); }
@@ -137,17 +136,46 @@ function delPref(prefID) {
 }
 
 function initStage1() {
+  var prefDataSorted = prefData;
+  var container = document.getElementById("stage1List");
+  while(container.firstChild) { container.removeChild(container.firstChild); }
+  for(var i = 0; i < prefDataSorted.length; i++) {
+    var sel = false;
+    for(var n = 0; n < prefsStage1.length; n++) {
+      if(prefsStage1[n].id == i) {
+        sel = true;
+      }
+    }
+    
+    var iconOuter = document.createElement("div");
+    iconOuter.className = "stage1 prefIconOuter";
+    var icon = document.createElement("img");
+    icon.className = "stage1 prefIcon";
+    icon.src = prefDataSorted[i].image;
+    iconOuter.appendChild(icon);
+    if(sel) {
+      var overlay = document.createElement("img");
+      overlay.className = "stage1 prefIconOverlay";
+      overlay.src = "img/select.png";
+      iconOuter.appendChild(overlay);
+    }
+    var caption = document.createElement("span");
+    caption.className = "stage1 prefIconCaption";
+    caption.innerText = prefDataSorted[i].name;
+    iconOuter.appendChild(caption);
+    container.appendChild(iconOuter);
+  }
   document.getElementById("stage1").style.display = "block";
   document.getElementById("stage2").style.display = "none";
-  initStage2();
 }
 
 function initStage2() {
-  document.getElementById("stage1").style.display = "none";
-  document.getElementById("stage2").style.display = "block";
   for(var i = 0; i < prefsStage1.length; i++) {
     addPref(prefsStage1[i].id, prefsStage1[i].level);
   }
+  initPrefs();
+  document.getElementById("stage1").style.display = "none";
+  document.getElementById("stage2").style.display = "block";
 }
 
 document.addEventListener("DOMContentLoaded", init);
