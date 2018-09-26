@@ -1,3 +1,7 @@
+#stage1, #stage2 {
+  display: none;
+}
+
 table.prefs {
   margin: 0px;
   border: 0px;
@@ -49,6 +53,7 @@ td.prefs {
 }
 
 #addMenu {
+  display: none; /* JS used to reveal this */
   /* TODO: CSS flexbox */
   width: calc(100% - 24px);
   max-width: 516px;

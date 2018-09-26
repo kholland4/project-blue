@@ -67,6 +67,16 @@ function initPrefs() {
   }
 }
 
+var addMenuState = false;
+function toggleAddMenu() {
+  if(addMenuState) {
+    document.getElementById("addMenu").style.display = "none";
+  } else {
+    document.getElementById("addMenu").style.display = "block";
+  }
+  addMenuState = !addMenuState;
+}
+
 function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
   if(prefID != -1 && document.getElementById("prefRow" + prefID) == undefined) {
     var tr = document.createElement("tr");
@@ -127,10 +137,14 @@ function delPref(prefID) {
 }
 
 function initStage1() {
+  document.getElementById("stage1").style.display = "block";
+  document.getElementById("stage2").style.display = "none";
   initStage2();
 }
 
 function initStage2() {
+  document.getElementById("stage1").style.display = "none";
+  document.getElementById("stage2").style.display = "block";
   for(var i = 0; i < prefsStage1.length; i++) {
     addPref(prefsStage1[i].id, prefsStage1[i].level);
   }

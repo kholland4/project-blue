@@ -27,27 +27,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 </head>
 <body>
-  <form action="prefsui.php" method="POST" id="prefListForm">
-    <table id="prefList" class="prefs">
-      <?php
-      /*$prefs = prefs_get_arr($conn, $userid);
-      foreach($prefs as $prefID => $level) {
-        echo "<tr id=\"prefRow" . $prefID . "\" class=\"prefs\">\n";
-        echo "<td class=\"prefs\"><div class=\"prefIconOuter\"><img class=\"prefIcon\" src=\"" . $prefData[$prefID]["image"] . "\"><span class=\"prefIconCaption\">" . htmlspecialchars($prefData[$prefID]["name"]) . "</span></td>";
-        echo "<td class=\"prefs\"><input type=\"range\" name=\"" . $prefID . "\" min=\"" . $PREF_LEVEL_MIN . "\" max=\"" . $PREF_LEVEL_MAX . "\" value=\"" . $level . "\"></td>\n";
-        echo "<td class=\"prefs\"><button class=\"delPref\" onclick=\"delPref(" . $prefID . ");\" type=\"button\"></button></td>";
-        echo "</tr>\n";
-      }*/
-      ?>
-    </table>
-  </form>
-  <div id="addMenu">
-    <!--<select id="addMenuSelect">
-      <option value="-1" selected>Choose</option>
-    </select>
-    <button onclick="addPref();">Add</button>-->
+  <div id="stage1"></div>
+  <div id="stage2">
+    <form action="prefsui.php" method="POST" id="prefListForm">
+      <table id="prefList" class="prefs"></table>
+    </form>
+    <div id="addMenuControl" onclick="toggleAddMenu();">More &#x25BE;</div>
+    <div id="addMenu"></div>
+    <button onclick="document.getElementById('prefListForm').submit();">Update</button>
+    <a href="<?php echo $BASE_URL; ?>">Cancel</a>
   </div>
-  <button onclick="document.getElementById('prefListForm').submit();">Update</button>
-  <a href="<?php echo $BASE_URL; ?>">Cancel</a>
-  </body>
+</body>
 </html>
