@@ -266,7 +266,7 @@ function initStage1() {
     container.appendChild(iconOuter);
   }
   for(var i = 0; i < categories.length; i++) {
-    for(var n = 0; n < Math.ceil(window.innerWidth / 128); n++) { /* FIXME */
+    for(var n = 0; n < Math.ceil(window.innerWidth / 80); n++) { /* FIXME */
       var container = containers[categories[i]];
       
       var iconOuter = document.createElement("div");
