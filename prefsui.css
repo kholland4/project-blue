@@ -106,24 +106,26 @@ td.stage2.prefs {
 }
 .stage1.prefIconOuter {
   position: relative;
-  width: 128px;
+  width: 80px;
   margin: 10px;
 }
 .stage1.prefIconPlaceholder {
-  width: 128px;
-  margin: 10px;
+  width: 80px;
+  height: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .stage1.prefIcon {
-  width: 128px;
-  height: 128px;
+  width: 80px;
+  height: 80px;
   border-radius: 100%;
 }
 .stage1.prefIconOverlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 128px;
-  height: 128px;
+  width: 80px;
+  height: 80px;
   border-radius: 100%;
   opacity: 0.5;
 }
