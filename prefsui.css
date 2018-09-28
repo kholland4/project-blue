@@ -52,6 +52,19 @@ td.stage2.prefs {
   font-size: 12px;
 }
 
+.stage2.levelButton {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin: 0px;
+  border: 0px;
+  padding: 3px;
+}
+.stage2.levelButton.selected {
+  border: 2px solid blue;
+}
+
 .stage2#addMenu {
   display: none; /* JS used to reveal this */
   /* TODO: CSS flexbox */
