@@ -149,16 +149,45 @@ function initStage1() {
     
     var iconOuter = document.createElement("div");
     iconOuter.className = "stage1 prefIconOuter";
+    
+    iconOuter.dataset.id = i;
+    iconOuter.onclick = function() {
+      var id = this.dataset.id;
+      var sel = false;
+      for(var n = 0; n < prefsStage1.length; n++) {
+        if(prefsStage1[n].id == id) {
+          sel = true;
+        }
+      }
+      
+      if(sel) {
+        for(var n = 0; n < prefsStage1.length; n++) {
+          if(prefsStage1[n].id == id) {
+            prefsStage1.splice(n, 1);
+            break;
+          }
+        }
+        this.getElementsByClassName("stage1 prefIconOverlay")[0].style.display = "none";
+      } else {
+        prefsStage1.push({
+          id: id,
+          level: PREF_LEVEL_DEFAULT
+        });
+        this.getElementsByClassName("stage1 prefIconOverlay")[0].style.display = "block";
+      }
+    };
+    
     var icon = document.createElement("img");
     icon.className = "stage1 prefIcon";
     icon.src = prefDataSorted[i].image;
     iconOuter.appendChild(icon);
-    if(sel) {
-      var overlay = document.createElement("img");
-      overlay.className = "stage1 prefIconOverlay";
-      overlay.src = "img/select.png";
-      iconOuter.appendChild(overlay);
+    var overlay = document.createElement("img");
+    overlay.className = "stage1 prefIconOverlay";
+    overlay.src = "img/select.png";
+    if(!sel) {
+      overlay.style.display = "none";
     }
+    iconOuter.appendChild(overlay);
     var caption = document.createElement("span");
     caption.className = "stage1 prefIconCaption";
     caption.innerText = prefDataSorted[i].name;
