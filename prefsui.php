@@ -25,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <title>Your Interests - <?php echo $DISPLAY_NAME; ?></title>
 <script src="prefsui.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div id="stage1">
