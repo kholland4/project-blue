@@ -17,20 +17,20 @@
     {"category": "animals", "name": "Dogs", "image": "img/dog.png"},
     {"category": "animals", "name": "Cats", "image": "img/cat.png"},
     
-    {"category": "sports", "name": "Archery", "image": ""},
-    {"category": "sports", "name": "Badminton", "image": ""},
-    {"category": "sports", "name": "Baseball", "image": ""},
-    {"category": "sports", "name": "Basketball", "image": ""},
-    {"category": "sports", "name": "Climbing", "image": ""},
-    {"category": "sports", "name": "Football", "image": ""},
-    {"category": "sports", "name": "Golf", "image": ""},
-    {"category": "sports", "name": "Skiing", "image": ""},
-    {"category": "sports", "name": "Snowboarding", "image": ""},
-    {"category": "sports", "name": "Soccer", "image": ""},
-    {"category": "sports", "name": "Swimming", "image": ""},
+    {"category": "sports", "name": "Archery", "image": "img/archery.png"},
+    {"category": "sports", "name": "Badminton", "image": "img/badminton.png"},
+    {"category": "sports", "name": "Baseball", "image": "img/baseball.png"},
+    {"category": "sports", "name": "Basketball", "image": "img/basketball.png"},
+    {"category": "sports", "name": "Climbing", "image": "img/climbing.png"},
+    {"category": "sports", "name": "Football", "image": "img/football.png"},
+    {"category": "sports", "name": "Golf", "image": "img/golf.png"},
+    {"category": "sports", "name": "Skiing", "image": "img/skiing.png"},
+    {"category": "sports", "name": "Snowboarding", "image": "img/snowboarding.png"},
+    {"category": "sports", "name": "Soccer", "image": "img/soccer.png"},
+    {"category": "sports", "name": "Swimming", "image": "img/swimming.png"},
     
-    {"category": "fun", "name": "Beaches", "image": ""},
-    {"category": "fun", "name": "Boating", "image": ""},
-    {"category": "fun", "name": "Surfing", "image": ""}
+    {"category": "fun", "name": "Beaches", "image": "img/beaches.png"},
+    {"category": "fun", "name": "Boating", "image": "img/boating.png"},
+    {"category": "fun", "name": "Surfing", "image": "img/surfing.png"}
   ]
 }

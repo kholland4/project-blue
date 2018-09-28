@@ -203,7 +203,7 @@ function initStage1() {
     iconOuter.appendChild(icon);
     var overlay = document.createElement("img");
     overlay.className = "stage1 prefIconOverlay";
-    overlay.src = "img/select.png";
+    overlay.src = "img/check.png";
     if(!sel) {
       overlay.style.display = "none";
     }

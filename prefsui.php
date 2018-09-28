@@ -25,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <title>Your Interests - <?php echo $DISPLAY_NAME; ?></title>
 <script src="prefsui.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
+<link rel="stylesheet" type="text/css" href="inButtStyle.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -38,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     <div id="addMenuControl" class="stage2" onclick="toggleAddMenu();">More &#x25BE;</div>
     <div id="addMenu" class="stage2"></div>
-    <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button>
+    <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button><br>
     <a href="<?php echo $BASE_URL; ?>" class="stage2">Cancel</a>
   </div>
 </body>
