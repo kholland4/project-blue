@@ -90,11 +90,26 @@ td.stage2.prefs {
   font-size: 12px;
 }
 
-
-
+.stage1.categoryOuter {
+  
+}
+.stage1.categoryHeader {
+  
+}
+.stage1.category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: flex-start;
+}
 .stage1.prefIconOuter {
-  display: inline-block;
   position: relative;
+  width: 128px;
+  margin: 10px;
+}
+.stage1.prefIconPlaceholder {
   width: 128px;
   margin: 10px;
 }
@@ -110,7 +125,7 @@ td.stage2.prefs {
   width: 128px;
   height: 128px;
   border-radius: 100%;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .stage1.prefIconCaption {
   display: inline-block;

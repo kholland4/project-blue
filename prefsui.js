@@ -2,6 +2,7 @@ var PREF_LEVEL_MIN;
 var PREF_LEVEL_MAX;
 var PREF_LEVEL_DEFAULT;
 var prefData;
+var prefMeta;
 
 var prefsStage1;
 
@@ -22,9 +23,10 @@ function init() {
     if(this.status == 200) {
       var prefDataRaw = JSON.parse(this.responseText);
       prefData = prefDataRaw.data;
-      PREF_LEVEL_MIN = prefDataRaw.meta.PREF_LEVEL_MIN;
-      PREF_LEVEL_MAX = prefDataRaw.meta.PREF_LEVEL_MAX;
-      PREF_LEVEL_DEFAULT = prefDataRaw.meta.PREF_LEVEL_DEFAULT;
+      prefMeta = prefDataRaw.meta;
+      PREF_LEVEL_MIN = prefMeta.PREF_LEVEL_MIN;
+      PREF_LEVEL_MAX = prefMeta.PREF_LEVEL_MAX;
+      PREF_LEVEL_DEFAULT = prefMeta.PREF_LEVEL_DEFAULT;
       
       loadf("getprefs.php?r=" + Math.random(), function() {
         if(this.status == 200) {
@@ -157,9 +159,58 @@ function delPref(prefID) {
 
 function initStage1() {
   var prefDataSorted = prefData;
-  var container = document.getElementById("stage1List");
-  while(container.firstChild) { container.removeChild(container.firstChild); }
+  
+  //category alphabetical sort
+  prefDataSorted.sort(function(a, b) {
+    var s = a.category.localeCompare(b.category);
+    if(s == 0) { return -1; }
+    if(s == 1) { return 1; }
+    return 0;
+  });
+  //create a list of populated categories
+  var categories = [];
   for(var i = 0; i < prefDataSorted.length; i++) {
+    var found = false;
+    for(var n = 0; n < categories.length; n++) {
+      if(categories[n] == prefDataSorted[i].category) {
+        found = true;
+      }
+    }
+    if(!found) {
+      categories.push(prefDataSorted[i].category);
+    }
+  }
+  
+  //name alphabetical sort
+  prefDataSorted.sort(function(a, b) {
+    var s = a.name.localeCompare(b.name);
+    if(s == 0) { return -1; }
+    if(s == 1) { return 1; }
+    return 0;
+  });
+  
+  var containerMain = document.getElementById("stage1List");
+  while(containerMain.firstChild) { containerMain.removeChild(containerMain.firstChild); }
+  
+  //create a container for each category
+  var containers = [];
+  for(var i = 0; i < categories.length; i++) {
+    var cO = document.createElement("div");
+    cO.className = "stage1 categoryOuter";
+    var cHeader = document.createElement("div");
+    cHeader.className = "stage1 categoryHeader";
+    cHeader.innerText = prefMeta.categories[categories[i]];
+    cO.appendChild(cHeader);
+    var c = document.createElement("div");
+    c.className = "stage1 category";
+    containers[categories[i]] = c;
+    cO.appendChild(c);
+    containerMain.appendChild(cO);
+  }
+  
+  for(var i = 0; i < prefDataSorted.length; i++) {
+    var container = containers[prefDataSorted[i].category];
+    
     var sel = false;
     for(var n = 0; n < prefsStage1.length; n++) {
       if(prefsStage1[n].id == i) {
@@ -213,6 +264,15 @@ function initStage1() {
     caption.innerText = prefDataSorted[i].name;
     iconOuter.appendChild(caption);
     container.appendChild(iconOuter);
+  }
+  for(var i = 0; i < categories.length; i++) {
+    for(var n = 0; n < Math.ceil(window.innerWidth / 128); n++) { /* FIXME */
+      var container = containers[categories[i]];
+      
+      var iconOuter = document.createElement("div");
+      iconOuter.className = "stage1 prefIconPlaceholder";
+      container.appendChild(iconOuter);
+    }
   }
   document.getElementById("stage1").style.display = "block";
   document.getElementById("stage2").style.display = "none";
