@@ -7,7 +7,8 @@
       "test": "Test",
       "animals": "Pets",
       "sports": "Sports",
-      "fun": "Recreation"
+      "fun": "Recreation",
+      "activities": "Activities"
     }
   },
   "data": [
@@ -16,6 +17,7 @@
     
     {"category": "animals", "name": "Dogs", "image": "img/dog.png"},
     {"category": "animals", "name": "Cats", "image": "img/cat.png"},
+
     
     {"category": "sports", "name": "Archery", "image": "img/archery.png"},
     {"category": "sports", "name": "Badminton", "image": "img/badminton.png"},
@@ -28,9 +30,26 @@
     {"category": "sports", "name": "Snowboarding", "image": "img/snowboarding.png"},
     {"category": "sports", "name": "Soccer", "image": "img/soccer.png"},
     {"category": "sports", "name": "Swimming", "image": "img/swimming.png"},
+    {"category": "sports", "name": "Dancing", "image": "img/dancing.png"},
+    {"category": "sports", "name": "Hiking", "image": "img/hiking.png"},
+    {"category": "sports", "name": "", "image": "img/.png"},
+    {"category": "sports", "name": "", "image": "img/.png"},
+    {"category": "sports", "name": "", "image": "img/.png"},
+    {"category": "sports", "name": "", "image": "img/.png"},
+    {"category": "sports", "name": "", "image": "img/.png"},
+    {"category": "sports", "name": "", "image": "img/.png"},
     
     {"category": "fun", "name": "Beaches", "image": "img/beaches.png"},
     {"category": "fun", "name": "Boating", "image": "img/boating.png"},
-    {"category": "fun", "name": "Surfing", "image": "img/surfing.png"}
+    {"category": "fun", "name": "Surfing", "image": "img/surfing.png"},
+    {"category": "fun", "name": "Painting", "image": "img/painting.png"},
+    {"category": "fun", "name": "Hunting", "image": "img/hunting.png"},
+    {"category": "fun", "name": "Reading", "image": "img/read.png"},
+    {"category": "fun", "name": "Fishing", "image": "img/fishing.png"},
+    {"category": "fun", "name": "Road Trips", "image": "img/roadTrip.png"},
+    {"category": "fun", "name": "Crafts", "image": "img/craft.png"},
+    {"category": "fun", "name": "Cooking", "image": "img/cooking.png"},
+    {"category": "fun", "name": "Camping", "image": "img/camping.png"},
+    {"category": "fun", "name": "Volunteer Work", "image": "img/volunteer.png"}   
   ]
 }
