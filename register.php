@@ -12,7 +12,7 @@ require "util.php";
 <body>
   <div id="container">
     <div id="header">Register</div>
-    <br><img style="cursor: pointer;" id="profilePic" src="img/test.png" alt="your image" height=200 width=100>
+    <br><img style="cursor: pointer;" id="profilePic" src="img/pp.png" alt="your image" height=200 width=100>
     <input style="margin-bottom: 1em; display: none;" type='file' />
     <form id="f1" action="register.php" method="POST" id="f1">
       <input placeholder="Username" type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required><br>
