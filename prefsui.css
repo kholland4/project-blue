@@ -103,7 +103,7 @@ td.stage2.prefs {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05);
   border-radius: 2px;
   margin-bottom: 3px;
   margin-top: 5px;
