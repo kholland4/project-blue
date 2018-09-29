@@ -1,12 +1,26 @@
 body {
   background-color: #fcfcfc;
+  margin: 0px;
 }
 
+#appHeader {
+  height: 2.8em;
+  border-bottom: 1px solid black; /* CHANGE ME */
+}
+#backButton {
+  display: inline-block;
+  height: 2.8em;
+}
+#headerText {
+  display: inline-block;
+  height: 2.8em;
+  line-height: 2.8em;
+  vertical-align: top;
+}
 i.fas {
-  position: absolute;
-  margin-top: .2em;
-  margin-left: .2em;
+  margin: .2em;
   color: #f19000;
+  border-bottom: rgba(0, 0, 0, 0); /* consistent height */
 }
 i.fas:hover {
   border-bottom: solid #f19000;
