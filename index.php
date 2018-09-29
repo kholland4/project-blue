@@ -5,6 +5,7 @@ require "util.php";
 <html>
 <head>
 <title><?php echo $DISPLAY_NAME; ?></title>
+<link rel="stylesheet" type="text/css" href="inButtStyle.css">   
 <link rel="stylesheet" type="text/css" href="indexStyle.css">
 <meta name="viewport" content="width=device-widht, initial-scale=1">
 </head>
@@ -12,10 +13,11 @@ require "util.php";
   <!-- slide container -->
   <div class ="slideContainer">
     <!-- images -->
-    <div id="slide1" class="mySlides fade">
+    <div id="slide1">
       <li style="display: flex; flex-wrap: wrap; margin-bottom: 0px; justify-content: center;">
         <img class="logo" src="img/huugsWhite.png" style="max-width: 300px;" alt="<?php echo $DISPLAY_NAME; ?>"> 
       </li>
+      <div id="main">
       <?php
       $conn = create_sql_connection();
       //TODO: just use global $conn
@@ -31,7 +33,8 @@ require "util.php";
         echo "<a href='" . $BASE_URL . "register.php'><button>Register</button></a>";
       }
       close_sql_connection($conn);
-      ?>        
+      ?>         
+      </div>
     </div>
   </div>
 

@@ -16,7 +16,6 @@ button {
   text-transform: uppercase;
   outline: 0;
   background: #07254f;
-  margin: 1em;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
@@ -33,6 +32,8 @@ button {
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  display: block;
+  margin: auto;
 }
 
 button:hover {
