@@ -299,8 +299,14 @@ function initStage2() {
   headerText.innerText = "Levels";
   
   //---prefs list
+  var container = document.getElementById("prefList");
+  while(container.firstChild) { container.removeChild(container.firstChild); }
   for(var i = 0; i < prefsStage1.length; i++) {
     addPref(prefsStage1[i].id, prefsStage1[i].level);
+  }
+  if(addMenuState) {
+    document.getElementById("addMenu").style.display = "none";
+    addMenuState = false;
   }
   initPrefs();
   document.getElementById("stage1").style.display = "none";
