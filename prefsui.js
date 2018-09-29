@@ -43,16 +43,6 @@ function init() {
 }
 
 function initPrefs() {
-  //insert header 
-  var header = document.createElement("nav");
-  var stage2 = document.getElementById("stage2");
-  var textNode = document.createTextNode("Levels");
-  header.appendChild(textNode);
-  stage2.insertBefore(header, stage2.childNodes[0]);
-  header.classList.add("categoryHeader");
-  var link = document.getElementById("back");
-  link.setAttribute("href", "prefsui.php");
-  //end
   var container = document.getElementById("addMenu");
   while(container.firstChild) { container.removeChild(container.firstChild); }
   for(var i = 0; i < prefData.length; i++) {
@@ -168,6 +158,14 @@ function delPref(prefID) {
 }
 
 function initStage1() {
+  //---header
+  var backButton = document.getElementById("backButton");
+  backButton.href = "javascript:history.go(-1);";
+  
+  var headerText = document.getElementById("headerText");
+  headerText.innerText = "[placeholder text]";
+  
+  //---preference options
   var prefDataSorted = prefData;
   
   //category alphabetical sort
@@ -289,6 +287,14 @@ function initStage1() {
 }
 
 function initStage2() {
+  //---header
+  var backButton = document.getElementById("backButton");
+  backButton.href = "javascript:initStage1();";
+  
+  var headerText = document.getElementById("headerText");
+  headerText.innerText = "Levels";
+  
+  //---prefs list
   for(var i = 0; i < prefsStage1.length; i++) {
     addPref(prefsStage1[i].id, prefsStage1[i].level);
   }

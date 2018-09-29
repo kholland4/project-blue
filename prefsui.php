@@ -30,7 +30,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <a id="back" href="<?php echo $BASE_URL; ?>"><i class="fas fa-2x fa-angle-left"></i></a>
+  <div id="appHeader">
+    <a id="backButton" href="<?php echo $BASE_URL; ?>"><i class="fas fa-2x fa-angle-left"></i></a>
+    <span id="headerText"></span>
+  </div>
   <div id="stage1">
     <div id="stage1List" class="stage1"></div>
     <div class="forButton">
