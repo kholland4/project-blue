@@ -25,3 +25,8 @@ p {
   font-family: "Roboto", sans-serif;
   color: gray;
 }
+img#hDots {
+  height: 15%;
+  width: 15%;
+  margin-top: 2em;
+}

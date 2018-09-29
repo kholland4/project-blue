@@ -18,7 +18,8 @@ require "util.php";
 <input type="text" name="username" minlength="4" maxlength="100" placeholder="Username" required autofocus><br>
 <input type="password" name="password" minlength="8" maxlength="64" placeholder="Password" required><br>
 <button>Sign In</button>
-<p>Don't have an account?</p><a href="register.php">Register</a>
+<p>Don't have an account?</p><a href="register.php">Register</a><br>
+<img id="hDots" src="img/huugsDots.png">
 </form>
 <?php
 if(isset($_POST["username"])) {
