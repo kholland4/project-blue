@@ -3,29 +3,6 @@ body {
   margin: 0px;
 }
 
-#appHeader {
-  height: 2.8em;
-  border-bottom: 1px solid black; /* CHANGE ME */
-}
-#backButton {
-  display: inline-block;
-  height: 2.8em;
-}
-#headerText {
-  display: inline-block;
-  height: 2.8em;
-  line-height: 2.8em;
-  vertical-align: top;
-}
-i.fas {
-  margin: .2em;
-  color: #f19000;
-  border-bottom: rgba(0, 0, 0, 0); /* consistent height */
-}
-i.fas:hover {
-  border-bottom: solid #f19000;
-}
-
 #stage1, #stage2 {
   display: none;
 }
@@ -121,19 +98,27 @@ td.stage2.prefs {
 .stage1.categoryOuter {
   
 }
-.categoryHeader {
-  text-align: center;
-  background-color: #ffffff;
-  width: 100%;
+.stage1.categoryHeader {
+  display: inline-block; /* shrink to fit contents, for the ::after pseudo-element */
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05);
-  border-radius: 2px;
+  padding-left: 20px;
   margin-bottom: 3px;
   margin-top: 5px;
   color: #08213e;
-  font-weight: bold;
+  
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
+  font-weight: bold;
+}
+.stage1.categoryHeader::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 0px;
+  margin-top: 5px;
+  border-bottom: 2px solid #08213e;
+  opacity: 0.5;
 }
 .stage1.category {
   display: flex;
