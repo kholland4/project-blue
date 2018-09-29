@@ -43,6 +43,16 @@ function init() {
 }
 
 function initPrefs() {
+  //insert header 
+  var header = document.createElement("nav");
+  var stage2 = document.getElementById("stage2");
+  var textNode = document.createTextNode("Levels");
+  header.appendChild(textNode);
+  stage2.insertBefore(header, stage2.childNodes[0]);
+  header.classList.add("categoryHeader");
+  var link = document.getElementById("back");
+  link.setAttribute("href", "prefsui.php");
+  //end
   var container = document.getElementById("addMenu");
   while(container.firstChild) { container.removeChild(container.firstChild); }
   for(var i = 0; i < prefData.length; i++) {
