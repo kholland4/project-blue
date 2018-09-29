@@ -8,6 +8,8 @@ body {
 }
 
 table.stage2.prefs {
+  width: 100%;
+  max-width: 500px;
   margin: 0px;
   border: 0px;
   padding: 0px;
@@ -16,27 +18,31 @@ table.stage2.prefs {
 tr.stage2.prefs {
   margin: 0px;
   border: 0px;
-  border-bottom: 1px solid #777777;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 0px;
 }
 td.stage2.prefs {
   margin: 0px;
   border: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+td.stage2.prefs.prefsListIcon {
+  width: 0px;
 }
 
 .stage2.delPref {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
   margin: 0px;
-  border: 0px;
+  border: 1px solid rgba(0, 0, 0, 0);
   padding: 3px;
   color: black;
   background-color: white;
   outline: none;
-}
-.stage2.delPref::after {
-  /* TODO: use image instead */
-  content: "x";
+  background-image: url(img/delpref.png);
+  background-size: contain;
 }
 .stage2.delPref:hover {
   border: 1px solid #999999;
@@ -44,6 +50,7 @@ td.stage2.prefs {
 
 .stage2.prefIconOuter {
   width: 80px;
+  margin-left: 16px;
 }
 .stage2.prefIcon {
   width: 80px;
@@ -57,14 +64,22 @@ td.stage2.prefs {
   font-size: 12px;
 }
 
+.stage2.levelOuter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: flex-start;
+}
 .stage2.levelButton {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 100%;
   margin: 0px;
-  border: 0px;
-  padding: 3px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 4px;
 }
 .stage2.levelButton.selected {
   border: 2px solid blue;

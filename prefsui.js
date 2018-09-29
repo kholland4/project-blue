@@ -86,7 +86,7 @@ function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
     
     //name and icon
     var tdName = document.createElement("td");
-    tdName.className = "stage2 prefs";
+    tdName.className = "stage2 prefs prefsListIcon";
     var iconOuter = document.createElement("div");
     iconOuter.className = "stage2 prefIconOuter";
     var icon = document.createElement("img");
@@ -114,6 +114,9 @@ function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
     slider.name = prefID;
     slider.value = Math.max(Math.min(level, PREF_LEVEL_MAX), PREF_LEVEL_MIN);
     tdSlider.appendChild(slider);
+    
+    var buttonOuter = document.createElement("div");
+    buttonOuter.className = "stage2 levelOuter";
     for(var i = PREF_LEVEL_MIN; i <= PREF_LEVEL_MAX; i++) {
       var button = document.createElement("img");
       button.src = "img/level" + i + ".png";
@@ -123,12 +126,13 @@ function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
       button.onclick = function() {
         this.parentElement.firstChild.value = this.dataset.level;
         for(var n = 0; n <= (PREF_LEVEL_MAX - PREF_LEVEL_MIN); n++) {
-          this.parentElement.children[n + 1].className = "stage2 levelButton";
+          this.parentElement.children[n].className = "stage2 levelButton";
         }
-        this.parentElement.children[this.dataset.level - PREF_LEVEL_MIN + 1].className = "stage2 levelButton selected";
+        this.parentElement.children[this.dataset.level - PREF_LEVEL_MIN].className = "stage2 levelButton selected";
       };
-      tdSlider.appendChild(button);
+      buttonOuter.appendChild(button);
     }
+    tdSlider.appendChild(buttonOuter);
     
     //delete button
     var tdDel = document.createElement("td");
