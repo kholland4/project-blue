@@ -26,12 +26,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="prefsui.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <a id="back" href="<?php echo $BASE_URL; ?>"><i class="fas fa-2x fa-angle-left"></i></a>
   <div id="stage1">
     <div id="stage1List" class="stage1"></div>
-    <button onclick="initStage2();">Next</button>
+    <div class="forButton">
+      <button onclick="initStage2();">Next</button> 
+    </div>
   </div>
   <div id="stage2">
     <form action="prefsui.php" method="POST" id="prefListForm" class="stage2">
@@ -39,8 +43,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     <div id="addMenuControl" class="stage2" onclick="toggleAddMenu();">More &#x25BE;</div>
     <div id="addMenu" class="stage2"></div>
-    <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button><br>
-    <a href="<?php echo $BASE_URL; ?>" class="stage2">Cancel</a>
+    <div class="forButton">
+      <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button><br>
+    </div>
   </div>
 </body>
 </html>

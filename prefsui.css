@@ -2,6 +2,16 @@ body {
   background-color: #fcfcfc;
 }
 
+i.fas {
+  position: absolute;
+  margin-top: .2em;
+  margin-left: .2em;
+  color: #f19000;
+}
+i.fas:hover {
+  border-bottom: solid #f19000;
+}
+
 #stage1, #stage2 {
   display: none;
 }
@@ -97,7 +107,7 @@ td.stage2.prefs {
 .stage1.categoryOuter {
   
 }
-.stage1.categoryHeader {
+.categoryHeader {
   text-align: center;
   background-color: #ffffff;
   width: 100%;
@@ -149,4 +159,9 @@ td.stage2.prefs {
   width: 100%;
   text-align: center;
   font-size: 12px;
+}
+
+div.forButton {
+  display: flex;
+  justify-content: center;
 }
