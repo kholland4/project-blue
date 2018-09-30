@@ -1,3 +1,4 @@
+/* TODO: better support for multi-line captions (.stage1.prefIconCaption and .stage2.prefIconCaption) */
 body {
   background-color: #fcfcfc;
   margin: 0px;
@@ -107,6 +108,7 @@ td.stage2.prefs.prefsListIcon {
   display: inline-block;
   width: 100%;
   text-align: center;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
 }
 
@@ -172,6 +174,7 @@ td.stage2.prefs.prefsListIcon {
   display: inline-block;
   width: 100%;
   text-align: center;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
 }
 
