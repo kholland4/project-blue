@@ -129,13 +129,13 @@ td.stage2.prefs.prefsListIcon {
   font-weight: bold;
 }
 .stage1.categoryHeader::after {
-  content: "";
+/*  content: "";
   display: block;
   width: 50%;
   height: 0px;
   margin-top: 5px;
   border-bottom: 2px solid #08213e;
-  opacity: 0.5;
+  opacity: 0.5;*/
 }
 .stage1.category {
   display: flex;
@@ -144,6 +144,11 @@ td.stage2.prefs.prefsListIcon {
   justify-content: space-evenly;
   align-items: center;
   align-content: flex-start;
+  /*categority boxes*/
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin-right: .5em;
+  margin-left: .5em;
 }
 .stage1.prefIconOuter {
   position: relative;

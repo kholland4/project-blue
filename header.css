@@ -1,7 +1,9 @@
 /* Should the header be fixed in place (ie always shows even when scrolling)? */
 #appHeader {
   height: 2.8rem;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.23);
+  border-top: solid rgba(0, 0, 0, 0.23);
+  border-bottom: solid rgba(0, 0, 0, 0.23);
+  border-width: thin;
   background-color: #ffffff;
   margin-top: .5em;
 }
