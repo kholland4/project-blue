@@ -16,8 +16,8 @@
     {"category": "test", "name": "test #2", "image": "img/test.png"},
     
 
-    {"category": "animals", "name": "Dogs", "image": "img/dog.png"},
-    {"category": "animals", "name": "Cats", "image": "img/cat.png"},
+    {"category": "animals", "group": "Pet Lover", "name": "Dogs", "image": "img/dog.png"},
+    {"category": "animals", "group": "Pet Lover", "name": "Cats", "image": "img/cat.png"},
 
     
     {"category": "sports", "name": "Archery", "image": "img/archery.png"},
