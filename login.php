@@ -14,7 +14,7 @@ require "util.php";
 <body>
 <div id="container">
 <form id="f1" action="login.php" method="POST">
-<img src="img/huugsClear.png">
+<img src="img/huugsClear.svg">
 <input type="text" name="username" minlength="4" maxlength="100" placeholder="Username" required autofocus><br>
 <input type="password" name="password" minlength="8" maxlength="64" placeholder="Password" required><br>
 <button>Sign In</button>
