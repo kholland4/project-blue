@@ -6,7 +6,7 @@ $conn = create_sql_connection();
 $userid = authenticate($conn);
 ?>
 <?php
-header("Content-Type: text/plain");
+header("Content-Type: text/json");
 
 $EXP = 1.5;
 
@@ -20,6 +20,8 @@ foreach($people as $person) {
     foreach($person["prefs"] as $p_p => $p_l) {
       if($t_p == $p_p) { //found matching preference
         $maxRange = ($PREF_LEVEL_MAX - $PREF_LEVEL_MIN + 1);
+        $p_l = min(max($p_l, $PREF_LEVEL_MIN), $PREF_LEVEL_MAX); //constrain
+        $t_l = min(max($t_l, $PREF_LEVEL_MIN), $PREF_LEVEL_MAX); //constrain
         $s = $maxRange - abs($p_l - $t_l); //calculate the match difference (higher is better)
         $s = pow($s, $EXP) / pow($maxRange, $EXP); //logarithmetic weighting and convert to percent
         array_push($scoresRaw, array("matchLevel" => $s, "importance" => $t_l, "pref" => $t_p)); //TODO: logaritmetic importance

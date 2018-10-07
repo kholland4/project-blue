@@ -1,0 +1,22 @@
+.userOuter {
+  height: 64px;
+  padding: 10px;
+}
+.userIcon {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  margin-right: 30px;
+}
+.userInfoOuter {
+  display: inline-block;
+  vertical-align: top;
+  height: 64px;
+}
+.userInfoName {
+  height: 64px;
+  line-height: 64px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+}
