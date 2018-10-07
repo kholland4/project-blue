@@ -27,7 +27,8 @@ require "util.php";
         echo "<span>Hello, $name!</span><br>\n";
         echo "<a href='" . $BASE_URL . "prefsui.php'>Your interests</a><br>\n";
         echo "<a href='" . $BASE_URL . "matchui.php'>People like you</a><br>\n";
-        echo "<a href='" . $BASE_URL . "logout.php'>Log out</a>";
+        echo "<a href='" . $BASE_URL . "logout.php'>Log out</a><br>";
+        echo "<a href='" . $BASE_URL . "userlist.php'>The List</a>";
       } else {
         echo "<a href='" . $BASE_URL . "login.php'><button>Log in</button></a><br>\n";
         echo "<a href='" . $BASE_URL . "register.php'><button>Register</button></a>";
