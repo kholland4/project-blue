@@ -18,8 +18,8 @@ require "util.php";
       <input placeholder="Username" type="text" name="username" minlength="4" maxlength="100" pattern="^[A-Za-z0-9_\-]+$" title="Letters, numbers, underscores, and hyphens only." required><br>
       <input placeholder="Password" type="password" name="password1" minlength="8" maxlength="64" required><br>
       <input placeholder="Confirm password" type="password" name="password2" minlength="8" maxlength="64" required><br>
-      <input placeholder="First name" type="text" name="firstname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only."><br>
-      <input placeholder="Last name" type="text" name="lastname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only."><br>
+      <input placeholder="First name" type="text" name="firstname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only." required><br>
+      <input placeholder="Last name" type="text" name="lastname" minlength="1" maxlength="100" pattern="^[A-Za-z\-]+$" title="Letters and hyphens only." required><br>
       <input placeholder="Email address" type="email" name="email" minlength="6" maxlength="100" pattern="^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-]+\.[a-z\.]+$" title="Letters, numbers, underscores, hyphens, and periods."><br>
       <button id="rButton">Register</button>
       <p>Already have an account?</p><a href="login.php">Sign In</a><br>

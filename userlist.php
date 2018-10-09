@@ -21,5 +21,6 @@ $userid = authenticate($conn);
   <div id="main">
     <div id="userList"></div>
   </div>
+  <div style="display: flex;justify-content: center;"><img id="hDots" src="img/huugsDots.png"></div>
 </body>
 </html>
