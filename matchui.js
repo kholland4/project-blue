@@ -101,7 +101,7 @@ function displayUsers() {
     outer.appendChild(img);
     var caption = document.createElement("span");
     caption.className = "qqCaption";
-    caption.innerText = "It looks like you have unique interests.";
+    caption.innerText = "You have unique interests in this area!";
     outer.appendChild(caption);
     
     container.appendChild(outer);
