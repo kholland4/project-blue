@@ -15,7 +15,7 @@ require "util.php";
     <!-- images -->
     <div id="slide1">
       <li style="display: flex; flex-wrap: wrap; margin-bottom: 0px; justify-content: center;">
-        <img class="logo" src="img/huugsWhite.png" style="max-width: 300px;" alt="<?php echo $DISPLAY_NAME; ?>"> 
+        <img class="logo" src="img/huugsClear.svg" style="max-width: 300px;" alt="<?php echo $DISPLAY_NAME; ?>"> 
       </li>
       <div id="main">
       <?php
