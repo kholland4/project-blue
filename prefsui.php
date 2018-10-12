@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
   <div id="appHeader">
-    <a id="backButton" href=""><i class="fas fa-2x fa-angle-left"></i></a>
+    <a id="backButton" href=""><img src="img/arrow.png" class="fas fa-2x fa-angle-left"></a>
     <span id="headerText"></span>
   </div>
   <div id="stage1">
