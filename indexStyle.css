@@ -17,6 +17,12 @@ div #slide1 {
 img {
   width: 100%;
 }
+.liLogo {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: center;
+  justify-content: center;
+}
 .logo {
   margin-top: 3em;
   width: 250px;

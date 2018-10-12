@@ -1,4 +1,3 @@
-/* Should the header be fixed in place (ie always shows even when scrolling)? */
 /* I added appHeader, backButton, and headerText classes to support pages with multiple headers */
 #appHeader, .appHeader {
   height: 2.8rem;
@@ -6,8 +5,7 @@
   border-bottom: solid #f3f3f3;
   border-width: thin;
   background-color: #ffffff;
-  margin-top: .5em;
-  
+  margin-top: .5em;	
   /*box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);*/
 }
 #backButton, .backButton {

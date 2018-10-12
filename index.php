@@ -15,9 +15,9 @@ require "util.php";
   <div class ="slideContainer">
     <!-- images -->
     <div id="slide1">
-      <li style="display: flex; flex-wrap: wrap; margin-bottom: 0px; justify-content: center;">
+      <!-- <li class="liLogo">
         <img class="logo" src="img/huugsClear.svg" style="max-width: 300px;" alt="<?php echo $DISPLAY_NAME; ?>">
-      </li>
+      </li> -->
       <div id="main">
       <?php
       $conn = create_sql_connection();
@@ -31,6 +31,8 @@ require "util.php";
         echo "<a href='" . $BASE_URL . "logout.php'>Log out</a><br>";
         echo "<a href='" . $BASE_URL . "userlist.php'>The List</a>";
       } else {
+        // echo "<li "
+        echo "<li class='liLogo'><img class='logo' src='img/huugsClear.svg' style='max-width: 300px;'></li>"; 
         echo "<a href='" . $BASE_URL . "login.php'><button>Log in</button></a><br>\n";
         echo "<a href='" . $BASE_URL . "register.php'><button>Register</button></a>";
       }
