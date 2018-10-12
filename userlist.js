@@ -1,23 +1,23 @@
 var users;
-
-function loadf(url, callback) {
-  var xhttp = new XMLHttpRequest();
-  xhttp._callback = callback;
-  xhttp.onreadystatechange = function() {
-    if(this.readyState == 4) {
-      this._callback();
-    }
-  };
-  xhttp.open("GET", url);
-  xhttp.send();
-}
+var prefData;
+var prefMeta;
 
 function init() {
-  loadf("getusers.php?r=" + Math.random(), function() {
+  loadf("getmatch.php?r=" + Math.random(), function() {
     if(this.status == 200) {
       users = JSON.parse(this.responseText);
       sortUsers("firstlast");
       displayUsers();
+    }
+  });
+  loadf("prefdata.json", function() {
+    if(this.status == 200) {
+      var prefDataRaw = JSON.parse(this.responseText);
+      prefData = prefDataRaw.data;
+      prefMeta = prefDataRaw.meta;
+      PREF_LEVEL_MIN = prefMeta.PREF_LEVEL_MIN;
+      PREF_LEVEL_MAX = prefMeta.PREF_LEVEL_MAX;
+      PREF_LEVEL_DEFAULT = prefMeta.PREF_LEVEL_DEFAULT;
     }
   });
 }
@@ -30,17 +30,25 @@ function getName(user) {
   }
 }
 
+//TODO [Kyle]: Add a dropdown to change the list sorting
+//TODO [Kyle]: Add a search system
 function sortUsers(mode) {
   if(mode == "firstlast") {
     users.sort(function(a, b) {
       var s;
-      if(a.firstname != null && a.lastname != null) {
-        s = getName(a).localeCompare(getName(b));
+      if(a.person.firstname != null && a.person.lastname != null) {
+        s = getName(a.person).localeCompare(getName(b.person));
       } else {
-        s = getName(a).localeCompare(getName(b));
+        s = getName(a.person).localeCompare(getName(b.person));
       }
       if(s == 0) { return -1; }
       if(s == 1) { return 1; }
+      return 0;
+    });
+  } else if(mode == "score") {
+    users.sort(function(a, b) {
+      if(a.score < b.score) { return -1; }
+      if(a.score > b.score) { return 1; }
       return 0;
     });
   }
@@ -54,11 +62,11 @@ function displayUsers() {
     var outer = document.createElement("div");
     outer.className = "userOuter";
     outer.dataset.data = JSON.stringify(users[i]);
-    outer.onClick = function() { showDetail(JSON.parse(this.dataset.data)); }
+    outer.onclick = function() { showDetail(JSON.parse(this.dataset.data)); }
     var profilePic = document.createElement("img");
     profilePic.className = "userIcon";
-    if(users[i].profile_photo != null) {
-      profilePic.src = users[i].profile_photo; //FIXME
+    if(users[i].person.profile_photo != null) {
+      profilePic.src = users[i].person.profile_photo; //FIXME
     } else {
       profilePic.src = "img/pp.png";
     }
@@ -68,16 +76,17 @@ function displayUsers() {
     
     var name = document.createElement("div");
     name.className = "userInfoName";
-    name.innerText = getName(users[i]);
+    name.innerText = getName(users[i].person);
     info.appendChild(name);
+    
+    var extra = document.createElement("div");
+    extra.className = "userInfoExtra";
+    extra.innerText = (users[i].score.toPrecision(2) * 100) + "% match";
+    info.appendChild(extra);
     
     outer.appendChild(info);
     container.appendChild(outer);
   }
-}
-
-function showDetail(userData) {
-  //TODO
 }
 
 document.addEventListener("DOMContentLoaded", init);

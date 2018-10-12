@@ -1,16 +1,6 @@
 var users;
-
-function loadf(url, callback) {
-  var xhttp = new XMLHttpRequest();
-  xhttp._callback = callback;
-  xhttp.onreadystatechange = function() {
-    if(this.readyState == 4) {
-      this._callback();
-    }
-  };
-  xhttp.open("GET", url);
-  xhttp.send();
-}
+var prefData;
+var prefMeta;
 
 function init() {
   loadf("getmatch.php?r=" + Math.random(), function() {
@@ -18,6 +8,16 @@ function init() {
       users = JSON.parse(this.responseText);
       sortUsers("score");
       displayUsers();
+    }
+  });
+  loadf("prefdata.json", function() {
+    if(this.status == 200) {
+      var prefDataRaw = JSON.parse(this.responseText);
+      prefData = prefDataRaw.data;
+      prefMeta = prefDataRaw.meta;
+      PREF_LEVEL_MIN = prefMeta.PREF_LEVEL_MIN;
+      PREF_LEVEL_MAX = prefMeta.PREF_LEVEL_MAX;
+      PREF_LEVEL_DEFAULT = prefMeta.PREF_LEVEL_DEFAULT;
     }
   });
 }
@@ -66,7 +66,7 @@ function displayUsers() {
     var outer = document.createElement("div");
     outer.className = "userOuter";
     outer.dataset.data = JSON.stringify(users[i]);
-    outer.onClick = function() { showDetail(JSON.parse(this.dataset.data)); }
+    outer.onclick = function() { showDetail(JSON.parse(this.dataset.data)); }
     var profilePic = document.createElement("img");
     profilePic.className = "userIcon";
     if(users[i].person.profile_photo != null) {
@@ -106,10 +106,6 @@ function displayUsers() {
     
     container.appendChild(outer);
   }
-}
-
-function showDetail(userData) {
-  //TODO
 }
 
 document.addEventListener("DOMContentLoaded", init);

@@ -1,0 +1,74 @@
+#detailPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+/* please style this */
+.detailIcon {
+  display: block;
+  width: 256px;
+  height: 256px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 100%;
+  border: 2px solid black;
+}
+.detailInfoOuter {
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+}
+.detailInfoName {
+  font-family: "Roboto", sans-serif;
+  font-size: 36px;
+  color: #08213e;
+  font-weight: bold;
+}
+.detailInfoExtra {
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  color: #08213e;
+}
+
+table.detailListOuter {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  width: 100%;
+}
+tr.detailListRow, tr.detailListBar {
+  display: block;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+tr.detailListBar {
+  height: 0px;
+}
+td.detailListIconCell {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 0px;
+}
+.detailListIcon {
+  margin-left: 16px;
+  margin-right: 16px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+td.detailListNameCell {
+  text-align: left;
+}
+.detailListName {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}

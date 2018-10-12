@@ -1,5 +1,6 @@
 /* Should the header be fixed in place (ie always shows even when scrolling)? */
-#appHeader {
+/* I added appHeader, backButton, and headerText classes to support pages with multiple headers */
+#appHeader, .appHeader {
   height: 2.8rem;
   border-top: solid #f3f3f3;
   border-bottom: solid #f3f3f3;
@@ -9,11 +10,11 @@
   
   /*box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);*/
 }
-#backButton {
-  display: inline-flex;
+#backButton, .backButton {
+  display: inline-block;
   height: 2.8rem;
 }
-#headerText {
+#headerText, .headerText {
   display: inline-block;
   height: 2.8rem;
   line-height: 2.8rem;
@@ -24,12 +25,11 @@
   font-weight: bold;
   color: #08213e;
 }
-img.fas {
+i.fas {
   margin: .2em;
+  color: #f19000;
   border-bottom: solid rgba(0, 0, 0, 0); /* consistent height */
-  height: 60%;
-  align-self: center;
 }
-/*img.fas:hover {
+i.fas:hover {
   border-bottom: solid #f19000;
-}*/
+}

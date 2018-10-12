@@ -11,7 +11,7 @@ body {
   border-radius: 15px;
   margin: 7px;
   margin-bottom: 10px;
-  margin-top: 10px;  
+  margin-top: 10px;
   display: flex;   
 }
 .userIcon {
@@ -24,21 +24,25 @@ body {
 }
 .userInfoOuter {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   height: 64px;
 }
+/* Feel free to tweak the spacing for these lines */
 .userInfoName {
-  height: 30px;
-  line-height: 35px;
+  height: 36px;
+  line-height: 36px;
   font-family: "Roboto", sans-serif;
-  font-size: 1.1em;
+  font-size: 18px;
   color: #08213e;
   font-weight: bold;
-  display: flex;
-  align-items: flex-start;
 }
-.userButtons {
-  
+.userInfoExtra {
+  height: 28px;
+  line-height: 28px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #08213e;
+  font-weight: normal;
 }
 
 /*FIXME*/

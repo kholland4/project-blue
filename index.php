@@ -7,7 +7,7 @@ require "util.php";
 <title><?php echo $DISPLAY_NAME; ?></title>
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">   
 <link rel="stylesheet" type="text/css" href="indexStyle.css">
-<meta name="viewport" content="width=device-widht, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <!-- slide container -->
@@ -15,7 +15,7 @@ require "util.php";
     <!-- images -->
     <div id="slide1">
       <li style="display: flex; flex-wrap: wrap; margin-bottom: 0px; justify-content: center;">
-        <img class="logo" src="img/huugsClear.svg" style="max-width: 300px;" alt="<?php echo $DISPLAY_NAME; ?>"> 
+        <img class="logo" src="img/huugsClear.svg" style="max-width: 300px;" alt="<?php echo $DISPLAY_NAME; ?>">
       </li>
       <div id="main">
       <?php
