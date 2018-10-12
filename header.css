@@ -10,7 +10,7 @@
   /*box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);*/
 }
 #backButton {
-  display: inline-block;
+  display: inline-flex;
   height: 2.8rem;
 }
 #headerText {
@@ -24,11 +24,12 @@
   font-weight: bold;
   color: #08213e;
 }
-i.fas {
+img.fas {
   margin: .2em;
-  color: #f19000;
   border-bottom: solid rgba(0, 0, 0, 0); /* consistent height */
+  height: 50%;
+  align-self: center;
 }
-i.fas:hover {
+/*img.fas:hover {
   border-bottom: solid #f19000;
-}
+}*/
