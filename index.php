@@ -9,11 +9,10 @@ require "util.php";
 <link rel="stylesheet" type="text/css" href="indexStyle.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
-  <!-- slide container -->
   <div class ="slideContainer">
-    <!-- images -->
     <div id="slide1">
       <div id="main">
       <?php
@@ -28,7 +27,7 @@ require "util.php";
         echo "<a href='" . $BASE_URL . "logout.php'>Log out</a><br>";
         echo "<a href='" . $BASE_URL . "userlist.php'>The List</a>";
       } else {
-        echo "<li class='liLogo'><img class='logo' src='img/huugsClear.svg' style='max-width: 300px;'></li>\n"; 
+        echo "<li class='liLogo'><img class='logo' src='img/huugsClear.svg' style='max-width:300px;'></li>\n"; 
         echo "<a href='" . $BASE_URL . "login.php'><button>Log in</button></a><br>\n";
         echo "<a href='" . $BASE_URL . "register.php'><button>Register</button></a>";
       }
@@ -37,6 +36,5 @@ require "util.php";
       </div>
     </div>
   </div>
-
 </body>
 </html>
