@@ -37,10 +37,29 @@ body {
   font-size: 28px;
   color: #08213e;
 }
+.detailButton {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.03), 0 5px 5px 0 rgba(0, 0, 0, 0.03);
+  color: #08213e;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin: 7px;
+  padding: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.detailButton:active {
+  background-color: #fafafa;
+  box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.09), 0 5px 5px 0 rgba(0, 0, 0, 0.09);
+}
 
 table.detailListOuter {
   display: block;
-   box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.03), 0 5px 5px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.03), 0 5px 5px 0 rgba(0, 0, 0, 0.03);
   margin: 0px;
   margin: auto;
   border: 0px;
