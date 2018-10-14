@@ -75,7 +75,7 @@ function displayUsers() {
       profilePic.src = "img/pp.png";
     }
     var targetColor = Math.floor(users[i].score.toPrecision(2) * 120);
-    profilePic.style.border = "5px solid hsl(" + targetColor + ", 100%, 50%)";
+    profilePic.style.border = "3px solid hsl(" + targetColor + ", 100%, 50%)";
     outer.appendChild(profilePic);
     var info = document.createElement("div");
     info.className = "userInfoOuter";
