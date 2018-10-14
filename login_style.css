@@ -1,6 +1,6 @@
 body {
   /*THOUGHTS???*/
-  background-image: linear-gradient(rgba(255,0,0,0), rgba(8, 33, 62,.05));
+  background-image: linear-gradient(rgba(255,0,0,0), rgba(8, 33, 62,.1));
 }
 div.container {
   background: transparent;
