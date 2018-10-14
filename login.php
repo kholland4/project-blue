@@ -10,6 +10,8 @@ require "util.php";
 <!-- General stylesheet -->
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
 <div id="container">
