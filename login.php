@@ -9,7 +9,7 @@ require "util.php";
 <link rel="stylesheet" type="text/css" href="login_style.css">
 <!-- General stylesheet -->
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
 <div id="container">

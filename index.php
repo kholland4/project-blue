@@ -7,7 +7,7 @@ require "util.php";
 <title><?php echo $DISPLAY_NAME; ?></title>
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">   
 <link rel="stylesheet" type="text/css" href="indexStyle.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 </head>

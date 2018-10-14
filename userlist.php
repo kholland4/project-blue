@@ -14,7 +14,7 @@ $userid = authenticate($conn);
 <script src="userlist.js" type="text/javascript"></script>
 <script src="detailpopup.js" type="text/javascript"></script>
 <script src="util.js" type="text/javascript"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
   <div id="appHeader">

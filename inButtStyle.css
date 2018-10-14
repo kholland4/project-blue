@@ -16,7 +16,7 @@ button {
   text-transform: uppercase;
   outline: 0;
   background: #07254f;
-  border: 0;
+  border: none;
   padding: 15px;
   color: #FFFFFF;
   font-size: 14px;
@@ -34,6 +34,7 @@ button {
   transition: all 0.5s;
   display: block;
   margin: auto;
+  outline: none;
 }
 
 button:hover {

@@ -5,7 +5,7 @@ require "util.php";
 <html>
 <head>
   <title>Register - <?php echo $DISPLAY_NAME; ?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="registerStyle.css">
   <link rel="stylesheet" type="text/css" href="inButtStyle.css">
 </head>
