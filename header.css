@@ -25,11 +25,11 @@
   font-weight: bold;
   color: #08213e;
 }
-i.fas {
+i.fa-angle-left {
   margin: .2em;
   color: #f19000;
   border-bottom: solid rgba(0, 0, 0, 0); /* consistent height */
 }
-i.fas:hover {
+i.fa-angle-left:hover {
   border-bottom: solid #f19000;
 }

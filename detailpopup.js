@@ -28,15 +28,10 @@ function showDetail(data) {
   extra.innerText = (data.score.toPrecision(2) * 100) + "% match";
   info.appendChild(extra);
 
-  var buttonOne = document.createElement("button");
-  buttonOne.className = "detailButton";
-  buttonOne.innerText = "Text";
-  info.appendChild(buttonOne);
-
-  var buttonTwo = document.createElement("button");
-  buttonTwo.className = "detailButton";
-  buttonTwo.innerText = "Add as Friend";
-  info.appendChild(buttonTwo);
+  var bFriend = document.createElement("button");
+  bFriend.className = "detailButton";
+  bFriend.innerText = "Add as Friend";
+  info.appendChild(bFriend);
   
   container.appendChild(info);
   

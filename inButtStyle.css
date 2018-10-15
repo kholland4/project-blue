@@ -43,3 +43,7 @@ button:hover {
   -moz-border-radius: 25px;
   border-radius: 25px;
 }
+
+button:focus {
+  outline:0;
+}
