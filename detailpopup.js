@@ -25,7 +25,7 @@ function showDetail(data) {
   
   var extra = document.createElement("div");
   extra.className = "detailInfoExtra";
-  extra.innerText = (data.score.toPrecision(2) * 100) + "% match";
+  extra.innerText = (Math.round(data.score * 100)) + "% match";
   info.appendChild(extra);
 
   var buttonOne = document.createElement("button");
