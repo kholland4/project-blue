@@ -82,7 +82,7 @@ function displayUsers() {
     info.appendChild(name);
     var extra = document.createElement("div");
     extra.className = "userInfoExtra";
-    extra.innerText = (users[i].score.toPrecision(2)*100) + "% match";
+    extra.innerText = (Math.round(users[i].score*100)) + "% match";
     info.appendChild(extra);
     userInfo.appendChild(info);
 
