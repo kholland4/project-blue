@@ -33,9 +33,9 @@ body {
   height: auto;
   line-height: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 5.5vw;
+  font-size: 5vw;
   color: #08213e;
-  font-weight: bold;
+  font-weight: bolder;
 }
 .userInfoExtra {
   height: auto;
@@ -50,6 +50,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-self: flex-end;
+  margin-left: auto;
 }
 .actionButton {
   background-color: #ffffff;
@@ -63,8 +65,8 @@ body {
   border-radius: 5px;
   margin: 7px;
   padding: .2em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   outline: none;
 }
 .actionButton:active {
@@ -74,6 +76,9 @@ body {
 }
 .actionButton:focus {
   outline: 0;
+}
+.actionButton::-moz-focus-inner {
+  border: 0;
 }
 
 .fa-user-plus, .fa-comments {

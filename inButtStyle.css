@@ -47,3 +47,7 @@ button:hover {
 button:focus {
   outline:0;
 }
+
+button::-moz-focus-inner {
+  border: 0;
+}

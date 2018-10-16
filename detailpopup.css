@@ -58,6 +58,9 @@ body {
   background-color: #fafafa;
   box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.09), 0 5px 5px 0 rgba(0, 0, 0, 0.09); 
 }
+.detailButton::-moz-focus-inner {
+  border: 0;
+}
 
 table.detailListOuter {
   display: block;
