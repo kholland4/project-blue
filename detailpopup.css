@@ -16,8 +16,8 @@ body {
 /* please style this */
 .detailIcon {
   display: block;
-  width: 11em;
-  height: 11em;
+  width: 9em;
+  height: 9em;
   margin: auto;
   margin-top: 20px;
   border-radius: 100%;
@@ -29,7 +29,7 @@ body {
 }
 .detailInfoName {
   font-family: "Roboto", sans-serif;
-  font-size: 36px;
+  font-size: 2rem;
   color: #08213e;
   font-weight: bold;
 }
@@ -57,6 +57,18 @@ body {
 .detailButton:active {
   background-color: #fafafa;
   box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.09), 0 5px 5px 0 rgba(0, 0, 0, 0.09); 
+}
+.detailButton::-moz-focus-inner {
+  border: 0;
+}
+
+.friendButton, .messageButton {
+  padding-bottom: .5em;
+  padding-top: .5em;
+}
+
+.fa-user-plus, .fa-comments {
+  font-size: large;
 }
 
 table.detailListOuter {

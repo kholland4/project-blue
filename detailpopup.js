@@ -28,16 +28,27 @@ function showDetail(data) {
   extra.innerText = (Math.round(data.score * 100)) + "% match";
   info.appendChild(extra);
 
-  var buttonOne = document.createElement("button");
-  buttonOne.className = "detailButton";
-  buttonOne.innerText = "Text";
-  info.appendChild(buttonOne);
-
-  var buttonTwo = document.createElement("button");
-  buttonTwo.className = "detailButton";
-  buttonTwo.innerText = "Add as Friend";
-  info.appendChild(buttonTwo);
+  var seeProf = document.createElement("button");
+  seeProf.className = "detailButton";
+  seeProf.innerText = "See Profile";
+  info.appendChild(seeProf);
   
+  var br = document.createElement("br");
+  info.appendChild(br);
+  var friend = document.createElement("button");
+  friend.className = "actionButton friendButton";
+  var friendIcon = document.createElement("i");
+  friendIcon.className ="fas fa-user-plus";
+  friend.appendChild(friendIcon);
+  info.appendChild(friend)
+
+  var message = document.createElement("button");
+  message.className="actionButton messageButton";
+  var textIcon = document.createElement("i");
+  textIcon.className ="fas fa-comments";
+  message.appendChild(textIcon);
+  info.appendChild(message);
+
   container.appendChild(info);
   
   //List of connections

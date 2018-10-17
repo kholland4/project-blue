@@ -4,7 +4,7 @@ body {
 }
 
 .userOuter {
-  height: 64px;
+  height: auto;
   padding: 5px;
   box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.03), 0 5px 5px 0 rgba(0, 0, 0, 0.03);
   background-color: #ffffff;
@@ -17,32 +17,72 @@ body {
 .userIcon {
   display: inline-block;
   width: 64px;
-  height: 64px;
+  height: auto;
   border-radius: 100%;
   margin-right: 10px;
   box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.03), 0 5px 5px 0 rgba(0, 0, 0, 0.03);
 }
 .userInfoOuter {
   display: inline-block;
-  vertical-align: middle;
-  height: 64px;
+  vertical-align: top;
+  height: 100%;
+  padding-top: 1.5vw;
 }
 /* Feel free to tweak the spacing for these lines */
 .userInfoName {
-  height: 36px;
-  line-height: 36px;
+  height: auto;
+  line-height: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 5vw;
   color: #08213e;
   font-weight: bold;
 }
 .userInfoExtra {
-  height: 28px;
-  line-height: 28px;
+  height: auto;
+  line-height: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 3.5vw;
   color: #08213e;
   font-weight: normal;
+}
+
+.buttonContOuter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.actionButton {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.04), 0 5px 5px 0 rgba(0, 0, 0, 0.04);
+  color: #08213e;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin: 7px;
+  padding: .2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  outline: none;
+}
+.actionButton:active {
+  background-color: #fafafa;
+  box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.09), 0 5px 5px 0 rgba(0, 0, 0, 0.09); 
+  outline: none;
+}
+.actionButton:focus {
+  outline: 0;
+}
+.actionButton::-moz-focus-inner {
+  border: 0;
+}
+
+.fa-user-plus, .fa-comments {
+  font-size: medium;
 }
 
 /*FIXME*/

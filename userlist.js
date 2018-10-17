@@ -60,9 +60,11 @@ function displayUsers() {
   //TODO: profile pics and DOB
   for(var i = 0; i < users.length; i++) {
     var outer = document.createElement("div");
-    outer.className = "userOuter";
-    outer.dataset.data = JSON.stringify(users[i]);
-    outer.onclick = function() { showDetail(JSON.parse(this.dataset.data)); }
+    outer.className = "userOuter";  
+    var userInfo = document.createElement("div"); //a div of only the info not including the buttons
+    userInfo.dataset.data = JSON.stringify(users[i]); //you now click in that area instead of the whole div
+    userInfo.onclick = function() { showDetail(JSON.parse(this.dataset.data)); }
+    userInfo.className = "userInfo";
     var profilePic = document.createElement("img");
     profilePic.className = "userIcon";
     if(users[i].person.profile_photo != null) {
@@ -70,7 +72,7 @@ function displayUsers() {
     } else {
       profilePic.src = "img/pp.png";
     }
-    outer.appendChild(profilePic);
+    userInfo.appendChild(profilePic);
     var info = document.createElement("div");
     info.className = "userInfoOuter";
     
@@ -78,13 +80,37 @@ function displayUsers() {
     name.className = "userInfoName";
     name.innerText = getName(users[i].person);
     info.appendChild(name);
-    
     var extra = document.createElement("div");
     extra.className = "userInfoExtra";
     extra.innerText = (Math.round(users[i].score* 100)) + "% match";
     info.appendChild(extra);
+    userInfo.appendChild(info);
+
+    var bOuter = document.createElement("div");
+    bOuter.className = "buttonContOuter";
     
-    outer.appendChild(info);
+    var buttonOne = document.createElement("div");
+    buttonOne.className = "buttonCont";
+    var friend = document.createElement("button");
+    friend.className = "actionButton";
+    var friendIcon = document.createElement("i");
+    friendIcon.className ="fas fa-user-plus";
+    friend.appendChild(friendIcon);
+    buttonOne.appendChild(friend);
+    bOuter.appendChild(buttonOne);
+  
+    var buttonTwo = document.createElement("div");
+    buttonTwo.className ="buttonCont";
+    var message = document.createElement("button");
+    message.className="actionButton";
+    var textIcon = document.createElement("i");
+    textIcon.className ="fas fa-comments";
+    message.appendChild(textIcon);
+    buttonTwo.appendChild(message);
+    bOuter.appendChild(buttonTwo);
+    
+    outer.appendChild(userInfo);
+    outer.appendChild(bOuter);
     container.appendChild(outer);
   }
 }
