@@ -82,7 +82,7 @@ function displayUsers() {
     info.appendChild(name);
     var extra = document.createElement("div");
     extra.className = "userInfoExtra";
-    extra.innerText = (Math.round(users[i].score*100)) + "% match";
+    extra.innerText = (Math.round(users[i].score* 100)) + "% match";
     info.appendChild(extra);
     userInfo.appendChild(info);
 
@@ -98,7 +98,7 @@ function displayUsers() {
     friend.appendChild(friendIcon);
     buttonOne.appendChild(friend);
     bOuter.appendChild(buttonOne);
-    
+  
     var buttonTwo = document.createElement("div");
     buttonTwo.className ="buttonCont";
     var message = document.createElement("button");
