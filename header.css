@@ -9,6 +9,10 @@
   /*box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);*/
   width: 100%;
 }
+#firstW, .firstW {
+  color: #f19000;
+}
+
 #backButton, .backButton {
   display: inline-block;
   height: 2.8rem;
@@ -27,9 +31,9 @@
 }
 i.fa-angle-left {
   margin: .2em;
-  color: #f19000;
+  color: gray;
   border-bottom: solid rgba(0, 0, 0, 0); /* consistent height */
 }
 i.fa-angle-left:hover {
-  border-bottom: solid #f19000;
+  /*border-bottom: solid #f19000;*/
 }

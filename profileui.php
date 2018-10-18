@@ -7,7 +7,6 @@ $userid = authenticate($conn);
 <html>
 <head>
   <title>Profile - <?php echo $DISPLAY_NAME; ?></title>
-  <link rel="stylesheet" type="text/css" href="detailpopup.css">
   <link rel="stylesheet" type="text/css" href="profileui.css">
   <link rel="stylesheet" type="text/css" href="header.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -21,11 +20,13 @@ $userid = authenticate($conn);
       <a id="backButton" href="javascript:history.go(-1)">
       	<i class="fas fa-2x fa-angle-left"></i>
       </a>
-      <span id="headerText">Your Profile</span>
-      <button class="editButt">Edit Profile</button>
+      <span id="headerText"><span class="firstW">Your </span>Profile</span>
     </div>
-    <div id="main">
-      <img class="detailIcon" src="img/pp.png">
+    <div class="userCont">
+      <div class="userInfo">
+        <img class="detailIcon" src="img/pp.png">
+      </div>
+      <p id="usersName">Palpatine Something</p>
     </div>
   </div>
 </body>

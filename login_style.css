@@ -1,6 +1,7 @@
 body {
   /*THOUGHTS???*/
   background-image: linear-gradient(rgba(255,0,0,0), rgba(8, 33, 62,.1));
+  height: 100vh;
 }
 div.container {
   background: transparent;

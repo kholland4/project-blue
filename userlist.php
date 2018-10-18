@@ -19,7 +19,7 @@ $userid = authenticate($conn);
 <body>
   <div id="appHeader">
     <a id="backButton" href="javascript:history.go(-1);"><i class="fas fa-2x fa-angle-left"></i></a>
-    <span id="headerText">All Users</span>
+    <span id="headerText"><span id="firstW">All </span> Users</span>
   </div>
   <div id="main">
     <div id="userList"></div>
