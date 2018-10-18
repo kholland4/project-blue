@@ -26,7 +26,7 @@ $userid = authenticate($conn);
       <div class="userInfo">
         <img class="detailIcon" src="img/pp.png">
       </div>
-      <p id="usersName">Palpatine Something</p>
+      <p id="usersName">[PlaceHolder Text]</p>
     </div>
   </div>
 </body>

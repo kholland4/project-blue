@@ -17,15 +17,17 @@
   display: inline-block;
   height: 2.8rem;
   text-decoration: none;
+  position: absolute;
 }
 #headerText, .headerText {
   display: inline-block;
   height: 2.8rem;
   line-height: 2.8rem;
   vertical-align: top;
-  
+  width: 100%;
+  text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 22px;
+  font-size: 6vw;
   font-weight: bold;
   color: #08213e;
 }

@@ -26,9 +26,7 @@ $userid = authenticate($conn);
   </div>
   <div id="detailPopup">
     <div class="appHeader">
-      <!-- TODO [Kyle]: use a X button on the right side instead -->
-      <a class="backButton" href="javascript:hideDetail();"><i class="fas fa-2x fa-angle-left"></i></a>
-      <span class="headerText" id="detailPopupHeaderText"></span>
+     <a id="backButton" href="javascript:hideDetail();"><i class="far fa-2x fa-times-circle"></i></a>
     </div>
     <div id="detailPopupInner"></div>
   </div>

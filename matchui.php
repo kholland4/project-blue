@@ -20,7 +20,7 @@ $userid = authenticate($conn);
 <body>
   <div id="appHeader">
     <a id="backButton" href="javascript:history.go(-1);"><i class="fas fa-2x fa-angle-left"></i></a>
-    <span id="headerText">Your Matches</span>
+    <span id="headerText"><span class="firstW">Your </span>Matches</span>
   </div>
   <div id="main">
     <div id="userList"></div>

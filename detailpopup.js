@@ -2,8 +2,6 @@ function showDetail(data) {
   var container = document.getElementById("detailPopupInner");
   while(container.firstChild) { container.removeChild(container.firstChild); }
   
-  document.getElementById("detailPopupHeaderText").innerText = getName(data.person);
-  
   //Large profile picture
   var profilePic = document.createElement("img");
   profilePic.className = "detailIcon";
