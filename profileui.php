@@ -23,10 +23,14 @@ $userid = authenticate($conn);
       <span id="headerText"><span class="firstW">Your </span>Profile</span>
     </div>
     <div class="userCont">
-      <div class="userInfo">
+      <div class="userPic">
         <img class="detailIcon" src="img/pp.png">
       </div>
-      <p id="usersName">[PlaceHolder Text]</p>
+      <div class="userInfo">
+        <p id="usersName">Username</p>
+        <p class="userBio">Hey this is just gibberish text about the possible future addition of a bio. Here, users will be able to write wsomething quick about themselves shfkjsdhfkjahfaufjasdhfk jashfiasfhjshfkjausdfihdskjfkljadh thoughts?</p>
+        <button class="editButt">Edit Profile</button>
+      </div>
     </div>
   </div>
 </body>
