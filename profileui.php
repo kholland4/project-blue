@@ -27,9 +27,14 @@ $userid = authenticate($conn);
         <img class="detailIcon" src="img/pp.png">
       </div>
       <div class="userInfo">
-        <p id="usersName">Username</p>
+        <p id="usersName">Alejandro Jimenez</p>
+        <p id="username">Algonzale</p>
         <p class="userBio">Hey this is just gibberish text about the possible future addition of a bio. Here, users will be able to write wsomething quick about themselves shfkjsdhfkjahfaufjasdhfk jashfiasfhjshfkjausdfihdskjfkljadh thoughts?</p>
         <button class="editButt">Edit Profile</button>
+      </div>
+      <div class="interestCont">
+        <p>Your Interests</p>
+        <div class="interestList"></div>
       </div>
     </div>
   </div>

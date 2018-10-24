@@ -97,7 +97,7 @@ function displayUsers() {
     
     var img = document.createElement("img");
     img.className = "qqImg";
-    img.src = "img/questions.svg";
+    img.src = "img/questions.png";
     outer.appendChild(img);
     var caption = document.createElement("span");
     caption.className = "qqCaption";

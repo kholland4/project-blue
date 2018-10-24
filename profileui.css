@@ -31,7 +31,13 @@ p#usersName {
   text-align: center;
   font-size: 4vw;
   font-weight: 600;
-  color: #08213e;
+  color: black;
+  margin-bottom: .5rem;
+}
+p#username {
+  color: #afafaf;
+  text-align: center;
+  margin-top: .5rem;
 }
 .userBio {
   margin: 3vw;
