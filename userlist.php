@@ -23,6 +23,7 @@ $userid = authenticate($conn);
   </div>
   <div id="main">
     <div id="userList"></div>
+    <div style="display: flex;justify-content: center;"><img id="hDots" src="img/huugsDots.png"></div>
   </div>
   <div id="detailPopup">
     <div class="appHeader">
@@ -30,6 +31,5 @@ $userid = authenticate($conn);
     </div>
     <div id="detailPopupInner"></div>
   </div>
-  <div style="display: flex;justify-content: center;"><img id="hDots" src="img/huugsDots.png"></div>
 </body>
 </html>

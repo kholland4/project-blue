@@ -4,9 +4,9 @@ body {
 }
 
 .fa-times-circle {
-    padding-top: 20%;
-    padding-left: 10%;
-    color: #f19000;
+  padding-top: 20%;
+  padding-left: 10%;
+ color: #f19000;
 }
 #detailPopup {
   display: none;

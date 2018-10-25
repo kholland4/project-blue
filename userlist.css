@@ -1,8 +1,13 @@
 body {
   background-color: #fbfbfb;
   margin: 0px;
+  overflow-y: hidden;
 }
 
+div#main {
+  overflow-y: scroll;
+  height: 90vh;
+}
 .userOuter {
   height: auto;
   padding: 5px;

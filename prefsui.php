@@ -23,7 +23,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
 <title>Your Interests - <?php echo $DISPLAY_NAME; ?></title>
-<script src="prefsui.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 <link rel="stylesheet" type="text/css" href="header.css">
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
@@ -39,8 +38,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   <div id="stage1">
     <div id="stage1List" class="stage1"></div>
     <div class="forButton">
-      <button onclick="initStage2();">Next</button> 
+      <button onclick="initStage2();">Next</button><br>
     </div>
+    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! Text: (xxx) xxx-xxx</p>
   </div>
   <div id="stage2">
     <form action="prefsui.php" method="POST" id="prefListForm" class="stage2">
@@ -51,6 +51,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="forButton">
       <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button><br>
     </div>
+    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! Text: (xxx) xxx-xxx</p> 
   </div>
+  <script src="prefsui.js" type="text/javascript"></script>
 </body>
 </html>

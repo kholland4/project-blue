@@ -73,7 +73,10 @@ function toggleAddMenu() {
   if(addMenuState) {
     document.getElementById("addMenu").style.display = "none";
   } else {
-    document.getElementById("addMenu").style.display = "block";
+    let addmenu = document.getElementById("addMenu");
+    addMenu.style.display = "flex";
+    addMenu.style.justifyContent = "space-evenly";
+    addMenu.style.flexWrap = "wrap";
   }
   addMenuState = !addMenuState;
 }

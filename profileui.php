@@ -27,9 +27,16 @@ $userid = authenticate($conn);
         <img class="detailIcon" src="img/pp.png">
       </div>
       <div class="userInfo">
-        <p id="usersName">Alejandro Jimenez</p>
-        <p id="username">Algonzale</p>
+        <p id="usersName">[placeholder-name]</p>
+        <p id="username">[username]</p>
         <p class="userBio">Hey this is just gibberish text about the possible future addition of a bio. Here, users will be able to write wsomething quick about themselves shfkjsdhfkjahfaufjasdhfk jashfiasfhjshfkjausdfihdskjfkljadh thoughts?</p>
+        <i class="fas fa-graduation-cap">: <span style="color: black; font-weight: normal;">[school]</span></i>
+        <div class="imageCarousel">
+          <img class="carouselPic" src="https://images.unsplash.com/photo-1526749837599-b4eba9fd855e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=36f243a4902af3e45f4f2f3c031f04f6&auto=format&fit=crop&w=1500&q=80">
+          <img class="carouselPic" src="https://images.unsplash.com/photo-1526749837599-b4eba9fd855e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=36f243a4902af3e45f4f2f3c031f04f6&auto=format&fit=crop&w=1500&q=80">
+          <img class="carouselPic" src="https://images.unsplash.com/photo-1526749837599-b4eba9fd855e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=36f243a4902af3e45f4f2f3c031f04f6&auto=format&fit=crop&w=1500&q=80">
+          <img class="carouselPic" src="https://images.unsplash.com/photo-1526749837599-b4eba9fd855e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=36f243a4902af3e45f4f2f3c031f04f6&auto=format&fit=crop&w=1500&q=80">
+        </div>
         <button class="editButt">Edit Profile</button>
       </div>
       <div class="interestCont">
