@@ -15,7 +15,7 @@ require "util.php";
     <div class="header">
       <div class="buttonDiv"><button class="headerButt"><a href='<?php echo "" . $BASE_URL . "#"?>'>Messages</a></button></div>
       <div class="buttonDiv"><button class="headerButt"><a href='<?php echo "" . $BASE_URL . "userlist.php"?>'>The list</a></button></div>
-    </div>
+    </div> 
     <div>
       <?php
       $conn = create_sql_connection();
@@ -30,7 +30,7 @@ require "util.php";
         echo "<a href='" . $BASE_URL . "profileui.php'>Your Profile</a>";
       }
       close_sql_connection($conn);
-      ?>     
+      ?>    
     </div>
   </div>
 </body>

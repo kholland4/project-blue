@@ -17,19 +17,22 @@ $userid = authenticate($conn);
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
+<div id="topPart">
   <div id="appHeader">
     <a id="backButton" href="javascript:history.go(-1);"><i class="fas fa-2x fa-angle-left"></i></a>
     <span id="headerText"><span id="firstW">All </span> Users</span>
   </div>
-  <div id="main">
-    <div id="userList"></div>
-    <div style="display: flex;justify-content: center;"><img id="hDots" src="img/huugsDots.png"></div>
+  <div class="search" style="margin-top: 6px;"><input class= "searchbar" type="search" name="searchUsers" placeholder="Find Users"></div>
+</div>
+<div id="main">
+  <div id="userList"></div>
+  <div style="display: flex;justify-content: center;"><img id="hDots" src="img/huugsDots.png"></div>
+</div>
+<div id="detailPopup">
+  <div class="appHeader">
+    <a id="backButton" href="javascript:hideDetail();"><i class="far fa-2x fa-times-circle"></i></a>
   </div>
-  <div id="detailPopup">
-    <div class="appHeader">
-     <a id="backButton" href="javascript:hideDetail();"><i class="far fa-2x fa-times-circle"></i></a>
-    </div>
-    <div id="detailPopupInner"></div>
-  </div>
+  <div id="detailPopupInner"></div>
+</div>
 </body>
 </html>

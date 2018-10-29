@@ -29,11 +29,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
-  <div id="appHeader">
-    <a id="backButton" href=""><i class="fas fa-2x fa-angle-left"></i></a>
-    <span id="headerText"></span>
+  <div class="appHeaderCont">
+    <div id="appHeader">
+      <a id="backButton" href=""><i class="fas fa-2x fa-angle-left"></i></a>
+      <span id="headerText"></span>
+    </div>
   </div>
   <div id="stage1">
     <div id="stage1List" class="stage1"></div>

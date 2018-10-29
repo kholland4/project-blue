@@ -170,8 +170,14 @@ function initStage1() {
   backButton.href = "javascript:history.go(-1);";
   
   var headerText = document.getElementById("headerText");
-  headerText.innerText = "[placeholder text]";
-  
+  var headerWord1 = document.createElement("span");
+  headerWord1.innerText = "Your ";
+  headerWord1.className = "firstW";
+  headerText.appendChild(headerWord1);
+  var headerWord2 = document.createElement("span");
+  headerWord2.innerText = "Interests";
+  headerWord2.className = "secondW";
+  headerText.appendChild(headerWord2);
   //---preference options
   var prefDataSorted = prefData;
   

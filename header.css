@@ -1,4 +1,10 @@
 /* I added appHeader, backButton, and headerText classes to support pages with multiple headers */
+#appHeaderCont, .appHeaderCont {
+  background-color: #fbfbfb;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
 #appHeader, .appHeader {
   height: 2.8rem;
   border-top: solid #f3f3f3;

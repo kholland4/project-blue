@@ -1,12 +1,28 @@
 body {
   background-color: #fbfbfb;
   margin: 0px;
-  overflow-y: hidden;
 }
-
+ 
+ div#topPart {
+  margin-bottom: 1vh;
+  position: fixed;
+  width: 100%;
+  background-color: #fbfbfb;
+  margin-top: 0px;
+ }
+ .searchbar {
+  width: 95%;
+  display: block;
+  margin: auto;
+  padding: .4rem;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 6px;
+  border: solid lightgray;
+  border-width: thin
+ }
 div#main {
-  overflow-y: scroll;
-  height: 90vh;
+  padding-top: 86px;
 }
 .userOuter {
   height: auto;

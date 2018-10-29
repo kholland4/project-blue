@@ -31,7 +31,6 @@ td.stage2.prefs {
 td.stage2.prefs.prefsListIcon {
   width: 0px;
 }
-
 .stage2.delPref {
   width: 20px;
   height: 20px;
@@ -112,8 +111,8 @@ td.stage2.prefs.prefsListIcon {
   font-size: 12px;
 }
 
-.stage1.categoryOuter {
-  
+.stage1.categoryOuter:first-child {
+  padding-top: 50px;
 }
 .stage1.categoryHeader {
   display: inline-block; /* shrink to fit contents, for the ::after pseudo-element */
