@@ -2,7 +2,7 @@
 require "util.php";
 ?>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 <title><?php echo $DISPLAY_NAME; ?></title> 
 <link rel="stylesheet" type="text/css" href="app.css">
@@ -11,12 +11,21 @@ require "util.php";
 <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="buttonDiv"><button class="headerButt"><a href='<?php echo "" . $BASE_URL . "#"?>'>Messages</a></button></div>
-      <div class="buttonDiv"><button class="headerButt"><a href='<?php echo "" . $BASE_URL . "userlist.php"?>'>The list</a></button></div>
-    </div> 
-    <div>
+  <div class="topPart">
+    <div class="menuContainer" onclick="toggleMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div> 
+    </div>
+    <div class="dropdown-content" id="myDropdown">
+      <?php 
+      echo "<a href='" . $BASE_URL . "userlist.php'>The List</a>";
+      echo "<a href='#'>Chatting</a>";
+      echo "<a href='#'>Forums</a>";
+      ?>
+    </div>
+  </div>
+  <div class="main">
       <?php
       $conn = create_sql_connection();
       //TODO: just use global $conn
@@ -31,7 +40,22 @@ require "util.php";
       }
       close_sql_connection($conn);
       ?>    
-    </div>
   </div>
+  <script type="text/javascript">
+  function toggleMenu(x){x.classList.toggle("change"); myFunction()}
+
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+/*  window.onclick = function(e) {
+    if (!e.target.matches('.menuContainer')) {
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+    }
+  }*/
+</script>
 </body>
 </html>

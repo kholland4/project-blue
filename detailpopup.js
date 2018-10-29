@@ -28,7 +28,7 @@ function showDetail(data) {
 
   var seeProf = document.createElement("button");
   seeProf.className = "detailButton";
-  seeProf.innerText = "See Profile";
+  seeProf.innerText = "View Profile";
   info.appendChild(seeProf);
   
   var br = document.createElement("br");
