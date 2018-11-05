@@ -1,4 +1,3 @@
-/* I added appHeader, backButton, and headerText classes to support pages with multiple headers */
 #appHeaderCont, .appHeaderCont {
   background-color: #fbfbfb;
   position: fixed;
@@ -33,7 +32,7 @@
   width: 100%;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 6vw;
+  font-size: 2.1rem; /* changed this back b/c the text was huge (at least in Firefox) */
   font-weight: bold;
   color: #08213e;
 }

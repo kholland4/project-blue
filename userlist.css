@@ -2,15 +2,15 @@ body {
   background-color: #fbfbfb;
   margin: 0px;
 }
- 
- div#topPart {
+
+div#topPart {
   margin-bottom: 1vh;
   position: fixed;
   width: 100%;
   background-color: #fbfbfb;
   margin-top: 0px;
- }
- .searchbar {
+}
+.searchbar {
   width: 95%;
   display: block;
   margin: auto;

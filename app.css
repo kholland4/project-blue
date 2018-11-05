@@ -1,0 +1,9 @@
+/* Misc. shared CSS */
+
+/*FIXME*/
+img#hDots {
+  height: 17%;
+  width: 15%;
+  padding-top: 2px;
+  padding-bottom: 5px;
+}
