@@ -4,22 +4,19 @@
     "PREF_LEVEL_MAX": 5,
     "PREF_LEVEL_DEFAULT": 3,
     "categories": {
-      "animals": "Pets",
       "sports": "Sports",
       "outdoors": "Outdoors",
       "activities": "Activities",
       "careerInterests": "Career Interests",
-      "fun": "Fun",
+      "fun": "Fun & General",
       "food": "Food",
       "music": "Music",
-      "arts" : "Arts"
+      "arts" : "Arts",
+      "lifeCulture" : "Lifestyle & Culture"
     }
   },
   "data": [
-    {"category": "animals", "group": "Pet Lover", "name": "Dogs", "image": "img/dog.png"},
-    {"category": "animals", "group": "Pet Lover", "name": "Cats", "image": "img/cat.png"},
-
-
+   
     {"category": "sports", "name": "Badminton", "image": "img/badminton.png"},
     {"category": "sports", "name": "Baseball", "image": "img/baseball.png"},
     {"category": "sports", "name": "Racquetball", "image": "img/racquetball.png"},
@@ -49,8 +46,19 @@
     {"category": "sports", "name": "Cheerleading", "image": "img/cheer.png"},
 
 
-    {"category": "fun", "name": "Cooking", "image": "img/cooking.png"},
-    {"category": "fun", "name": "Volunteer Work", "image": "img/volunteer.png"},
+    {"category": "fun", "name": "Anime", "image": "img/anime.png"},
+    {"category": "fun", "name": "Bowling", "image": "img/bowling.png"},
+    {"category": "fun", "name": "Road Trips", "image": "img/roadtrip.png"},
+    {"category": "fun", "name": "Cats", "image": "img/cat.png"},
+    {"category": "fun", "name": "Dogs", "image": "img/dog.png"},
+    {"category": "fun", "name": "Collecting", "image": "img/collecting.png"},
+    {"category": "fun", "name": "Gaming", "image": "img/gaming.png"},
+    {"category": "fun", "name": "Harry Potter", "image": "img/hPotter.png"},
+    {"category": "fun", "name": "Star Wars", "image": "img/sWars.png"},
+    {"category": "fun", "name": "Movies & Series", "image": "img/moviesAndS.png"},
+    {"category": "fun", "name": "Museums", "image": "img/museum.png"},
+    {"category": "fun", "name": "Parties", "image": "img/parties.png"},
+    {"category": "fun", "name": "Table Games", "image": "img/tGames.png"},
 
 
     {"category": "outdoors", "name": "Picnics", "image": "img/picnic.png"},
@@ -61,8 +69,7 @@
     {"category": "outdoors", "name": "Water Activities", "image": "img/kayaking.png"},
     {"category": "outdoors", "name": "Boating", "image": "img/boating.png"},
     {"category": "outdoors", "name": "Hiking", "image": "img/hiking.png"},  
-    {"category": "outdoors", "name": "Hunting", "image": "img/hunting.png"},   
-    {"category": "outdoors", "name": "Road Trips", "image": "img/roadTrip.png"},  
+    {"category": "outdoors", "name": "Hunting", "image": "img/hunting.png"},     
     {"category": "outdoors", "name": "Beaches", "image": "img/beaches.png"},  
 
 
@@ -89,12 +96,24 @@
     {"category": "music", "name": "Classical Music", "image": "img/classicalM.png"}, 
     {"category": "music", "name": "Chill Music", "image": "img/chillM.png"}, 
     {"category": "music", "name": "90s & 00s Music", "image": "img/9000sM.png"},
+    {"category": "music", "name": "Singing", "image": "img/singing.png"},
+    {"category": "music", "name": "Play an Instrument", "image": "img/playIns.png"},
+
+
+    {"category": "lifeCulture", "name": "Languages", "image" : "img/languages.png"},
+    {"category": "lifeCulture", "name": "Meditation", "image" : "img/meditation.png"},
+    {"category": "lifeCulture", "name": "Religion", "image" : "img/religion.png"},
+    {"category": "lifeCulture", "name": "Social Causes", "image" : "img/sCauses.png"},
+    {"category": "lifeCulture", "name": "Volunteer Work", "image" : "img/volunteer.png"},
+    {"category": "lifeCulture", "name": "Traveling", "image" : "img/traveling.png"},
+    {"category": "lifeCulture", "name": "Healthiness", "image" : "img/healthiness.png"},
+    {"category": "lifeCulture", "name": "Yoga", "image" : "img/yoga.png"},
 
 
     {"category": "careerInterests", "name": "Technology", "image": "img/technology.png"},  
-    {"category": "careerInterests", "name": "Social Service", "image": "img/socialServ.png"},
+    {"category": "careerInterests", "name": "Community", "image": "img/community.png"},
     {"category": "careerInterests", "name": "Politics", "image": "img/politics.png"},
-    {"category": "careerInterests", "name": "Military", "image": "img/military.png"},
+    {"category": "careerInterests", "name": "The Military", "image": "img/military.png"},
     {"category": "careerInterests", "name": "Medicine/Science", "image": "img/medScien.png"},
     {"category": "careerInterests", "name": "Engineering", "image": "img/engineering.png"},
     {"category": "careerInterests", "name": "Entertainment", "image": "img/entertainment.png"},

@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="forButton">
       <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button><br>
     </div>
-    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! Text: (xxx) xxx-xxx</p> 
+    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! Text: (801) 810-1766</p> 
   </div>
   <script src="prefsui.js" type="text/javascript"></script>
 </body>
