@@ -17,6 +17,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: #fbfbfb;
+  z-index: 1;
 }
 /* please style this */
 .detailIcon {

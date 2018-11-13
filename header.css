@@ -32,7 +32,7 @@
   width: 100%;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 2.1rem; /* changed this back b/c the text was huge (at least in Firefox) */
+  font-size: 1.5rem; /* changed this back b/c the text was huge (at least in Firefox) */
   font-weight: bold;
   color: #08213e;
 }

@@ -24,7 +24,7 @@ for(var i = 0; i < a.length; i++) {
   }
 }
 
-var mainUser = document.getElementById("mainUser");
+var mainUser = document.getElementsByClassName("detailIconMain")[0];
 mainUser.addEventListener("click", function() {
   window.location = "/project-blue/profileui.php";
 });

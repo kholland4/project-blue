@@ -1,9 +1,4 @@
 /* Misc. shared CSS */
-body {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-}
 /*FIXME*/
 img#hDots {
   height: 17%;
