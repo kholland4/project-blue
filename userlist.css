@@ -9,6 +9,7 @@ div#topPart {
   width: 100%;
   background-color: #fbfbfb;
   margin-top: 0px;
+  box-shadow: 0 4px 2px -2px #fbfbfb;
 }
 .searchbar {
   width: 95%;
@@ -22,7 +23,7 @@ div#topPart {
   border-width: thin
  }
 div#main {
-  padding-top: 86px;
+  padding-top: 89px;
 }
 .userOuter {
   height: auto;
@@ -72,11 +73,4 @@ div#main {
   margin-left: auto;
 }
 
-/*FIXME*/
-img#hDots {
-  height: 17%;
-  width: 15%;
-  padding-top: 2px;
-  padding-bottom: 5px;
-}
 

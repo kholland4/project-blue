@@ -1,8 +1,14 @@
 /* Misc. shared CSS */
+* {
+  -webkit-user-select: none!important;  
+  -moz-user-select: none!important;     
+  -ms-user-select: none!important;     
+  user-select: none!important; 
+}
 /*FIXME*/
 img#hDots {
-  height: 17%;
-  width: 15%;
+  height: 16.6px;
+  width: 50px;
   padding-top: 2px;
   padding-bottom: 5px;
 }

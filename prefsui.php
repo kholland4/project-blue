@@ -25,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <title>Your Interests - <?php echo $DISPLAY_NAME; ?></title>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
 <link rel="stylesheet" type="text/css" href="header.css">
+<link rel="stylesheet" type="text/css" href="app.css">
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -43,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="forButton">
       <button onclick="initStage2();">Next</button><br>
     </div>
-    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! Text: (xxx) xxx-xxx</p>
+    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! email: HuugsCo@gmail.com</p>
   </div>
   <div id="stage2">
     <form action="prefsui.php" method="POST" id="prefListForm" class="stage2">
@@ -54,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="forButton">
       <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button><br>
     </div>
-    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! Text: (801) 810-1766</p> 
+    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! email: HuugsCo@gmail.com</p> 
   </div>
   <script src="prefsui.js" type="text/javascript"></script>
 </body>
