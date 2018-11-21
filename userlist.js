@@ -62,13 +62,13 @@ function displayUsers() {
     var outer = document.createElement("div");
     outer.className = "userOuter";  
     var userInfo = document.createElement("div"); //a div of only the info not including the buttons
-    userInfo.dataset.data = JSON.stringify(users[i]); //you now click in that area instead of the whole div
+    userInfo.dataset.data = JSON.stringify(users[i]); //you now click in that area instead of the whole div TODO allow clicking on the whole div but disable JS event bubbling on the buttons
     userInfo.onclick = function() { showDetail(JSON.parse(this.dataset.data)); }
     userInfo.className = "userInfo";
     var profilePic = document.createElement("img");
     profilePic.className = "userIcon";
     if(users[i].person.profile_photo != null) {
-      profilePic.src = users[i].person.profile_photo; //FIXME
+      profilePic.src = "avatar.php?id=" + users[i].person.id;
     } else {
       profilePic.src = "img/pp.png";
     }
@@ -103,6 +103,8 @@ function displayUsers() {
     buttonTwo.className ="buttonCont";
     var message = document.createElement("button");
     message.className="actionButton";
+    message.dataset.id = users[i].person.id;
+    message.onclick = function() { goToLink("msg/msg.php?target=" + this.dataset.id); };
     var textIcon = document.createElement("i");
     textIcon.className ="fas fa-comments";
     message.appendChild(textIcon);

@@ -9,3 +9,7 @@ function loadf(url, callback) {
   xhttp.open("GET", url);
   xhttp.send();
 }
+
+function goToLink(link) {
+  location.href = link;
+}

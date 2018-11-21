@@ -3,10 +3,10 @@ require "util.php";
 $conn = create_sql_connection();
 //TODO: just use global $conn
 $userid = get_login_user($conn);
-$userInfo = get_user_info($conn, $userid);
 if($userid === null) {
   header("Location:" . $BASE_URL . "login.php");
 }
+$userInfo = get_user_info($conn, $userid);
 close_sql_connection($conn);
 ?>         
 <!DOCTYPE html>

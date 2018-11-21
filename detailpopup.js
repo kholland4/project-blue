@@ -6,7 +6,7 @@ function showDetail(data) {
   var profilePic = document.createElement("img");
   profilePic.className = "detailIcon";
   if(data.person.profile_photo != null) {
-    profilePic.src = data.person.profile_photo; //FIXME
+    profilePic.src = "avatar.php?id=" + users[i].person.id;
   } else {
     profilePic.src = "img/pp.png";
   }
@@ -42,6 +42,8 @@ function showDetail(data) {
 
   var message = document.createElement("button");
   message.className="actionButton messageButton";
+  message.dataset.id = data.person.id;
+  message.onclick = function() { goToLink("msg/msg.php?target=" + this.dataset.id); };
   var textIcon = document.createElement("i");
   textIcon.className ="fas fa-comments";
   message.appendChild(textIcon);

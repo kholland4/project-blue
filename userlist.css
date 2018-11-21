@@ -48,20 +48,20 @@ div#main {
   display: inline-block;
   vertical-align: top;
   height: 100%;
-  padding-top: 1.5vw;
+  padding-top: 8px;
 }
 /* Feel free to tweak the spacing for these lines */
 .userInfoName {
   height: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 5vw;
+  font-size: 22px;
   color: #08213e;
   font-weight: 600;
 }
 .userInfoExtra {
   height: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 3.5vw;
+  font-size: 16px;
   font-weight: normal;
 }
 

@@ -27,7 +27,7 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <script src="../util.js" type="text/javascript"></script>
 <script src="msg.js" type="text/javascript"></script>
-<script type="text/javascript">var targetUserID = <?php echo $target_userid; ?>;</script>
+<script type="text/javascript">var userID = <?php echo $userid; ?>; var targetUserID = <?php echo $target_userid; ?>;</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>

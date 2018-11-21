@@ -1,0 +1,49 @@
+body {
+  
+}
+
+#messages {
+  
+}
+
+.messageWrapper {
+  width: 100%;
+}
+.messageWrapper.alignLeft {
+  text-align: left;
+}
+.messageWrapper.alignRight {
+  text-align: right;
+}
+
+.userBubble {
+  display: inline-block;
+  width: 64px;
+  /* don't set height */
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.userBubbleIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}
+
+.messageBubble {
+  display: inline-block;
+  text-align: left;
+  max-width: 50%;
+  
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  
+  padding: 12px;
+  background-color: #cccccc;
+  border-radius: 24px;
+}
+.messageBubble.alignLeft {
+  
+}
+.messageBubble.alignRight {
+  
+}
