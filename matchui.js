@@ -67,6 +67,8 @@ function displayUsers() {
     outer.className = "userOuter";
     outer.dataset.data = JSON.stringify(users[i]);
     outer.onclick = function() { showDetail(JSON.parse(this.dataset.data)); }
+    var userShrink = document.createElement("div");
+    userShrink.className = "userShrink";
     var profilePic = document.createElement("img");
     profilePic.className = "userIcon";
     if(users[i].person.profile_photo != null) {
@@ -75,8 +77,8 @@ function displayUsers() {
       profilePic.src = "img/pp.png";
     }
     var targetColor = Math.floor(users[i].score.toPrecision(2) * 120);
-    profilePic.style.border = "3px solid hsl(" + targetColor + ", 100%, 50%)";
-    outer.appendChild(profilePic);
+    profilePic.style.border = "1.5px solid hsl(" + targetColor + ", 100%, 50%)";
+    userShrink.appendChild(profilePic);
     var info = document.createElement("div");
     info.className = "userInfoOuter";
     
@@ -85,7 +87,8 @@ function displayUsers() {
     name.innerText = getName(users[i].person);
     info.appendChild(name);
     
-    outer.appendChild(info);
+    userShrink.appendChild(info);
+    outer.appendChild(userShrink);
     container.appendChild(outer);
     
     matchCount++;
