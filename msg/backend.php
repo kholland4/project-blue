@@ -5,10 +5,12 @@ $userid = authenticate($conn);
 
 if(!array_key_exists("target", $_GET)) {
   http_response_code(400);
+  echo "no target specified";
   exit();
 }
 if(!is_numeric($_GET["target"])) {
   http_response_code(400);
+  echo "invalid target (non-numeric)";
   exit();
 }
 
@@ -16,6 +18,7 @@ $target_userid = intval($_GET["target"]);
 
 if(!array_key_exists("mode", $_GET)) {
   http_response_code(400);
+  echo "no mode specified";
   exit();
 }
 $mode = $_GET["mode"];
@@ -23,13 +26,14 @@ $mode = $_GET["mode"];
 Modes:
   full: full message history
 */
-if(!in_array($mode, array("full"))) {
+if(!in_array($mode, array("full", "since", "send"))) {
   http_response_code(400);
+  echo "invalid mode";
   exit();
 }
 
 if($mode == "full") {
-  //load messages
+  //All messages
   $messages = array();
 
   $stmt = mysqli_stmt_init($conn);
@@ -50,5 +54,39 @@ if($mode == "full") {
   $stmt->close();
   
   echo json_encode($messages);
+} else if($mode == "since") {
+  //Messages since a certain time
+} else if($mode == "send") {
+  //Send a message
+  if(!array_key_exists("message", $_POST)) {
+    http_response_code(400);
+    echo "no message specified";
+    exit();
+  }
+  $message = $_POST["message"];
+  if(strlen($message) <= 0 || strlen($message) > 5000) { //FIXME pick a proper limit and implement on client end as well
+    http_response_code(400);
+    echo "message is too short or long";
+    exit();
+  }
+  
+  $stmt = mysqli_stmt_init($conn);
+  $stmt->prepare("INSERT INTO messages (src, dest, content) VALUES (?, ?, ?)");
+  $stmt->bind_param('iis', $userid, $target_userid, $message);
+  $stmt->execute();
+  $result = mysqli_stmt_get_result($stmt);
+  if(!$result) {
+    //ok
+  } else {
+    http_response_code(500);
+    echo "Error: " . mysqli_error($conn) . "\n";
+  }
+  $stmt->close();
+} else {
+  http_response_code(400);
+  echo "invalid mode";
+  exit();
 }
+
+close_sql_connection($conn);
 ?>

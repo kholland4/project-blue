@@ -39,6 +39,12 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
 </div>
 <div id="main" style="padding-top: 86px;"> <!-- FIXME dynamic padding -->
   <div id="messages"></div>
+  <div id="sendMessage">
+    <form id="sendMessageForm" action="javascript:;" onsubmit="sendMessage();">
+      <input type="text" id="sendMessageText">
+      <button>Send</button>
+    </form>
+  </div>
   <div style="display: flex;justify-content: center;"><img id="hDots" src="../img/huugsDots.png"></div>
 </div>
 </body>

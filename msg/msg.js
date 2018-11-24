@@ -45,4 +45,13 @@ function showMessage(message, container, align, doUserBubble) {
   container.appendChild(wrapper);
 }
 
+
+function sendMessage() {
+  var message = document.getElementById("sendMessageText").value;
+  document.getElementById("sendMessageForm").reset();
+  //TODO: check length
+  httpPost("backend.php?target=" + targetUserID + "&mode=send", "message=" + encodeURIComponent(message), function() {});
+  //TODO: display bubble with "sending..."?
+}
+
 document.addEventListener("DOMContentLoaded", init);
