@@ -187,3 +187,24 @@ div.forButton {
   justify-content: center;
   margin: 1.5em 1em;
 }
+
+.prefLevel1 {
+  background-color : #ffe093;
+  border-radius: 50%;
+  display: none;
+  position: absolute;
+  z-index: 1; 
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+.prefLevel2 {
+  background-color: #93b3ff;
+  border-radius: 50%;
+
+}
+.prefLevel3 {
+  background-color: #ff93ab;
+  border-radius: 50%;
+
+}

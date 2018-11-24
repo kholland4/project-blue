@@ -1,9 +1,9 @@
 body {
-  
+  margin: 0;
 }
 
 #messages {
-  
+  margin: 8px;  
 }
 
 .messageWrapper {
@@ -38,7 +38,7 @@ body {
   font-size: 16px;
   
   padding: 12px;
-  background-color: #cccccc;
+  background-color: #e4e4e4b3;
   border-radius: 24px;
   margin-bottom: 5px;
 }

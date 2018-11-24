@@ -3,14 +3,6 @@ body {
   margin: 0px;
 }
 
-div#topPart {
-  margin-bottom: 1vh;
-  position: fixed;
-  width: 100%;
-  background-color: #fbfbfb;
-  margin-top: 0px;
-  box-shadow: 0 4px 2px -2px #fbfbfb;
-}
 .searchbar {
   width: 95%;
   display: block;
@@ -54,7 +46,7 @@ div#main {
 .userInfoName {
   height: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 22px;
+  font-size: inherit;
   color: #08213e;
   font-weight: 600;
 }
