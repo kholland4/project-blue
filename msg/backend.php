@@ -56,8 +56,9 @@ if($mode == "full" || $mode == "since") {
     $stmt->prepare("SELECT src, time, content FROM messages WHERE (src=? AND dest=?) OR (dest=? AND src=?) ORDER BY time ASC");
     $stmt->bind_param('iiii', $userid, $target_userid, $userid, $target_userid);
   } else if($mode == "since") {
+    $since_formatted = date("Y-m-d H:i:s", $since);
     $stmt->prepare("SELECT src, time, content FROM messages WHERE ((src=? AND dest=?) OR (dest=? AND src=?)) AND time > ? ORDER BY time ASC");
-    $stmt->bind_param('iiiis', $userid, $target_userid, $userid, $target_userid, date("Y-m-d H:i:s", $since));
+    $stmt->bind_param('iiiis', $userid, $target_userid, $userid, $target_userid, $since_formatted);
   }
   $stmt->execute();
   $result = mysqli_stmt_get_result($stmt);
