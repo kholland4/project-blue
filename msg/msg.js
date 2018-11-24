@@ -1,20 +1,51 @@
 var messages;
+var lastMessageTime = 0;
+var isLoading = 0;
 
 var ALIGN_LEFT = " alignLeft";
 var ALIGN_RIGHT = " alignRight";
 
 function init() {
+  isLoading++;
   loadf("backend.php?target=" + targetUserID + "&mode=full&r=" + Math.random(), function() {
     if(this.status == 200) {
       messages = JSON.parse(this.responseText);
-      showMessages();
+      if(messages.length > 0) {
+        lastMessageTime = messages[messages.length - 1].time;
+      }
+      showMessages(messages);
     }
-  });
+    isLoading--;
+  }, 4000, function() { isLoading--; /* TODO: show error */});
+  
+  //periodically check for new messages
+  setInterval(function() {
+    if(isLoading <= 0) {
+      getPartial();
+    }
+  }, 500);
 }
 
-function showMessages() {
+function getPartial() {
+  isLoading++;
+  loadf("backend.php?target=" + targetUserID + "&mode=since&since=" + lastMessageTime + "&r=" + Math.random(), function() {
+    if(this.status == 200) {
+      newMessages = JSON.parse(this.responseText);
+      if(newMessages.length > 0) {
+        lastMessageTime = newMessages[newMessages.length - 1].time;
+      }
+      messages.push.apply(messages, newMessages);
+      showMessages(newMessages, false);
+    }
+    isLoading--;
+  }, 4000, function() { isLoading--; /* TODO: show error */});
+}
+
+function showMessages(messages, clear = true) {
   var container = document.getElementById("messages");
-  while(container.firstChild) { container.removeChild(container.firstChild); }
+  if(clear) {
+    while(container.firstChild) { container.removeChild(container.firstChild); }
+  }
   for(var i = 0; i < messages.length; i++) {
     var align = ALIGN_LEFT;
     if(messages[i].src == userID) { align = ALIGN_RIGHT; }
@@ -50,7 +81,7 @@ function sendMessage() {
   var message = document.getElementById("sendMessageText").value;
   document.getElementById("sendMessageForm").reset();
   //TODO: check length
-  httpPost("backend.php?target=" + targetUserID + "&mode=send", "message=" + encodeURIComponent(message), function() {});
+  httpPost("backend.php?target=" + targetUserID + "&mode=send", "message=" + encodeURIComponent(message), function() { getPartial(); });
   //TODO: display bubble with "sending..."?
 }
 

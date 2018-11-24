@@ -1,4 +1,4 @@
-function loadf(url, callback) {
+function loadf(url, callback, timeout = null, timeoutCallback = null) {
   var xhttp = new XMLHttpRequest();
   xhttp._callback = callback;
   xhttp.onreadystatechange = function() {
@@ -6,6 +6,12 @@ function loadf(url, callback) {
       this._callback();
     }
   };
+  if(timeout != null) {
+    xhttp.timeout = timeout;
+  }
+  if(timeoutCallback != null) {
+    xhttp.ontimeout = timeoutCallback;
+  }
   xhttp.open("GET", url);
   xhttp.send();
 }

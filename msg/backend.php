@@ -32,13 +32,33 @@ if(!in_array($mode, array("full", "since", "send"))) {
   exit();
 }
 
-if($mode == "full") {
+$since = 0;
+if($mode == "since") {
+  if(!array_key_exists("since", $_GET)) {
+    http_response_code(400);
+    echo "no 'since' parameter specified";
+    exit();
+  }
+  if(!is_numeric($_GET["since"])) {
+    http_response_code(400);
+    echo "invalid 'since' parameter (non-numeric)";
+    exit();
+  }
+  $since = intval($_GET["since"]);
+}
+
+if($mode == "full" || $mode == "since") {
   //All messages
   $messages = array();
 
   $stmt = mysqli_stmt_init($conn);
-  $stmt->prepare("SELECT src, time, content FROM messages WHERE (src=? AND dest=?) OR (dest=? AND src=?) ORDER BY time ASC");
-  $stmt->bind_param('iiii', $userid, $target_userid, $userid, $target_userid);
+  if($mode == "full") {
+    $stmt->prepare("SELECT src, time, content FROM messages WHERE (src=? AND dest=?) OR (dest=? AND src=?) ORDER BY time ASC");
+    $stmt->bind_param('iiii', $userid, $target_userid, $userid, $target_userid);
+  } else if($mode == "since") {
+    $stmt->prepare("SELECT src, time, content FROM messages WHERE ((src=? AND dest=?) OR (dest=? AND src=?)) AND time > ? ORDER BY time ASC");
+    $stmt->bind_param('iiiis', $userid, $target_userid, $userid, $target_userid, date("Y-m-d H:i:s", $since));
+  }
   $stmt->execute();
   $result = mysqli_stmt_get_result($stmt);
   $len = mysqli_num_rows($result);
@@ -46,7 +66,7 @@ if($mode == "full") {
     $row = mysqli_fetch_assoc($result);
     $data = array(
       "src" => $row["src"],
-      "time" => $row["time"], //TODO convert to UNIX timestamp
+      "time" => strtotime($row["time"]), //convert to UNIX timestamp
       "content" => $row["content"]
     );
     array_push($messages, $data);
@@ -54,8 +74,6 @@ if($mode == "full") {
   $stmt->close();
   
   echo json_encode($messages);
-} else if($mode == "since") {
-  //Messages since a certain time
 } else if($mode == "send") {
   //Send a message
   if(!array_key_exists("message", $_POST)) {
