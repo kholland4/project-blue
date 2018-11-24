@@ -5,12 +5,9 @@ require "util.php";
 <html>
 <head>
 <title>Sign In - <?php echo $DISPLAY_NAME; ?></title>
-<link rel="stylesheet" type="text/css" href="app.css">
 <link rel="stylesheet" type="text/css" href="login_style.css">
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
+<?php import("includes.html"); ?>
 </head>
 <body>
 <div id="container">

@@ -111,4 +111,11 @@ function authenticate($conn) {
     return $userid;
   }
 }
+
+function import($name) {
+  //FIXME FIXME sanitize $name
+  if(file_exists("import/" . $name)) {
+    readfile("import/" . $name);
+  }
+}
 ?>

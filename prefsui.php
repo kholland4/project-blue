@@ -24,13 +24,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <title>Your Interests - <?php echo $DISPLAY_NAME; ?></title>
 <link rel="stylesheet" type="text/css" href="prefsui.css">
-<link rel="stylesheet" type="text/css" href="header.css">
-<link rel="stylesheet" type="text/css" href="app.css">
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<?php import("includes.html"); ?>
 </head>
 <body>
   <div class="appHeaderCont">

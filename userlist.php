@@ -8,14 +8,10 @@ $userid = authenticate($conn);
 <head>
 <link rel="stylesheet" type="text/css" href="userlist.css">
 <link rel="stylesheet" type="text/css" href="detailpopup.css">
-<link rel="stylesheet" type="text/css" href="header.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="app.css">
 <script src="userlist.js" type="text/javascript"></script>
 <script src="detailpopup.js" type="text/javascript"></script>
 <script src="util.js" type="text/javascript"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<?php import("includes.html"); ?>
 </head>
 <body>
 <div id="topPart">
@@ -29,11 +25,6 @@ $userid = authenticate($conn);
   <div id="userList"></div>
   <div style="display: flex;justify-content: center;"><img id="hDots" src="img/huugsDots.png"></div>
 </div>
-<div id="detailPopup">
-  <div class="appHeader">
-    <a id="backButton" href="javascript:hideDetail();"><i class="far fa-2x fa-times-circle"></i></a>
-  </div>
-  <div id="detailPopupInner"></div>
-</div>
+<?php import("detailPopup.html"); ?>
 </body>
 </html>

@@ -12,14 +12,10 @@ close_sql_connection($conn);
 <!DOCTYPE html>
 <html> 
 <head>
-<title><?php echo $DISPLAY_NAME; ?></title> 
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<title><?php echo $DISPLAY_NAME; ?></title>
+<?php import("includes.html"); ?>
 <link rel="stylesheet" type="text/css" href="index.css">
 <link rel="stylesheet" type="text/css" href="detailpopup.css">
-<link rel="stylesheet" type="text/css" href="header.css">
-<link rel="stylesheet" type="text/css" href="app.css">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -52,14 +48,7 @@ close_sql_connection($conn);
         ?></p>
     </div>
   </div>
-    <div id="detailPopup">
-    <div class="appHeader">
-      <!-- TODO [Kyle]: use a X button on the right side instead -->
-      <a class="backButton" href="javascript:hideDetail();"><i class="fas fa-2x fa-angle-left"></i></a>
-      <span class="headerText" id="detailPopupHeaderText"></span>
-    </div>
-    <div id="detailPopupInner"></div>
-  </div>
+  <?php import("detailPopup.html"); ?>
 <script src="index.js" type="text/javascript"></script>
 <script src="matchui.js" type="text/javascript"></script>
 <script src="detailpopup.js" type="text/javascript"></script>
