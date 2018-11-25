@@ -56,14 +56,5 @@ window.addEventListener("DOMContentLoaded", function() {
   inter();
 })
 
-window.addEventListener("load", change)
-window.addEventListener("load", function() {
-var lastUser = list[list.length - 1],
-lastUserBott = lastUser.getBoundingClientRect().bottom,
-firstUserTop = list[0].getBoundingClientRect().top,
-uLHeight = lastUserBott - firstUserTop,
-userList = document.getElementById("userList");
-userList.style.height = uLHeight + windowHeight + "px";
-list[list.length-1].scrollIntoView({ block: 'center',  behavior: 'smooth' });
-})
+window.addEventListener("load", change);
 

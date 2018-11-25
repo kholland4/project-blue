@@ -109,6 +109,20 @@ function displayUsers() {
     
     container.appendChild(outer);
   }
+    finalLayout();
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+function finalLayout () {
+  var windowHeight = window.innerHeight,
+  list = document.getElementsByClassName("userOuter");
+  var lastUser = list[list.length - 1],
+  lastUserBott = lastUser.getBoundingClientRect().bottom,
+  firstUserTop = list[0].getBoundingClientRect().top,
+  uLHeight = lastUserBott - firstUserTop,
+  userList = document.getElementById("userList");
+  userList.style.height = uLHeight + windowHeight + "px";
+  list[list.length-1].scrollIntoView({ block: 'center',  behavior: 'smooth' });
+}
+
