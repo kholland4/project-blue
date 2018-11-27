@@ -136,11 +136,13 @@ function initStage1() {
         }
         this.getElementsByClassName("stage1 prefIconOverlay")[0].style.display = "none";
       } else {
-        prefsStage1.push({
+        //commented code handled by levelPopup code
+        /*prefsStage1.push({
           id: id,
           level: PREF_LEVEL_DEFAULT
         });
-        this.getElementsByClassName("stage1 prefIconOverlay")[0].style.display = "block";
+        this.getElementsByClassName("stage1 prefIconOverlay")[0].style.display = "block";*/
+        showLevelPopup(id);
       }
     };
     
@@ -154,6 +156,7 @@ function initStage1() {
     if(!sel) {
       overlay.style.display = "none";
     }
+    overlay.id = "prefIconOverlay" + i; //set the id for external manipulation
     iconOuter.appendChild(overlay);
     var caption = document.createElement("span");
     caption.className = "stage1 prefIconCaption";
@@ -217,12 +220,13 @@ function showLevelPopup(prefID) {
     button.dataset.prefID = prefID;
     button.dataset.level = i;
     button.onclick = function() {
-      this.parentElement.firstChild.value = this.dataset.level;
-      for(var n = 0; n <= (PREF_LEVEL_MAX - PREF_LEVEL_MIN); n++) {
+      /*for(var n = 0; n <= (PREF_LEVEL_MAX - PREF_LEVEL_MIN); n++) {
         this.parentElement.children[n].className = "levelPopupButton";
       }
-      this.parentElement.children[this.dataset.level - PREF_LEVEL_MIN].className = "levelPopupButton selected";
+      this.parentElement.children[this.dataset.level - PREF_LEVEL_MIN].className = "levelPopupButton selected";*/
       setStage1Level(this.dataset.prefID, this.dataset.level);
+      document.getElementById("prefIconOverlay" + prefID).style.display = "block"; //display check mark
+      hideLevelPopup();
     };
     buttonContainer.appendChild(button);
   }
@@ -230,7 +234,7 @@ function showLevelPopup(prefID) {
   container.style.display = "block";
 }
 function hideLevelPopup() {
-  document.getElementById("levelPopupButtons").style.display = "none";
+  document.getElementById("levelPopup").style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", init);

@@ -44,6 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   <div id="levelPopup">
     <div id="levelPopupTitle">How much do you like <span id="levelPopupName"></span>?</div>
     <div id="levelPopupButtons"></div>
+    <button onclick="hideLevelPopup();">Cancel</div>
   </div>
   <script src="prefsui.js" type="text/javascript"></script>
 </body>
