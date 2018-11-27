@@ -53,7 +53,11 @@ function addPref(container, prefID, level = PREF_LEVEL_DEFAULT) {
 }
 
 function initStage1() {
-  var prefDataSorted = prefData;
+  //put IDs in the prefData array to correlate the sorted and unsorted versions
+  for(var i = 0; i < prefData.length; i++) {
+    prefData[i].id = i;
+  }
+  var prefDataSorted = Array.from(prefData);
   
   //category alphabetical sort
   //commented out b/c categories should be sorted as they appear in prefdata.json
@@ -106,10 +110,11 @@ function initStage1() {
   
   for(var i = 0; i < prefDataSorted.length; i++) {
     var container = containers[prefDataSorted[i].category];
+    var id = prefDataSorted[i].id;
     
     var sel = false;
     for(var n = 0; n < prefsStage1.length; n++) {
-      if(prefsStage1[n].id == i) {
+      if(prefsStage1[n].id == id) {
         sel = true;
       }
     }
@@ -117,7 +122,7 @@ function initStage1() {
     var iconOuter = document.createElement("div");
     iconOuter.className = "stage1 prefIconOuter";
     
-    iconOuter.dataset.id = i;
+    iconOuter.dataset.id = id;
     iconOuter.onclick = function() {
       var id = this.dataset.id;
       var sel = false;
