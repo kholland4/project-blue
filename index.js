@@ -53,6 +53,7 @@ function inter() {
 }
 window.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("touchmove", change);
+  window.addEventListener("scroll", change);
   inter();
 })
 

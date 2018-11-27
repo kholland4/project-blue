@@ -42,152 +42,27 @@ function init() {
   });
 }
 
-function initPrefs() {
-  var container = document.getElementById("addMenu");
-  while(container.firstChild) { container.removeChild(container.firstChild); }
-  for(var i = 0; i < prefData.length; i++) {
-    //var opt = document.createElement("option");
-    //opt.value = i;
-    //opt.innerText = prefData[i].name;
-    //container.appendChild(opt);
-    if(document.getElementById("prefRow" + i) == undefined) {
-      var opt = document.createElement("div");
-      opt.className = "stage2 prefAddOuter";
-      opt.dataset.id = i;
-      opt.onclick = function() { addPref(this.dataset.id); this.parentElement.removeChild(this); };
-      var icon = document.createElement("img");
-      icon.className = "stage2 prefAddIcon";
-      icon.src = prefData[i].image;
-      var caption = document.createElement("span");
-      caption.className = "stage2 prefAddCaption";
-      caption.innerText = prefData[i].name;
-      opt.appendChild(icon);
-      opt.appendChild(caption);
-      container.appendChild(opt);
-    }
-  }
-}
-
-var addMenuState = false;
-function toggleAddMenu() {
-  if(addMenuState) {
-    document.getElementById("addMenu").style.display = "none";
-  } else {
-    let addmenu = document.getElementById("addMenu");
-    addMenu.style.display = "flex";
-    addMenu.style.justifyContent = "space-evenly";
-    addMenu.style.flexWrap = "wrap";
-  }
-  addMenuState = !addMenuState;
-}
-
-function addPref(prefID, level = PREF_LEVEL_DEFAULT) {
+function addPref(container, prefID, level = PREF_LEVEL_DEFAULT) {
   if(prefID != -1 && document.getElementById("prefRow" + prefID) == undefined) {
-    var tr = document.createElement("tr");
-    tr.id = "prefRow" + prefID;
-    tr.className = "stage2 prefs";
-    
-    //name and icon
-    var tdName = document.createElement("td");
-    tdName.className = "stage2 prefs prefsListIcon";
-    var iconOuter = document.createElement("div");
-    iconOuter.className = "stage2 prefIconOuter";
-    var icon = document.createElement("img");
-    icon.className = "stage2 prefIcon";
-    icon.src = prefData[prefID].image;
-    var caption = document.createElement("span");
-    caption.className = "stage2 prefIconCaption";
-    caption.innerText = prefData[prefID].name;
-    iconOuter.appendChild(icon);
-    iconOuter.appendChild(caption);
-    tdName.appendChild(iconOuter);
-    
-    //slider
-    var tdSlider = document.createElement("td");
-    tdSlider.className = "stage2 prefs";
-    /*var slider = document.createElement("input");
-    slider.type = "range";
-    slider.name = prefID;
-    slider.min = PREF_LEVEL_MIN;
-    slider.max = PREF_LEVEL_MAX;
-    slider.value = level;
-    tdSlider.appendChild(slider);*/
-    var slider = document.createElement("input");
-    slider.type = "hidden";
-    slider.name = prefID;
-    slider.value = Math.max(Math.min(level, PREF_LEVEL_MAX), PREF_LEVEL_MIN);
-    tdSlider.appendChild(slider);
-    
-    var buttonOuter = document.createElement("div");
-    buttonOuter.className = "stage2 levelOuter";
-    for(var i = PREF_LEVEL_MIN; i <= PREF_LEVEL_MAX; i++) {
-      var button = document.createElement("img");
-      button.src = "img/level" + i + ".png";
-      button.className = "stage2 levelButton";
-      if(i == slider.value) { button.className = "stage2 levelButton selected"; }
-      button.dataset.level = i;
-      button.onclick = function() {
-        this.parentElement.firstChild.value = this.dataset.level;
-        for(var n = 0; n <= (PREF_LEVEL_MAX - PREF_LEVEL_MIN); n++) {
-          this.parentElement.children[n].className = "stage2 levelButton";
-        }
-        this.parentElement.children[this.dataset.level - PREF_LEVEL_MIN].className = "stage2 levelButton selected";
-      };
-      buttonOuter.appendChild(button);
-    }
-    tdSlider.appendChild(buttonOuter);
-    
-    //delete button
-    var tdDel = document.createElement("td");
-    tdDel.className = "stage2 prefs";
-    var buttonDel = document.createElement("button");
-    buttonDel.className = "stage2 delPref";
-    buttonDel.type = "button";
-    buttonDel.dataset.id = prefID;
-    buttonDel.onclick = function() { delPref(this.dataset.id); }
-    tdDel.appendChild(buttonDel);
-    
-    //add to list
-    tr.appendChild(tdName);
-    tr.appendChild(tdSlider);
-    tr.appendChild(tdDel);
-    document.getElementById("prefList").appendChild(tr);
-  }
-  //this.parentElement.removeChild(this);
-}
-
-function delPref(prefID) {
-  var tr = document.getElementById("prefRow" + prefID);
-  if(tr != undefined) {
-    tr.parentElement.removeChild(tr);
-    initPrefs();
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = prefID;
+    input.value = Math.max(Math.min(level, PREF_LEVEL_MAX), PREF_LEVEL_MIN);
+    container.appendChild(input);
   }
 }
 
 function initStage1() {
-  //---header
-  var backButton = document.getElementById("backButton");
-  backButton.href = "javascript:history.go(-1);";
-  
-  var headerText = document.getElementById("headerText");
-  var headerWord1 = document.createElement("span");
-  headerWord1.innerText = "Your ";
-  headerWord1.className = "firstW";
-  headerText.appendChild(headerWord1);
-  var headerWord2 = document.createElement("span");
-  headerWord2.innerText = "Interests";
-  headerWord2.className = "secondW";
-  headerText.appendChild(headerWord2);
-  //---preference options
   var prefDataSorted = prefData;
   
   //category alphabetical sort
-  prefDataSorted.sort(function(a, b) {
+  //commented out b/c categories should be sorted as they appear in prefdata.json
+  /*prefDataSorted.sort(function(a, b) {
     var s = a.category.localeCompare(b.category);
     if(s == 0) { return -1; }
     if(s == 1) { return 1; }
     return 0;
-  });
+  });*/
   //create a list of populated categories
   var categories = [];
   for(var i = 0; i < prefDataSorted.length; i++) {
@@ -296,30 +171,66 @@ function initStage1() {
     }
   }
   document.getElementById("stage1").style.display = "block";
-  document.getElementById("stage2").style.display = "none";
 }
 
-function initStage2() {
-  //---header
-  var backButton = document.getElementById("backButton");
-  backButton.href = "javascript:initStage1();";
-  
-  var headerText = document.getElementById("headerText");
-  headerText.innerText = "Levels";
-  
-  //---prefs list
-  var container = document.getElementById("prefList");
-  while(container.firstChild) { container.removeChild(container.firstChild); }
+function submit() {
+  //---NOTICE--- this is somewhat temporary code that actually fills a HTML form with input elements to mimic the behavior of the original stage2 code; it will eventually be replaced with a proper system
+  var container = document.createElement("form");
+  container.style.display = "none";
+  container.action = "prefsui.php";
+  container.method = "POST";
   for(var i = 0; i < prefsStage1.length; i++) {
-    addPref(prefsStage1[i].id, prefsStage1[i].level);
+    addPref(container, prefsStage1[i].id, prefsStage1[i].level);
   }
-  if(addMenuState) {
-    document.getElementById("addMenu").style.display = "none";
-    addMenuState = false;
+  document.body.appendChild(container);
+  container.submit();
+}
+
+function setStage1Level(prefID, level) {
+  for(var i = 0; i < prefsStage1.length; i++) {
+    if(prefsStage1[i].id == prefID) {
+      prefsStage1[i].level = level;
+      return;
+    }
   }
-  initPrefs();
-  document.getElementById("stage1").style.display = "none";
-  document.getElementById("stage2").style.display = "block";
+  prefsStage1.push({id: prefID, level: level});
+}
+function showLevelPopup(prefID) {
+  var level = PREF_LEVEL_DEFAULT;
+  for(var i = 0; i < prefsStage1.length; i++) {
+    if(prefsStage1[i].id == prefID) {
+      level = prefsStage1[i].level;
+    }
+  }
+  
+  var container = document.getElementById("levelPopup"); //TODO: remove if variable isn't used
+  document.getElementById("levelPopupName").innerText = prefData[prefID].name; //TODO: remove capitalization from name?
+  
+  //dynamically generate buttons
+  var buttonContainer = document.getElementById("levelPopupButtons");
+  while(buttonContainer.firstChild) { buttonContainer.removeChild(buttonContainer.firstChild); }
+  for(var i = PREF_LEVEL_MIN; i <= PREF_LEVEL_MAX; i++) {
+    var button = document.createElement("img");
+    button.src = "img/level" + i + ".png";
+    button.className = "levelPopupButton";
+    if(i == level) { button.className = "levelPopupButton selected"; }
+    button.dataset.prefID = prefID;
+    button.dataset.level = i;
+    button.onclick = function() {
+      this.parentElement.firstChild.value = this.dataset.level;
+      for(var n = 0; n <= (PREF_LEVEL_MAX - PREF_LEVEL_MIN); n++) {
+        this.parentElement.children[n].className = "levelPopupButton";
+      }
+      this.parentElement.children[this.dataset.level - PREF_LEVEL_MIN].className = "levelPopupButton selected";
+      setStage1Level(this.dataset.prefID, this.dataset.level);
+    };
+    buttonContainer.appendChild(button);
+  }
+  
+  container.style.display = "block";
+}
+function hideLevelPopup() {
+  document.getElementById("levelPopupButtons").style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", init);

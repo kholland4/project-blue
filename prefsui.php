@@ -30,27 +30,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
   <div class="appHeaderCont">
     <div id="appHeader">
-      <a id="backButton" href=""><i class="fas fa-2x fa-angle-left"></i></a>
-      <span id="headerText"></span>
+      <a id="backButton" href="javascript:history.go(-1);"><i class="fas fa-2x fa-angle-left"></i></a>
+      <span id="headerText"><span class="firstW">Your </span><span class="secondW">Interests</span></span>
     </div>
   </div>
   <div id="stage1">
     <div id="stage1List" class="stage1"></div>
     <div class="forButton">
-      <button onclick="initStage2();">Next</button><br>
+      <button onclick="submit();">Submit</button><br>
     </div>
     <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! email: HuugsCo@gmail.com</p>
   </div>
-  <div id="stage2">
-    <form action="prefsui.php" method="POST" id="prefListForm" class="stage2">
-      <table id="prefList" class="stage2 prefs"></table>
-    </form>
-    <div id="addMenuControl" class="stage2" onclick="toggleAddMenu();">More &#x25BE;</div>
-    <div id="addMenu" class="stage2"></div>
-    <div class="forButton">
-      <button onclick="document.getElementById('prefListForm').submit();" class="stage2">Update</button><br>
-    </div>
-    <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! email: HuugsCo@gmail.com</p> 
+  <div id="levelPopup">
+    <div id="levelPopupTitle">How much do you like <span id="levelPopupName"></span>?</div>
+    <div id="levelPopupButtons"></div>
   </div>
   <script src="prefsui.js" type="text/javascript"></script>
 </body>

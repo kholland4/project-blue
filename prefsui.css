@@ -4,113 +4,6 @@ body {
   margin: 0px;
 }
 
-#stage1, #stage2 {
-  display: none;
-}
-
-table.stage2.prefs {
-  width: 100%;
-  max-width: 500px;
-  margin: 0px;
-  border: 0px;
-  padding: 0px;
-  border-collapse: collapse;
-}
-tr.stage2.prefs {
-  margin: 0px;
-  border: 0px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 0px;
-}
-td.stage2.prefs {
-  margin: 0px;
-  border: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-td.stage2.prefs.prefsListIcon {
-  width: 0px;
-}
-.stage2.delPref {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  margin: 0px;
-  border: 1px solid rgba(0, 0, 0, 0);
-  padding: 3px;
-  color: black;
-  background-color: white;
-  outline: none;
-  background-image: url(img/delpref.png);
-  background-size: contain;
-}
-.stage2.delPref:hover {
-  border: 1px solid #999999;
-}
-
-.stage2.prefIconOuter {
-  width: 80px;
-  margin-left: 7px;
-}
-.stage2.prefIcon {
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-}
-.stage2.prefIconCaption {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-}
-
-.stage2.levelOuter {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: flex-start;
-}
-.stage2.levelButton {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  margin: 0px;
-  border: 2px solid rgba(0, 0, 0, 0);
-  padding: 4px;
-}
-.stage2.levelButton.selected {
-  border: 2px solid blue;
-}
-
-.stage2#addMenu {
-  display: none; /* JS used to reveal this */
-  /* TODO: CSS flexbox */
-  width: calc(100% - 24px);
-  max-width: 516px;
-  border: 2px solid blue;
-  padding: 10px;
-}
-.stage2.prefAddOuter {
-  width: 80px;
-  display: inline-block;
-  margin: 3px;
-}
-.stage2.prefAddIcon {
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-}
-.stage2.prefAddCaption {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-}
-
 .stage1.categoryOuter:first-child {
   padding-top: 50px;
 }
@@ -188,6 +81,7 @@ div.forButton {
   margin: 1.5em 1em;
 }
 
+/* FIXME: what are these for? remove if not in use */
 .prefLevel1 {
   background-color : #ffe093;
   border-radius: 50%;
@@ -201,10 +95,33 @@ div.forButton {
 .prefLevel2 {
   background-color: #93b3ff;
   border-radius: 50%;
-
 }
 .prefLevel3 {
   background-color: #ff93ab;
   border-radius: 50%;
+}
 
+/* ---popup--- */
+#levelPopup {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#levelPopupTitle {
+  
+}
+#levelPopupName {
+  
+}
+#levelPopupButtons {
+  
+}
+.levelPopupButton {
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.levelPopupButton.selected {
+  border: 1px solid blue;
 }
