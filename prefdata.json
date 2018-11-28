@@ -1,8 +1,8 @@
 {
   "meta": {
     "PREF_LEVEL_MIN": 1,
-    "PREF_LEVEL_MAX": 5,
-    "PREF_LEVEL_DEFAULT": 3,
+    "PREF_LEVEL_MAX": 3,
+    "PREF_LEVEL_DEFAULT": 2,
     "categories": {
       "sports": "Sports",
       "outdoors": "Outdoors",
@@ -97,7 +97,7 @@
     {"category": "music", "name": "Chill Music", "image": "img/chillM.png"}, 
     {"category": "music", "name": "90s & 00s Music", "image": "img/9000sM.png"},
     {"category": "music", "name": "Singing", "image": "img/singing.png"},
-    {"category": "music", "name": "Play an Instrument", "image": "img/playIns.png"},
+    {"category": "music", "name": "Instruments", "image": "img/playIns.png"},
 
 
     {"category": "lifeCulture", "name": "Languages", "image" : "img/languages.png"},

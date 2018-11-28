@@ -148,6 +148,7 @@ function initStage1() {
         });
         this.getElementsByClassName("stage1 prefIconOverlay")[0].style.display = "block";*/
         showLevelPopup(id);
+        popupAnimation();
       }
     };
     
@@ -204,6 +205,10 @@ function setStage1Level(prefID, level) {
   prefsStage1.push({id: prefID, level: level});
 }
 function showLevelPopup(prefID) {
+  var mCont = document.getElementsByClassName("mainContainer")[0];
+  var pageOverlay = document.getElementById("grayOver");
+  mCont.classList.add("blurAndStyle");
+  pageOverlay.style.display = "block";
   var level = PREF_LEVEL_DEFAULT;
   for(var i = 0; i < prefsStage1.length; i++) {
     if(prefsStage1[i].id == prefID) {
@@ -213,33 +218,61 @@ function showLevelPopup(prefID) {
   
   var container = document.getElementById("levelPopup"); //TODO: remove if variable isn't used
   document.getElementById("levelPopupName").innerText = prefData[prefID].name; //TODO: remove capitalization from name?
-  
+
   //dynamically generate buttons
   var buttonContainer = document.getElementById("levelPopupButtons");
   while(buttonContainer.firstChild) { buttonContainer.removeChild(buttonContainer.firstChild); }
   for(var i = PREF_LEVEL_MIN; i <= PREF_LEVEL_MAX; i++) {
+    var indivContainer = document.createElement("div");
+    indivContainer.className = "indivContainer";
+    var shadow = document.createElement("div");
+    shadow.className = "shadow";
+    shadow.id = `shadow${i}`;
     var button = document.createElement("img");
     button.src = "img/level" + i + ".png";
     button.className = "levelPopupButton";
     if(i == level) { button.className = "levelPopupButton selected"; }
     button.dataset.prefID = prefID;
     button.dataset.level = i;
+    
     button.onclick = function() {
+      setTimeout(hideLevelPopup, 200);
       /*for(var n = 0; n <= (PREF_LEVEL_MAX - PREF_LEVEL_MIN); n++) {
         this.parentElement.children[n].className = "levelPopupButton";
       }
       this.parentElement.children[this.dataset.level - PREF_LEVEL_MIN].className = "levelPopupButton selected";*/
       setStage1Level(this.dataset.prefID, this.dataset.level);
       document.getElementById("prefIconOverlay" + prefID).style.display = "block"; //display check mark
-      hideLevelPopup();
+      
     };
-    buttonContainer.appendChild(button);
+    indivContainer.appendChild(shadow);
+    indivContainer.appendChild(button);
+    buttonContainer.appendChild(indivContainer);
   }
-  
   container.style.display = "block";
 }
 function hideLevelPopup() {
+  var mCont = document.getElementsByClassName("mainContainer")[0];
+  var pageOverlay = document.getElementById("grayOver");
   document.getElementById("levelPopup").style.display = "none";
+  mCont.classList.remove("blurAndStyle");
+  pageOverlay.style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+function popupAnimation() {
+  var face = document.getElementsByClassName("levelPopupButton");
+  var shadows = document.getElementsByClassName("shadow");
+    face[0].addEventListener("click", function() {shadows[0].style.transform = "scale(2.5)"})
+    face[0].addEventListener("touchstart", function() {shadows[0].style.transform = "scale(2.5)"});
+    face[0].addEventListener("touchend", function() {shadows[0].style.transform = "scale(1)"});
+    
+    face[1].addEventListener("click", function() {shadows[1].style.transform = "scale(2.5)"})
+    face[1].addEventListener("touchstart", function() {shadows[1].style.transform = "scale(2.5)"});
+    face[1].addEventListener("touchend", function() {shadows[1].style.transform = "scale(1)"});
+    
+    face[2].addEventListener("click", function() {shadows[2].style.transform = "scale(2.5)"})
+    face[2].addEventListener("touchstart", function() {shadows[2].style.transform = "scale(2.5)"});
+    face[2].addEventListener("touchend", function() {shadows[2].style.transform = "scale(1)"});
+}

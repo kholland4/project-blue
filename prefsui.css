@@ -3,7 +3,21 @@ body {
   background-color: #fdfdfd;
   margin: 0px;
 }
-
+div#grayOver {
+  position: fixed;
+  display: none; 
+  width: 100%; 
+  height: 100%; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.05); 
+  z-index: 1; 
+}
+div#stage1 {
+  transition: all .5s;
+}
 .stage1.categoryOuter:first-child {
   padding-top: 50px;
 }
@@ -103,25 +117,77 @@ div.forButton {
 
 /* ---popup--- */
 #levelPopup {
+  margin: 10px;
   display: none;
   position: fixed;
   z-index: 20;
   top: 0;
   left: 0;
   right: 0;
+  transition: all 1s;
+  margin-top: 22vh;
+  -webkit-animation: slide-down .3s ease-out;
+  -moz-animation: slide-down .3s ease-out;
 }
 #levelPopupTitle {
-  
+  text-align: center;
+  border-radius: 10px;
+  background-image: linear-gradient(45deg, rgb(228, 166, 43), rgba(203, 40, 139));
+  font-size: 20px;
+  overflow: auto;
+  padding: 5px;
+  color: #ffffff;
+  font-weight: 600;
+  max-width: 500px;
+  margin: auto;
 }
 #levelPopupName {
   
 }
+.indivContainer {
+  display: flex;
+  justify-content: center;
+}
+.shadow {
+  align-self: center;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  border-radius: 50%;
+  transition: all .2s;
+}
+#shadow1 {
+  background-color: rgba(255, 224, 147, .5);
+}
+#shadow2 {
+  background-color: rgba(147, 179, 255, .5);
+}
+#shadow3 {
+  background-color: rgba(255, 147, 171,.5);
+}
 #levelPopupButtons {
-  
+  margin: 5px;
+  display: flex;
+  justify-content: center;
 }
 .levelPopupButton {
   border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  z-index: 1;
+  margin: 5px;
 }
-.levelPopupButton.selected {
-  border: 1px solid blue;
+.blurAndStyle {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+@-webkit-keyframes slide-down {
+      0% { opacity: 0; -webkit-transform: scale(0); } 
+     50% { opacity: .5; }  
+    100% { opacity: 1; -webkit-transform: scale(1); }
+}
+@-moz-keyframes slide-down {
+      0% { opacity: 0; -moz-transform: scale(0); } 
+     50% { opacity: .5; }  
+    100% { opacity: 1; -moz-transform: scale(1); }
 }

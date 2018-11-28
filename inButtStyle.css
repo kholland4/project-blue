@@ -35,6 +35,7 @@ button {
   display: block;
   margin: auto;
   outline: none;
+  max-width: 200px;
 }
 
 button:hover {

@@ -28,6 +28,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php import("includes.html"); ?>
 </head>
 <body>
+  <div id="grayOver"></div>
+  <div class="mainContainer">
   <div class="appHeaderCont">
     <div id="appHeader">
       <a id="backButton" href="javascript:history.go(-1);"><i class="fas fa-2x fa-angle-left"></i></a>
@@ -41,10 +43,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <p style="margin: .5em;color: #8e8e8e;font-size: 15px;">Suggestions? We want to hear them! email: HuugsCo@gmail.com</p>
   </div>
+</div>
   <div id="levelPopup">
     <div id="levelPopupTitle">How much do you like <span id="levelPopupName"></span>?</div>
     <div id="levelPopupButtons"></div>
-    <button onclick="hideLevelPopup();">Cancel</div>
+    <button onclick="hideLevelPopup();">Cancel</button>
   </div>
   <script src="prefsui.js" type="text/javascript"></script>
 </body>

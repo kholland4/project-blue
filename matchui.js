@@ -108,8 +108,9 @@ function displayUsers() {
     outer.appendChild(caption);
     
     container.appendChild(outer);
-  }
+  } else {
     finalLayout();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", init);
