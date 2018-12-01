@@ -55,19 +55,10 @@ function showMessages(messages, clear = true) {
 function showMessage(message, container, align, doUserBubble) {
   var wrapper = document.createElement("div");
   wrapper.className = "messageWrapper" + align;
-  
-  if(align == ALIGN_LEFT) {
-    var userBubble = document.createElement("div");
-    userBubble.className = "userBubble";
-    if(doUserBubble) {
-      var userIcon = document.createElement("img");
-      userIcon.className = "userBubbleIcon";
-      userIcon.src = "../avatar.php?userid=" + message.src;
-      userBubble.appendChild(userIcon);
-    }
-    wrapper.appendChild(userBubble);
-  }
-  
+
+  var userIcon = document.getElementsByClassName = "userBubbleIcon";
+  userIcon.src = "../avatar.php?userid=" + message.src;
+
   var bubble = document.createElement("div");
   bubble.className = "messageBubble" + align;
   bubble.innerText = message.content;
@@ -83,6 +74,14 @@ function sendMessage() {
   //TODO: check length
   httpPost("backend.php?target=" + targetUserID + "&mode=send", "message=" + encodeURIComponent(message), function() { getPartial(); });
   //TODO: display bubble with "sending..."?
+  var textArea = document.getElementById("sendMessageText");
+  textArea.style.height = "28px";
+}
+
+
+function textAreaAdjust(o) {
+  o.style.height = "1px";
+  o.style.height = (5+o.scrollHeight)+"px";
 }
 
 document.addEventListener("DOMContentLoaded", init);

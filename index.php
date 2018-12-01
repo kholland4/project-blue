@@ -28,10 +28,9 @@ close_sql_connection($conn);
     </div>
     <div class="dropdown-content" id="myDropdown">
       <?php 
-      echo "<a href='" . $BASE_URL . "userlist.php'>The List</a>";
+      echo "<a href='" . $BASE_URL . "userlist.php'>User List</a>";
       echo "<a href='#'>Chatting</a>";
-      echo "<a href='#'>Forums</a>";
-      echo "<a href='" . $BASE_URL . "prefsui.php'>Your interests</a>\n";
+      echo "<a href='" . $BASE_URL . "prefsui.php'>Your Interests</a>\n";
       echo "<a href='" . $BASE_URL . "logout.php'>Log out</a>";
       ?>
     </div>

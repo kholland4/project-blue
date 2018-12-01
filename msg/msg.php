@@ -16,6 +16,7 @@ $target_userid = intval($_GET["target"]);
 $target_user = get_user_info($conn, $target_userid);
 
 $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX THIS !!!!!
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,8 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
 <div id="appHeaderCont">
   <div id="appHeader">
     <a id="backButton" href="javascript:history.go(-1);"><i class="fas fa-2x fa-angle-left"></i></a> <!-- TODO: should the back button be a back button or go back to the message thread list? -->
-    <span id="headerText">Conversation with <?php echo htmlspecialchars($target_name); ?></span>
+    <img class="userBubbleIcon" src="../img/pp.png">
+    <span id="headerText"><?php echo htmlspecialchars($target_user['firstname']." ". $target_user['lastname']); ?></span>
   </div>
 </div>
 <div id="main" style="padding-top: 86px;"> <!-- FIXME dynamic padding -->
@@ -42,10 +44,10 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
   <div style="display: flex;justify-content: center;"><img id="hDots" src="../img/huugsDots.png"></div>
 </div>
 <div id="sendMessage">
-    <form id="sendMessageForm" action="javascript:;" onsubmit="sendMessage();">
-      <input type="text" id="sendMessageText">
-      <button>Send</button>
+    <form id="sendMessageForm" action="javascript:;" onsubmit="sendMessage();"> 
+      <textarea type="text" id="sendMessageText" onkeyup="textAreaAdjust(this)"></textarea>
+      <button id="sendButton"><i id="sendIcon" class="fas fa-arrow-up"></i></button>
     </form>
-  </div>
+</div>
 </body>
 </html>
