@@ -56,7 +56,7 @@ function showMessage(message, container, align, doUserBubble) {
   var wrapper = document.createElement("div");
   wrapper.className = "messageWrapper" + align;
 
-  var userIcon = document.getElementsByClassName = "userBubbleIcon";
+  var userIcon = document.getElementsByClassName("userBubbleIcon")[0];
   userIcon.src = "../avatar.php?userid=" + message.src;
 
   var bubble = document.createElement("div");
