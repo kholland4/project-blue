@@ -51,6 +51,7 @@ p#username {
 }
 .imageCarousel {
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
   height: 25vh;
   display: flex;

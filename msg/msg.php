@@ -46,7 +46,7 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
 <div id="sendMessage">
     <form id="sendMessageForm" action="javascript:;" onsubmit="sendMessage();"> 
       <textarea type="text" id="sendMessageText" onkeyup="textAreaAdjust(this)"></textarea>
-      <button id="sendButton"><i id="sendIcon" class="fas fa-arrow-up"></i></button>
+      <button id="sendButton"><i id="sendIcon" class="fas fa-paper-plane"></i></button>
     </form>
 </div>
 </body>

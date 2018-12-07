@@ -3,24 +3,25 @@ html {
 }
 body {
   background-image: linear-gradient(rgba(255,0,0,0), rgba(8, 33, 62,.1));
-  height: 100%;
   margin: 0;
-  overflow-y: hidden;
-}
-div.container {
-  background: transparent;
-  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  top: 0;
 }
 #f1 {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
   padding-top: 65px;
   background-color: transparent;
+}
+#container {
+  display: block;
+  height: 100%;
 }
 img {
   max-width: 100%;

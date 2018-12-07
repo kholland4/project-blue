@@ -147,6 +147,10 @@ div.forButton {
 .indivContainer {
   display: flex;
   justify-content: center;
+  user-select: none !important;
+  -webkit-user-select: none;  
+  -moz-user-select: none;     
+  -ms-user-select: none;  
 }
 .shadow {
   align-self: center;
@@ -155,6 +159,10 @@ div.forButton {
   position: fixed;
   border-radius: 50%;
   transition: all .2s;
+  user-select: none !important;
+  -webkit-user-select: none;  
+  -moz-user-select: none;     
+  -ms-user-select: none;  
 }
 #shadow1 {
   background-color: rgba(255, 224, 147, .5);
@@ -175,6 +183,13 @@ div.forButton {
   border-radius: 50%;
   z-index: 1;
   margin: 5px;
+  font-size: 70px;
+  margin-left: 0px;
+  margin-right: 0px;
+  -webkit-user-select: none;  
+  -moz-user-select: none;     
+  -ms-user-select: none;     
+  user-select: none;
 }
 .blurAndStyle {
   -webkit-filter: blur(2px);

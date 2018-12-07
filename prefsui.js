@@ -228,9 +228,18 @@ function showLevelPopup(prefID) {
     var shadow = document.createElement("div");
     shadow.className = "shadow";
     shadow.id = `shadow${i}`;
-    var button = document.createElement("img");
-    button.src = "img/level" + i + ".png";
-    button.className = "levelPopupButton";
+    var button = document.createElement("p");
+    button.className = "levelPopupButton"; 
+    if (i==1) {
+      var emoji = "\u{1F914}";
+      button.innerHTML = emoji;      
+    }else if (i==2) {
+      var emoji = "\u{1F603}";
+      button.innerHTML = emoji;
+    }else{
+      var emoji = "\u{1F60D}";
+      button.innerHTML = emoji;       
+    }
     if(i == level) { button.className = "levelPopupButton selected"; }
     button.dataset.prefID = prefID;
     button.dataset.level = i;
@@ -265,14 +274,14 @@ function popupAnimation() {
   var face = document.getElementsByClassName("levelPopupButton");
   var shadows = document.getElementsByClassName("shadow");
     face[0].addEventListener("click", function() {shadows[0].style.transform = "scale(2.5)"})
-    face[0].addEventListener("touchstart", function() {shadows[0].style.transform = "scale(2.5)"});
+    face[0].addEventListener("touchstart", function() {setTimeout(function() {shadows[0].style.transform = "scale(2.5)"},400);});
     face[0].addEventListener("touchend", function() {shadows[0].style.transform = "scale(1)"});
     
     face[1].addEventListener("click", function() {shadows[1].style.transform = "scale(2.5)"})
-    face[1].addEventListener("touchstart", function() {shadows[1].style.transform = "scale(2.5)"});
+    face[1].addEventListener("touchstart", function() {setTimeout(function() {shadows[1].style.transform = "scale(2.5)"},400);});
     face[1].addEventListener("touchend", function() {shadows[1].style.transform = "scale(1)"});
     
     face[2].addEventListener("click", function() {shadows[2].style.transform = "scale(2.5)"})
-    face[2].addEventListener("touchstart", function() {shadows[2].style.transform = "scale(2.5)"});
+    face[2].addEventListener("touchstart", function() {setTimeout(function() {shadows[2].style.transform = "scale(2.5)"},400);});
     face[2].addEventListener("touchend", function() {shadows[2].style.transform = "scale(1)"});
 }

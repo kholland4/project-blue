@@ -75,12 +75,15 @@ body {
   border-radius: 15px;
   border: solid #b4b4b4;
   border-width: thin;
-  height: 28px;
+  height: 33px;
+  max-height: 161px;
   outline: none;
   resize: none;
   overflow: auto;
+  padding: 5px 5px 5px 10px;
   margin: 3px;
   font-size: large;
+  font-family: sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; 
@@ -103,6 +106,6 @@ body {
   align-items: center;
 }
 #sendIcon {
-  font-size: x-large;
+  font-size: 15px;
   color: #ffffff;
 }

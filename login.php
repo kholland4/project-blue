@@ -105,8 +105,6 @@ if(isset($_POST["username"])) {
 }
 ?>
 </div>
-
-<!-- so links in safari webapp do not open new tab  -->
 <script src="index.js"type="text/javascript"></script>
 </body>
 </html>

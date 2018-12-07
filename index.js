@@ -1,20 +1,3 @@
-/*link menu*/
-function toggleMenu(x){x.classList.toggle("change"); myFunction()}
-
-  function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// do we want to allow users to quit the manu by clicking anywhere? 
-/*  window.onclick = function(e) {
-    if (!e.target.matches('.menuContainer')) {
-      var myDropdown = document.getElementById("myDropdown");
-        if (myDropdown.classList.contains('show')) {
-          myDropdown.classList.remove('show');
-        }
-    }
-  }*/
-
 /*so links in safari webapp do not open new tab */
 var a = document.getElementsByTagName("a");
 for(var i = 0; i < a.length; i++) {
@@ -27,6 +10,14 @@ for(var i = 0; i < a.length; i++) {
 var mainUser = document.getElementsByClassName("detailIconMain")[0];
 mainUser.addEventListener("click", function() {
   window.location = "/project-blue/profileui.php";
+});
+var chatting = document.getElementsByClassName("messagePage")[0];
+chatting.addEventListener("click", function() {
+  window.location = "#";
+});
+var userL = document.getElementsByClassName("userlistPage")[0];
+userL.addEventListener("click", function() {
+  window.location = "/project-blue/userlist.php";
 });
 
 //variables for layout animation
@@ -58,4 +49,3 @@ window.addEventListener("DOMContentLoaded", function() {
 })
 
 window.addEventListener("load", change);
-

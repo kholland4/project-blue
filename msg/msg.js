@@ -75,13 +75,13 @@ function sendMessage() {
   httpPost("backend.php?target=" + targetUserID + "&mode=send", "message=" + encodeURIComponent(message), function() { getPartial(); });
   //TODO: display bubble with "sending..."?
   var textArea = document.getElementById("sendMessageText");
-  textArea.style.height = "28px";
+  textArea.style.height = "32px";
 }
 
 
 function textAreaAdjust(o) {
   o.style.height = "1px";
-  o.style.height = (5+o.scrollHeight)+"px";
+  o.style.height = (2+o.scrollHeight)+"px";
 }
 
 document.addEventListener("DOMContentLoaded", init);
