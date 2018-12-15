@@ -59,9 +59,9 @@ function displayUsers() {
   var matchCount = 0;
   for(var i = 0; i < users.length; i++) {
     //skip if <50% match
-    if(users[i].score < 0.5) {
+    /*if(users[i].score < 0.5) {
       continue;
-    }
+    }*/
     
     var outer = document.createElement("div");
     outer.className = "userOuter";

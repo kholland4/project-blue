@@ -1,7 +1,7 @@
 <?php
 $DISPLAY_NAME = "Project Blue";
 $BASE_URL = "/project-blue/";
-$MATCH_ALGO = "weighted"; //weighted or flat
+$MATCH_ALGO = "flat"; //weighted or flat
 
 function create_sql_connection() {
   $conn = mysqli_connect("localhost", "php", "password", "project-blue");

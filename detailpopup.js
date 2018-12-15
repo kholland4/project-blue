@@ -88,12 +88,16 @@ function showDetail(data) {
     tr.appendChild(tdName);
     outer.appendChild(tr);
     //bar at bottom - I would use ::after but there's no proper way to modify that in JS
-    var bar = document.createElement("tr");
-    bar.className = "detailListBar";
-    var targetColor = Math.floor(data.detail[i].matchLevel.toPrecision(2) * 120);
-    bar.style.borderBottom = "5px solid hsl(" + targetColor + ", 100%, 50%)";
-    bar.style.width = (data.detail[i].matchLevel.toPrecision(2) * 100) + "%";
-    outer.appendChild(bar);
+    if(MATCH_ALGO == "weighted") {
+      var bar = document.createElement("tr");
+      bar.className = "detailListBar";
+      var targetColor = Math.floor(data.detail[i].matchLevel.toPrecision(2) * 120);
+      bar.style.borderBottom = "5px solid hsl(" + targetColor + ", 100%, 50%)";
+      bar.style.width = (data.detail[i].matchLevel.toPrecision(2) * 100) + "%";
+      outer.appendChild(bar);
+    } else {
+      tr.style.borderBottom = "1px solid #dddddd";
+    }
   }
   container.appendChild(outer);
   

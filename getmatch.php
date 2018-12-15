@@ -53,6 +53,26 @@ if($MATCH_ALGO == "weighted") {
   }*/
   echo json_encode($scores);
 } else if($MATCH_ALGO == "flat") {
-  
+  /*Any user has to select at least 10 interests. In order to have a match and have other user appear on your feed and you appear on their's, at least 40% of your selected intererests have to be in the other users list of selected interest. In order to accomodate for differences in number of things selected accross different users. In order to match the algorithm has to use as reference the 40% of the user that has the lest amount of things selected.   
+I as a user with 10 interests selected would match with someone with 40 interests selected if he has in his list at least 4 things that I also have */
+  $target = prefs_get_arr($conn, $userid);
+  $people = match_get_raw($conn, $userid);
+  $scores = array();
+  foreach($people as $person) {
+    $scoresRaw = array();
+    foreach($target as $t_p => $t_l) {
+      foreach($person["prefs"] as $p_p => $p_l) {
+        if($t_p == $p_p) { //found matching preference
+          array_push($scoresRaw, array("matchLevel" => 1.0, "importance" => $t_l, "pref" => $t_p));
+        }
+      }
+    }
+    $score = count($scoresRaw) / count($target);
+    $scoreAlt = count($scoresRaw) / count($person["prefs"]);
+    if($score >= 0.4 || $scoreAlt >= 0.4) {
+      array_push($scores, array("person" => $person, "score" => $score, "detail" => $scoresRaw));
+    }
+  }
+  echo json_encode($scores);
 }
 ?>
