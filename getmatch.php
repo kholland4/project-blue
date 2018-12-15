@@ -67,8 +67,16 @@ I as a user with 10 interests selected would match with someone with 40 interest
         }
       }
     }
-    $score = count($scoresRaw) / count($target);
-    $scoreAlt = count($scoresRaw) / count($person["prefs"]);
+    
+    $score = 0;
+    if(count($target) > 0) {
+      $score = count($scoresRaw) / count($target);
+    }
+    $scoreAlt = 0;
+    if(count($person["prefs"]) > 0) {
+      $scoreAlt = count($scoresRaw) / count($person["prefs"]);
+    }
+    
     if($score >= 0.4 || $scoreAlt >= 0.4) {
       array_push($scores, array("person" => $person, "score" => $score, "detail" => $scoresRaw));
     }
