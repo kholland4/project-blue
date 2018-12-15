@@ -9,7 +9,7 @@ require "util.php";
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
 <?php import("includes.html"); ?>
 </head>
-<body>
+<body ontouchstart="removeIOSRubberEffect(this)">
 <div id="container">
 <form id="f1" action="login.php" method="POST">
 <img src="img/huugsClear.svg">
@@ -106,5 +106,15 @@ if(isset($_POST["username"])) {
 ?>
 </div>
 <script src="index.js"type="text/javascript"></script>
+<script type="text/javascript">
+  function removeIOSRubberEffect(element) {
+      var top = element.scrollTop, totalScroll = element.scrollHeight, currentScroll = top + element.offsetHeight;
+      if ( top === 0 ) {
+        element.scrollTop = 1;
+      } else if ( currentScroll === totalScroll ) {
+        element.scrollTop = top - 1;
+      }
+  }
+</script>
 </body>
 </html>

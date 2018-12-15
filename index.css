@@ -15,7 +15,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-image: linear-gradient(rgba(255,0,0,0), rgba(8, 33, 62,.1));
   display: flex;
   overflow-y: hidden;
   position: absolute;
@@ -25,10 +24,13 @@ body {
 
 .main {
   width: 100%;
+  background-image: linear-gradient(rgba(255,0,0,0), rgba(8, 33, 62,.1));
   position: fixed;
   top: 0;
   bottom: 0;
   overflow-x: scroll;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
 }
 #userList {
   display: flex;
