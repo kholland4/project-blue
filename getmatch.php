@@ -77,7 +77,7 @@ I as a user with 10 interests selected would match with someone with 40 interest
       $scoreAlt = count($scoresRaw) / count($person["prefs"]);
     }
     
-    if($score >= 0.4 || $scoreAlt >= 0.4) {
+    if($score >= 0.4 || $scoreAlt >= 0.4 || array_key_exists("all", $_GET)) {
       array_push($scores, array("person" => $person, "score" => $score, "detail" => $scoresRaw));
     }
   }

@@ -3,7 +3,7 @@ var prefData;
 var prefMeta;
 
 function init() {
-  loadf("getmatch.php?r=" + Math.random(), function() {
+  loadf("getmatch.php?all=true&r=" + Math.random(), function() {
     if(this.status == 200) {
       users = JSON.parse(this.responseText);
       sortUsers("firstlast");
