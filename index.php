@@ -31,7 +31,6 @@ close_sql_connection($conn);
     </div>
   </div>
   <?php import("detailPopup.html"); ?>
-<script>var MATCH_ALGO = "<?php echo htmlspecialchars($MATCH_ALGO); ?>";</script>
 <script src="index.js" type="text/javascript"></script>
 <script src="matchui.js" type="text/javascript"></script>
 <script src="detailpopup.js" type="text/javascript"></script>
