@@ -50,6 +50,7 @@ $userInfo = get_user_info($conn, $userid);
       <div class="interestCont">
         <p>Your Interests</p>
         <div class="interestList"></div>
+        <a href="prefsui.php">interest</a><br>
       </div>
     </div>
   </div>

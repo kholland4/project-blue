@@ -71,6 +71,14 @@ function showDetail(data) {
     var tr = document.createElement("tr");
     tr.className = "detailListRow";
     //icon
+    var tdCat = document.createElement("td");
+    tdCat.className = "categoryInfo";
+    var cat = prefData[data.detail[i].pref].category;
+    var catInfo = document.createElement("span");
+    catInfo.innerText = `In ${cat} :`;
+    tdCat.appendChild(catInfo);
+    tr.appendChild(tdCat);
+
     var tdIcon = document.createElement("td");
     tdIcon.className = "detailListIconCell";
     var icon = document.createElement("img");

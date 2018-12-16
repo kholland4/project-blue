@@ -114,25 +114,36 @@ body {
 
 table.detailListOuter {
   display: block;
-  box-shadow: 0 0 10px .1px rgba(0, 0, 0, 0.03), 0 5px 5px 0 rgba(0, 0, 0, 0.03);
-  margin: 0px;
   margin: auto;
   border: 0px;
+  margin-bottom: 15px;
   padding: 0px;
-  border-radius: 5px; 
   width: 95%;
-  background-color: white;
-  border-radius: 2px;
+  border-collapse: separate;
+  border-radius: 15px;
 }
 tr.detailListRow, tr.detailListBar {
   display: block;
   margin: 0px;
+  box-shadow: 0 0 10px 0.1px rgba(0, 0, 0, 0.03), 0 5px 5px 0 rgba(0, 0, 0, 0.03);
   border: 0px;
   padding: 0px;
+  background: #fff;
+  border-radius: 15px;
 }
 tr.detailListBar {
   height: 0px;
   border-radius: 5px;
+}
+td.categoryInfo {
+  display: flex;
+  margin-top: 5px;
+  padding: 3px 9px;
+  font-size: 16px;
+  font-weight: 900;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  border-top: 1px solid rgb(221, 221, 221);
+  border-radius: 15px 15px 0px 0px;
 }
 td.detailListIconCell {
   margin: 0px;
