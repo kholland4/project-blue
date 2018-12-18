@@ -8,6 +8,10 @@ $userid = authenticate($conn);
 <?php
 header("Content-Type: text/json");
 
+function curveFunc($x) {
+  return 0.01 * pow(($x - 55), 2) + 20;
+}
+
 if($MATCH_ALGO == "weighted") {
   $EXP = 1.5;
 
@@ -68,17 +72,29 @@ I as a user with 10 interests selected would match with someone with 40 interest
       }
     }
     
-    $score = 0;
+    /*$score = 0;
     if(count($target) > 0) {
       $score = count($scoresRaw) / count($target);
     }
     $scoreAlt = 0;
     if(count($person["prefs"]) > 0) {
       $scoreAlt = count($scoresRaw) / count($person["prefs"]);
+    }*/
+    
+    if(count($target) == 0 || count($person["prefs"]) == 0) {
+      continue;
     }
     
-    if($score >= 0.4 || $scoreAlt >= 0.4 || array_key_exists("all", $_GET)) {
-      array_push($scores, array("person" => $person, "score" => $score, "detail" => $scoresRaw));
+    $amount = count($scoresRaw);
+    
+    $targetOne = curveFunc(count($target)) * 0.01 * count($target);
+    $targetTwo = curveFunc(count($person["prefs"])) * 0.01 * count($person["prefs"]);
+    
+    $scoreOne = (($amount - $targetOne) / count($target)) + 0.5; //FIXME
+    $scoreTwo = (($amount - $targetTwo) / count($person["prefs"])) + 0.5; //FIXME
+    
+    if($scoreOne >= 0.5 || $scoreTwo >= 0.5 || array_key_exists("all", $_GET)) {
+      array_push($scores, array("person" => $person, "score" => $scoreOne, "matchCount" => $amount, "detail" => $scoresRaw));
     }
   }
   echo json_encode($scores);
