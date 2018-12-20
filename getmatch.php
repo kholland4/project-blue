@@ -82,6 +82,9 @@ I as a user with 10 interests selected would match with someone with 40 interest
     }*/
     
     if(count($target) == 0 || count($person["prefs"]) == 0) {
+      if(array_key_exists("all", $_GET)) {
+        array_push($scores, array("person" => $person, "score" => 0, "matchCount" => 0, "detail" => $scoresRaw));
+      }
       continue;
     }
     
