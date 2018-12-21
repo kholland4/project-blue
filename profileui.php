@@ -54,5 +54,15 @@ $userInfo = get_user_info($conn, $userid);
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    //stay in webapp mode
+    var a = document.getElementsByTagName("a");
+    for(var i = 0; i < a.length; i++) {
+      a[i].onclick=function() {
+        window.location = this.getAttribute("href");
+        return false
+      }
+    }
+  </script>
 </body>
 </html>

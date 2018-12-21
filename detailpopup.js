@@ -23,7 +23,7 @@ function showDetail(data) {
   
   var extra = document.createElement("div");
   extra.className = "detailInfoExtra";
-  extra.innerText = (Math.round(data.score * 100)) + "% match";
+  extra.innerText = `${data.detail.length} ${(data.detail.length === 1) ? "thing" : "things"} in common!`;
   info.appendChild(extra);
 
   var seeProf = document.createElement("button");

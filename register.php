@@ -78,28 +78,6 @@ require "util.php";
     }
     ?>
   </div>
-  <!-- script to select image -->
-  <script type="text/javascript">
-  window.addEventListener('load', function() {
-  document.querySelector("img").addEventListener("click", function() {
-    document.querySelector("input").click();
-     document.querySelector('input[type="file"]').addEventListener('change', function() {
-      if (this.files && this.files[0]) {
-          var img = document.querySelector('img');  // $('img')[0]
-          img.src = URL.createObjectURL(this.files[0]); // set src to file url
-      }
-  });
-});
-});
-
-/*so links in safari webapp do not open new tab */
-var a = document.getElementsByTagName("a");
-for(var i = 0; i < a.length; i++) {
-  a[i].onclick=function() {
-    window.location = this.getAttribute("href");
-    return false
-  }
-}
-  </script>
+  <script type="text/javascript" src="register.js"></script>
 </body>
 </html>

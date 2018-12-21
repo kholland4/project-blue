@@ -49,11 +49,16 @@ div#main {
   font-size: inherit;
   color: #08213e;
   font-weight: 600;
+  font-size: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .userInfoExtra {
   height: auto;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
+  margin-top: 2px;
   font-weight: normal;
 }
 

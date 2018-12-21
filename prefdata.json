@@ -7,12 +7,12 @@
       "sports": "Sports",
       "outdoors": "Outdoors",
       "activities": "Activities",
-      "careerInterests": "Career Interests",
+      "Career Interests": "Career Interests",
       "fun": "Fun & General",
       "food": "Food",
       "music": "Music",
       "arts" : "Arts",
-      "lifeCulture" : "Lifestyle & Culture"
+      "Lifestyle & Culture" : "Lifestyle & Culture"
     }
   },
   "data": [
@@ -100,28 +100,28 @@
     {"category": "music", "name": "Instruments", "image": "img/playIns.png"},
 
 
-    {"category": "lifeCulture", "name": "Languages", "image" : "img/languages.png"},
-    {"category": "lifeCulture", "name": "Meditation", "image" : "img/meditation.png"},
-    {"category": "lifeCulture", "name": "Religion", "image" : "img/religion.png"},
-    {"category": "lifeCulture", "name": "Social Causes", "image" : "img/sCauses.png"},
-    {"category": "lifeCulture", "name": "Volunteer Work", "image" : "img/volunteer.png"},
-    {"category": "lifeCulture", "name": "Traveling", "image" : "img/traveling.png"},
-    {"category": "lifeCulture", "name": "Healthiness", "image" : "img/healthiness.png"},
-    {"category": "lifeCulture", "name": "Yoga", "image" : "img/yoga.png"},
+    {"category": "Lifestyle & Culture", "name": "Languages", "image" : "img/languages.png"},
+    {"category": "Lifestyle & Culture", "name": "Meditation", "image" : "img/meditation.png"},
+    {"category": "Lifestyle & Culture", "name": "Religion", "image" : "img/religion.png"},
+    {"category": "Lifestyle & Culture", "name": "Social Causes", "image" : "img/sCauses.png"},
+    {"category": "Lifestyle & Culture", "name": "Volunteer Work", "image" : "img/volunteer.png"},
+    {"category": "Lifestyle & Culture", "name": "Traveling", "image" : "img/traveling.png"},
+    {"category": "Lifestyle & Culture", "name": "Healthiness", "image" : "img/healthiness.png"},
+    {"category": "Lifestyle & Culture", "name": "Yoga", "image" : "img/yoga.png"},
 
 
-    {"category": "careerInterests", "name": "Technology", "image": "img/technology.png"},  
-    {"category": "careerInterests", "name": "Community", "image": "img/community.png"},
-    {"category": "careerInterests", "name": "Politics", "image": "img/politics.png"},
-    {"category": "careerInterests", "name": "The Military", "image": "img/military.png"},
-    {"category": "careerInterests", "name": "Medicine/Science", "image": "img/medScien.png"},
-    {"category": "careerInterests", "name": "Engineering", "image": "img/engineering.png"},
-    {"category": "careerInterests", "name": "Entertainment", "image": "img/entertainment.png"},
-    {"category": "careerInterests", "name": "Criminal Justice", "image": "img/criminalJ.png"},
-    {"category": "careerInterests", "name": "Cosmetics", "image": "img/cosmetics.png"},
-    {"category": "careerInterests", "name": "Construction", "image": "img/construction.png"},    
-    {"category": "careerInterests", "name": "Computers", "image": "img/computers.png"},
-    {"category": "careerInterests", "name": "Business", "image": "img/business.png"},
+    {"category": "Career Interests", "name": "Technology", "image": "img/technology.png"},  
+    {"category": "Career Interests", "name": "Community", "image": "img/community.png"},
+    {"category": "Career Interests", "name": "Politics", "image": "img/politics.png"},
+    {"category": "Career Interests", "name": "The Military", "image": "img/military.png"},
+    {"category": "Career Interests", "name": "Medicine/Science", "image": "img/medScien.png"},
+    {"category": "Career Interests", "name": "Engineering", "image": "img/engineering.png"},
+    {"category": "Career Interests", "name": "Entertainment", "image": "img/entertainment.png"},
+    {"category": "Career Interests", "name": "Criminal Justice", "image": "img/criminalJ.png"},
+    {"category": "Career Interests", "name": "Cosmetics", "image": "img/cosmetics.png"},
+    {"category": "Career Interests", "name": "Construction", "image": "img/construction.png"},    
+    {"category": "Career Interests", "name": "Computers", "image": "img/computers.png"},
+    {"category": "Career Interests", "name": "Business", "image": "img/business.png"},
 
 
     {"category": "arts", "name": "Writing", "image": "img/writing.png"},

@@ -132,7 +132,7 @@ div.forButton {
 #levelPopupTitle {
   text-align: center;
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#e4a62b), to(#cb288b));;
+  background: -webkit-gradient(linear, left top, right top, from(#e4a62b), to(#cb288b));
   font-size: 20px;
   overflow: auto;
   padding: 5px;

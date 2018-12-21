@@ -82,7 +82,7 @@ function displayUsers() {
     info.appendChild(name);
     var extra = document.createElement("div");
     extra.className = "userInfoExtra";
-    extra.innerText = (Math.round(users[i].score* 100)) + "% match";
+    extra.innerText = `${users[i].detail.length} ${(users[i].detail.length === 1) ? "thing" : "things"} in common!`;
     info.appendChild(extra);
     userInfo.appendChild(info);
 
