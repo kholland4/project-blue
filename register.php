@@ -8,6 +8,7 @@ require "util.php";
   <?php import("includes.html"); ?>
   <link rel="stylesheet" type="text/css" href="registerStyle.css">
   <link rel="stylesheet" type="text/css" href="inButtStyle.css">
+  <link rel="stylesheet" href="./node_modules/croppie/croppie.css">
 </head>
 <body>
   <div id="container">
@@ -25,6 +26,10 @@ require "util.php";
       <p>Already have an account?</p><a href="login.php">Sign In</a><br>
       <img id="hDots" src="img/huugsDots.png">
     </form>
+    <div id="cropPopup">
+      <button id="done" >Done</button>
+      <button id="cancel" >Cancel</button>
+    </div>
     <?php
     if(isset($_POST["username"])) {
       $user_data = array();
@@ -78,6 +83,7 @@ require "util.php";
     }
     ?>
   </div>
+  <script src="./node_modules/croppie/croppie.js"></script>
   <script type="text/javascript" src="register.js"></script>
 </body>
 </html>

@@ -30,3 +30,28 @@ img#hDots {
   width: 20%;
   margin-top: 2em;
 }
+button#done {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  left: 0;
+}
+button#cancel {
+  position: absolute;
+  bottom: 18px;
+  right: 0;
+  left: 0;
+}
+.hide {
+  display: none;
+}
+#cropPopup {
+  display: none;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fefefe;
+}
