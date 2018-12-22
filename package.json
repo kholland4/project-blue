@@ -1,0 +1,22 @@
+{
+  "name": "project-blue",
+  "version": "1.0.0",
+  "description": "Geographical Position based social media/advertising app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kholland4/project-blue.git"
+  },
+  "author": "Alejandro Jimenez & Kyle Holland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kholland4/project-blue/issues"
+  },
+  "homepage": "https://github.com/kholland4/project-blue#readme",
+  "dependencies": {
+    "croppie": "^2.6.2"
+  }
+}
