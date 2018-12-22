@@ -11,12 +11,13 @@ var el = document.getElementById('cropPopup');
 var resize = new Croppie(el, {
     viewport: { width: 256, height: 256, type: "circle" },
     boundary: { width: 300, height: 300 },
-    enableOrientation: false,
+    enableOrientation: true,
     showZoomer: false,
 });
 
 function uploadImage() {
   var doneButtn = document.getElementById("done");
+  var cancelBttn = document.getElementById("cancel");
   if (this.files && this.files[0]) {
       var profilePic = document.getElementById("profilePic");
       var src = URL.createObjectURL(this.files[0]);
@@ -24,9 +25,11 @@ function uploadImage() {
       resize.bind({
           url: src,
       });
+      cancelBttn.addEventListener("click", hideCropDiv);
       doneButtn.addEventListener("click", function() {
         resize.result('base64').then(function(image) {
           if(image!="data:,"){
+            //post assign this image as the user's profile pic in the database
             profilePic.src = image;
             hideCropDiv(); 
           }
