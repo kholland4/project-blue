@@ -14,6 +14,7 @@ function init() {
         lastMessageTime = messages[messages.length - 1].time;
       }
       showMessages(messages);
+      showLastMessage();
     }
     isLoading--;
   }, 4000, function() { isLoading--; /* TODO: show error */});
@@ -52,6 +53,7 @@ function showMessages(messages, clear = true) {
     showMessage(messages[i], container, align, true); //TODO only show user bubble when last message src != messages[i].src
   }
 }
+
 function showMessage(message, container, align, doUserBubble) {
   var wrapper = document.createElement("div");
   wrapper.className = "messageWrapper" + align;
@@ -76,12 +78,26 @@ function sendMessage() {
   //TODO: display bubble with "sending..."?
   var textArea = document.getElementById("sendMessageText");
   textArea.style.height = "32px";
+  showLastMessage();
 }
 
-
-function textAreaAdjust(o) {
-  o.style.height = "1px";
-  o.style.height = (2+o.scrollHeight)+"px";
+function textAreaAdjust() {
+  var tx = document.getElementsByTagName('textarea');
+  for (var i = 0; i < tx.length; i++) {
+  tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+  tx[i].addEventListener("input", OnInput, false);
+  }
+}
+  
+function OnInput() {
+  this.style.height = 33 + 'px';
+  this.style.height = (this.scrollHeight) + 'px';
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+
+function showLastMessage() {
+  var listOfMessages = document.getElementsByClassName("messageWrapper");
+  listOfMessages[listOfMessages.length-1].scrollIntoView();
+}

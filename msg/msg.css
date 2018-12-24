@@ -10,7 +10,8 @@ body {
   background-color: #fbfbfb;
 }
 #messages {
-  margin: 8px;  
+  margin: 8px; 
+  margin-bottom: 20px; 
 }
 
 .messageWrapper {

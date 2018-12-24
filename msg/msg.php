@@ -39,13 +39,13 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
     <span id="headerText"><?php echo htmlspecialchars($target_user['firstname']." ". $target_user['lastname']); ?></span>
   </div>
 </div>
-<div id="main" style="padding-top: 86px;"> <!-- FIXME dynamic padding -->
+<div id="main" style="padding-top: 60px;">
   <div id="messages"></div>
   <div style="display: flex;justify-content: center;"><img id="hDots" src="../img/huugsDots.png"></div>
 </div>
 <div id="sendMessage">
     <form id="sendMessageForm" action="javascript:;" onsubmit="sendMessage();"> 
-      <textarea type="text" id="sendMessageText" onkeyup="textAreaAdjust(this)"></textarea>
+      <textarea type="text" id="sendMessageText" onkeydown="textAreaAdjust();"></textarea>
       <button id="sendButton"><i id="sendIcon" class="fas fa-paper-plane"></i></button>
     </form>
 </div>
