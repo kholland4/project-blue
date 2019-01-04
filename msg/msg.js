@@ -78,7 +78,6 @@ function sendMessage() {
   //TODO: display bubble with "sending..."?
   var textArea = document.getElementById("sendMessageText");
   textArea.style.height = "32px";
-  showLastMessage();
 }
 
 function textAreaAdjust() {

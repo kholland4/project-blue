@@ -26,14 +26,14 @@ close_sql_connection($conn);
   <div class="bottom">
     <div id="mainUser">
       <i class="fas fa-comments messagePage"></i>
-      <img class="detailIconMain" src="img/pp.png">
+      <img id="<?php echo $userid ?>" class="detailIconMain" src="img/pp.png">
       <i class="fas fa-list-ul userlistPage"></i>
     </div>
   </div>
   <?php import("detailPopup.html"); ?>
 <script src="index.js" type="text/javascript"></script>
+<script src="util.js" type="text/javascript"></script>
 <script src="matchui.js" type="text/javascript"></script>
 <script src="detailpopup.js" type="text/javascript"></script>
-<script src="util.js" type="text/javascript"></script>
 </body>
 </html>

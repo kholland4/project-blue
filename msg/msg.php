@@ -30,6 +30,7 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
 <script src="msg.js" type="text/javascript"></script>
 <script type="text/javascript">var userID = <?php echo $userid; ?>; var targetUserID = <?php echo $target_userid; ?>;</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="UTF-8">
 </head>
 <body>
 <div id="appHeaderCont">
@@ -45,7 +46,10 @@ $target_name = get_user_name($conn, $target_userid); //FIXME [Kyle]: !!!!! FIX T
 </div>
 <div id="sendMessage">
     <form id="sendMessageForm" action="javascript:;" onsubmit="sendMessage();"> 
-      <textarea type="text" id="sendMessageText" onkeydown="textAreaAdjust();"></textarea>
+      <textarea 
+        type="text" 
+        id="sendMessageText" 
+        onkeydown="textAreaAdjust();"></textarea>
       <button id="sendButton"><i id="sendIcon" class="fas fa-paper-plane"></i></button>
     </form>
 </div>

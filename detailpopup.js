@@ -27,6 +27,8 @@ function showDetail(data) {
   info.appendChild(extra);
 
   var seeProf = document.createElement("button");
+  seeProf.dataset.id = data.person.id;
+  seeProf.onclick = function() { goToLink("profileui.php?target=" + this.dataset.id); };
   seeProf.className = "detailButton";
   seeProf.innerText = "View Profile";
   info.appendChild(seeProf);
