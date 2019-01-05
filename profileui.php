@@ -74,31 +74,8 @@ $target_user = get_user_info($conn, $target_userid);
     </div>
   </div>
   <script type="text/javascript">
-    //stay in webapp mode
-    var a = document.getElementsByTagName("a");
-    for(var i = 0; i < a.length; i++) {
-      a[i].onclick=function() {
-        window.location = this.getAttribute("href");
-        return false
-      }
-    }
     let loginId = <?php echo $userid?>;
     let fromLinkId = <?php echo $target_userid?>;
-
-    const ShowEditOptions =()=> {
-      if(loginId === fromLinkId) {
-        let editProfDiv = document.getElementById("buttonDiv")
-        editProfButtn = document.createElement("button");
-        editProfButtn.className = "editButt";
-        editProfButtn.innerText = "Edit Profile";
-        editProfDiv.appendChild(editProfButtn);
-
-        let intText = document.getElementById("intText");
-        intText.innerText = "Your Interests";
-      }
-    }
-
-    window.addEventListener("DOMContentLoaded", ShowEditOptions);
   </script>
   <script type="text/javascript" src="profileui.js"></script>
 </body>

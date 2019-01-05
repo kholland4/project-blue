@@ -22,6 +22,7 @@ function uploadImage() {
       var profilePic = document.getElementById("profilePic");
       var src = URL.createObjectURL(this.files[0]);
       showCropDiv();
+      rotateImage();
       resize.bind({
           url: src,
       });
@@ -55,3 +56,15 @@ for(var i = 0; i < a.length; i++) {
     return false
   }
 } 
+
+const rotateImage =()=> {
+  let leftButt = document.getElementById("rotLeft"),
+  rightButt = document.getElementById("rotRight");
+  
+  leftButt.addEventListener("click", function () {
+    resize.rotate(90);
+  });
+  rightButt.addEventListener("click", function () {
+    resize.rotate(-90);
+  });
+}

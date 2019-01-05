@@ -3,6 +3,7 @@ function init() {
     if(this.status == 200) {
       users = JSON.parse(this.responseText);
       findCurrentUser(users);
+      ShowEditOptions();
     }
   });
   loadf("prefdata.json", function() {
@@ -13,9 +14,19 @@ function init() {
   });  
 }
 
+const webAppMode =()=> {
+	var a = document.getElementsByTagName("a");
+	for(var i = 0; i <= a.length; i++) {     
+	  a[i].onclick=function() {
+	    window.location = this.getAttribute("href");
+	    return false
+	  }
+	}
+}
+
 const findCurrentUser =(users)=> {
-	const filteredUser = users.filter((users)=> users.id === fromLinkId),
-	prefsArray = Object.keys(filteredUser[0].prefs),
+	const filteredUser = users.find(user => user.id === fromLinkId),
+  prefsArray = Object.keys(filteredUser.prefs),
 	arrayLength = (prefsArray.length < 8) ? prefsArray.length : 8;
 	loopIntersts(arrayLength, prefsArray);
 }
@@ -25,7 +36,6 @@ const loopIntersts =(arrayLength, prefsArray)=> {
 	let choose = randomNoRepeat(prefsArray);
 	for( let i = 0; i < arrayLength; i++) {
 			forRenderImages[i] = choose();
-			console.log(forRenderImages[i]);
 			displayInterests(prefData[forRenderImages[i]].image);
 	}
 }
@@ -50,5 +60,32 @@ const displayInterests =(interestSRC)=> {
 	icon.src = interestSRC;
 	interestList.appendChild(icon);
 }
+
+const ShowEditOptions =()=> {
+  if(loginId === fromLinkId) {
+    let editProfDiv = document.getElementById("buttonDiv")
+    editProfButtn = document.createElement("button");
+    editProfButtn.className = "editButt";
+    editProfButtn.innerText = "Edit Profile";
+    editProfDiv.appendChild(editProfButtn);
+
+    let intText = document.getElementById("intText");
+    intText.innerText = "Your Interests";
+
+    let interestList = document.getElementById("interestList"),
+    interestLink = document.createElement("a");
+    interestLink.className = "interestLink";
+    interestLink.innerText = "Edit...";
+    interestLink.href = "prefsui.php";
+    interestList.appendChild(interestLink);
+
+    webAppMode();
+  }
+}
+
+/*display interests if users are friends
+const friendStatus =()=> {
+
+}*/
 
 window.addEventListener("load", init);

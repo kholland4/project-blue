@@ -27,6 +27,14 @@ require "util.php";
       <img id="hDots" src="img/huugsDots.png">
     </form>
     <div id="cropPopup">
+      <div class="rotateDiv">
+        <button id="rotLeft" type="button" class="rotateButt" data-deg="-90">
+         <i class="fas fa-undo"></i>
+        </button>
+        <button  id ="rotRight" type="button" class="rotateButt" data-deg="90">
+          <i class="fas fa-redo"></i>
+        </button>
+      </div>
       <button id="done" >Done</button>
       <button id="cancel" >Cancel</button>
     </div>
