@@ -26,7 +26,7 @@ $mode = $_GET["mode"];
 Modes:
   full: full message history
 */
-if(!in_array($mode, array("full", "since", "send"))) {
+if(!in_array($mode, array("full", "since", "send", "convlist"))) {
   http_response_code(400);
   echo "invalid mode";
   exit();
@@ -101,6 +101,44 @@ if($mode == "full" || $mode == "since") {
     echo "Error: " . mysqli_error($conn) . "\n";
   }
   $stmt->close();
+} else if($mode == "convlist") {
+  //Conversation list
+  $messages = array();
+
+  $stmt = mysqli_stmt_init($conn);
+  $stmt->prepare("SELECT src, dest, time, content FROM messages WHERE dest=? OR src=? ORDER BY time ASC");
+  $stmt->bind_param('ii', $userid, $userid);
+  $stmt->execute();
+  $result = mysqli_stmt_get_result($stmt);
+  $len = mysqli_num_rows($result);
+  for($i = 0; $i < $len; $i++) {
+    $row = mysqli_fetch_assoc($result);
+    $data = array(
+      "src" => $row["src"],
+      "dest" => $row["dest"],
+      "time" => strtotime($row["time"]), //convert to UNIX timestamp
+      "content" => $row["content"]
+    );
+    array_push($messages, $data);
+  }
+  $stmt->close();
+  
+  $conversations = array();
+  foreach($messages as $message) {
+    $target = $message["src"];
+    if($message["src"] == $userid) {
+      $target = $message["dest"];
+    }
+    
+    $conversations[$target] = $message;
+  }
+  
+  $conversations2 = array();
+  foreach($conversations as $target => $lastMessage) {
+    array_push($conversations2, array("target" => $target, "lastMessage" => $lastMessage));
+  }
+  
+  echo json_encode($conversations2);
 } else {
   http_response_code(400);
   echo "invalid mode";

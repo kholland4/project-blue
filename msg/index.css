@@ -1,0 +1,25 @@
+/* Use styles similar to userlist? */
+
+.messageWrapper {
+  width: 100%;
+}
+
+.messageUserIcon {
+  height: 56px;
+  display: inline-block;
+  border-radius: 50%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.messageInfobox {
+  display: inline-block;
+}
+
+.messageInfoboxName {
+  
+}
+
+.messageInfoboxContent {
+  
+}
