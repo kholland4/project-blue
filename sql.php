@@ -25,6 +25,13 @@ dest BIGINT UNSIGNED NOT NULL,
 content MEDIUMTEXT,
 time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 )*/
+/*ADD FRIEND SUPPORT (
+ALTER TABLE USERS
+ADD Friends INT;
+ALTER TABLE USERS
+ADD Friend_req INT;
+)*/
+
 $conn = create_sql_connection();
 
 $sql = "";

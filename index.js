@@ -13,7 +13,7 @@ mainUser.addEventListener("click", function() {
 });
 var chatting = document.getElementsByClassName("messagePage")[0];
 chatting.addEventListener("click", function() {
-  window.location = "#";
+  window.location = "/project-blue/msg/index.php";
 });
 var userL = document.getElementsByClassName("userlistPage")[0];
 userL.addEventListener("click", function() {

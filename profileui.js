@@ -38,6 +38,12 @@ const loopIntersts =(arrayLength, prefsArray)=> {
 			forRenderImages[i] = choose();
 			displayInterests(prefData[forRenderImages[i]].image);
 	}
+  let isFriend = false;
+  if (isFriend === false && fromLinkId !== loginId ) {
+    blurInterest();
+  } else {
+    interestList.classList.remove("blurAndStyle");
+  }
 }
 
 const randomNoRepeat =(array)=> {
@@ -52,13 +58,24 @@ const randomNoRepeat =(array)=> {
 }
 
 const displayInterests =(interestSRC)=> {
-	let interestList = document.getElementById("interestList"),
-	icon = document.createElement("img");
-	icon.style.height = `${80}px`;	
-	icon.style.width = `${80}px`;	
-	icon.className = "interestList_icon";
-	icon.src = interestSRC;
-	interestList.appendChild(icon);
+  let interestList = document.getElementById("interestList"),
+  icon = document.createElement("img");
+  icon.style.height = `${80}px`;  
+  icon.style.width = `${80}px`; 
+  icon.className = "interestList_icon";
+  icon.src = interestSRC;
+  interestList.appendChild(icon);
+}
+
+const blurInterest =()=> {
+  let interestList = document.getElementById("interestList");
+  interestList.classList.add("blurAndStyle");
+  let interestCont = document.getElementsByClassName("interestCont")[0];
+  let friendMessage = document.createElement("p");
+  let friendButt = document.createElement("button");
+  friendMessage.innerText = `Add as friend to see interests`;
+  friendMessage.className = "friendMessage";
+  interestCont.appendChild(friendMessage);
 }
 
 const ShowEditOptions =()=> {
@@ -82,10 +99,5 @@ const ShowEditOptions =()=> {
     webAppMode();
   }
 }
-
-/*display interests if users are friends
-const friendStatus =()=> {
-
-}*/
 
 window.addEventListener("load", init);

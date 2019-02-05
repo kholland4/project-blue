@@ -21,7 +21,6 @@ $target_user = get_user_info($conn, $target_userid);
 <html>
 <head>
   <title>Profile - <?php echo $DISPLAY_NAME; ?></title>
-  <link rel="stylesheet" type="text/css" href="prefsui.css">
   <link rel="stylesheet" type="text/css" href="profileui.css">
   <?php import("includes.html"); ?>
   <script src="util.js" type="text/javascript"></script>
@@ -74,8 +73,9 @@ $target_user = get_user_info($conn, $target_userid);
     </div>
   </div>
   <script type="text/javascript">
-    let loginId = <?php echo $userid?>;
-    let fromLinkId = <?php echo $target_userid?>;
+    const loginId = <?php echo $userid?>;
+    const fromLinkId = <?php echo $target_userid?>;
+    const targetName = "camila";
   </script>
   <script type="text/javascript" src="profileui.js"></script>
 </body>

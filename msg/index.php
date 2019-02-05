@@ -18,10 +18,10 @@ $userid = authenticate($conn);
 <meta charset="UTF-8">
 </head>
 <body>
-<div id="appHeaderCont">
+<div class="appHeaderCont">
   <div id="appHeader">
     <a id="backButton" href="javascript:history.go(-1);"><i class="fas fa-2x fa-angle-left"></i></a> <!-- TODO: should the back button be a back button or go back to the message thread list? -->
-    <span id="headerText">All Messages [different title?]</span>
+    <span id="headerText">Conversations</span>
   </div>
 </div>
 <div id="main" style="padding-top: 60px;">

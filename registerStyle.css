@@ -38,6 +38,7 @@ div.rotateDiv {
   justify-content: center;
 }
 button.rotateButt {
+  background: -webkit-gradient(linear, left top, right top, from(#e4a62b), to(#cb288b));
   width: 50px;
   height: 50px;
   border-radius: 100%;

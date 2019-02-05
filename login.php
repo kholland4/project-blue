@@ -7,6 +7,8 @@ require "util.php";
 <title>Sign In - <?php echo $DISPLAY_NAME; ?></title>
 <link rel="stylesheet" type="text/css" href="login_style.css">
 <link rel="stylesheet" type="text/css" href="inButtStyle.css">
+<link rel="apple-touch-startup-image" href="img/HuugsLogo.PNG">
+<link rel="apple-touch-icon" href="img/HuugsLogo.PNG">
 <?php import("includes.html"); ?>
 </head>
 <body ontouchstart="removeIOSRubberEffect(this)">
