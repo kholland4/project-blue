@@ -1,41 +1,75 @@
 var conversations;
+var pastConversations;
+var users;
 var isLoading = 0;
 
 var ALIGN_LEFT = " alignLeft";
 var ALIGN_RIGHT = " alignRight";
 
 function init() {
-  update();
-  
+  loadf("../getusers.php?r=" + Math.random(), function() {
+    if(this.status == 200) {
+      users = JSON.parse(this.responseText); 
+      initMessages();
+    }
+  });  
   //periodically check for new messages
   setInterval(function() {
     if(isLoading <= 0) {
-      update();
+      updateMsgs();
     }
   }, 500);
 }
 
-function update() {
+const initMessages =()=> {
   isLoading++;
   loadf("backend.php?mode=convlist&target=-1&r=" + Math.random(), function() {
     if(this.status == 200) {
-      conversations = JSON.parse(this.responseText);
-      updateUI();
+      pastConversations = JSON.parse(this.responseText);
+      updateUI(pastConversations);
     }
     isLoading--;
   }, 4000, function() { isLoading--; /* TODO: show error */});
 }
 
-function updateUI() {
+function updateMsgs() {
+  isLoading++;
+  loadf("backend.php?mode=convlist&target=-1&r=" + Math.random(), function() {
+    if(this.status == 200) {      
+      conversations = JSON.parse(this.responseText);
+      if(JSON.stringify(pastConversations) != JSON.stringify(conversations)) {
+        pastConversations = conversations;
+        updateUI(conversations);
+      }
+    }
+    isLoading--;
+  }, 4000, function() { isLoading--; /* TODO: show error */});
+}
+
+
+function updateUI(conversations) {
   var container = document.getElementById("messages");
   while(container.firstChild) { container.removeChild(container.firstChild); }
   
+  console.log("im beign updated0");
   for(var i = 0; i < conversations.length; i++) {
-    showMessage(conversations[i].target, conversations[i].lastMessage, container);
+    targetName = findName(conversations[i].target);
+    console.log(name);
+    showMessage(targetName, conversations[i].target, conversations[i].lastMessage, container);
   }
 }
 
-function showMessage(target, message, container) {
+function findName(target) {
+  let user = users.find(item => item.id === target );
+  name =  `${user.firstname} ${user.lastname}`
+  if (user.firstname) {
+    return name;
+  } else {
+    return user.username;
+  }
+}
+
+function showMessage(targetName, target, message, container) {
   var wrapper = document.createElement("div");
   wrapper.className = "messageWrapper";
   wrapper.dataset.target = target;
@@ -51,7 +85,7 @@ function showMessage(target, message, container) {
   
   var name = document.createElement("div");
   name.className = "messageInfoboxName";
-  name.innerText = "UID " + target; //FIXME [Kyle]: Show real name!!!
+  name.innerText = targetName; //FIXME [Kyle]: Show real name!!!
   infobox.appendChild(name);
   
   var messageText = document.createElement("div");

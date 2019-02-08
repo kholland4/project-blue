@@ -14,7 +14,6 @@ function init() {
         lastMessageTime = messages[messages.length - 1].time;
       }
       showMessages(messages);
-      showLastMessage();
     }
     isLoading--;
   }, 4000, function() { isLoading--; /* TODO: show error */});
@@ -67,6 +66,7 @@ function showMessage(message, container, align, doUserBubble) {
   wrapper.appendChild(bubble);
   
   container.appendChild(wrapper);
+  showLastMessage();
 }
 
 
@@ -98,5 +98,5 @@ document.addEventListener("DOMContentLoaded", init);
 
 function showLastMessage() {
   var listOfMessages = document.getElementsByClassName("messageWrapper");
-  listOfMessages[listOfMessages.length-1].scrollIntoView();
+  listOfMessages[listOfMessages.length-1].scrollIntoView({ block: 'center',  behavior: 'smooth'  });
 }

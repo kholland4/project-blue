@@ -16,10 +16,12 @@ close_sql_connection($conn);
 <?php import("includes.html"); ?>
 <link rel="stylesheet" type="text/css" href="index.css">
 <link rel="stylesheet" type="text/css" href="detailpopup.css">
-<link rel="apple-touch-startup-image" href="img/HuugsLogo.PNG">
-<link rel="apple-touch-icon" href="img/HuugsLogo.PNG">
+<link rel="apple-touch-startup-image" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<link rel="manifest" href="manifest.json">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
+
 </head>
 <body>
   <div class="main">
